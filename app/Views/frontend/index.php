@@ -184,7 +184,7 @@
 <!-- projects block -->
 <section class="project-sec py-5" id="projects">
     <div class="container py-md-5 py-4">
-        <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+        <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4" style="max-width:520px;">
             <h3 class="title-style">35 Topics</h3>
         </div>
         <div class="row">
@@ -210,7 +210,7 @@
                 }
 
             ?>
-                <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 350px;">
+                <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 380px;">
                     <a href="topics">
                         <img src="assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                     </a>
