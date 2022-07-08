@@ -10,7 +10,6 @@
 
     <meta name="keywords" content="<?= $site_info['keyword']; ?>">
     <meta name="description" content="<?= $site_info['description']; ?>">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 

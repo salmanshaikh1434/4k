@@ -47,54 +47,59 @@
     <div class="container py-md-5 py-4">
         <div class="row align-items-center">
 
-            <div class="col-xl-5 col-lg-4 ps-lg-5 mt-lg-0 mt-5">
+            <div class="col-xl-5 col-lg-4 col-md-12 ps-lg-5 mt-lg-0 mt-5">
                 <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
                     offering</h3>
                 <p class="text-para">
 
                 </p>
-                <img src="assets/images/service.jpeg" style="width: 31vw;min-width: 300px;box-shadow: 10px 10px #fd746c;border-radius: 10%;">
+                <img src="/assets/images/service.jpeg" style="width: 31vw;min-width: 300px;box-shadow: 10px 10px #fd746c;border-radius: 10%;">
             </div>
 
 
             <div class="col-xl-7 col-lg-8 mt-lg-0 mt-5">
                 <div class="row">
 
-                    <div class="col-lg-4 col-sm-6 mt-2" style="width: 325px;">
+                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
                         <div class="grids-1" style="box-shadow: 4px 2px 28px 4px #888888;background-color: #fd746c;height: 400px;">
                             <div class="icon-style">
-                                <i class="fa fa-graduation-cap" style="color: #fff;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color: #fff;"></i>
+                                        Self-learning </span></h4>
                             </div>
-                            <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;">Self-learning </span></h4>
                             <p>is now available for everyone who has the same passion for learning, and YouTube has
                                 made it easy today, but YouTube is a bottomless ocean with all kinds of videos
                                 including educational content for the English language.</p>
 
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mt-2" style="width: 325px;">
+                    <div class="col-lg-6 col-sm-6  col-md-12 mt-2">
                         <div class="grids-1 " style="box-shadow: 4px 2px 28px 4px #888888;height: 400px;">
                             <div class="icon-style">
-                                <i class="fa fa-youtube"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube"></i>
+                                        YouTube
+                                    </span></h4>
                             </div>
-                            <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;">YouTube
-                                </span></h4>
                             <p>has very valuable educational content for the English language, but this content is
                                 lost amid a huge amount of ineffective content.<br><br></p>
 
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 7px;"></div>
+        <div class="row align-items-center">
 
-                    <div style="padding: 7px;"></div>
-
-
-                    <div class="col-lg-4 col-sm-6 mt-2" style="width: 325px;">
+            <div class="col-xl-7 col-lg-8 mt-lg-0 mt-5">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
                         <div class="grids-1" style="box-shadow: 4px 2px 28px 4px #888888;background-color: #fd746c;height: 400px;">
                             <div class="icon-style">
-                                <i class="fa fa-line-chart" style="color: #fff;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-line-chart" style="color: #fff;"></i> Our goal
+                                    </span></h4>
+
+
                             </div>
-                            <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;">Our goal
-                                </span></h4>
                             <p>is to provide easy access to the valuable content available on YouTube for learning
                                 English for those interested.
                                 <br><br>
@@ -102,13 +107,13 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mt-2" style="width:325px;">
+                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
                         <div class="grids-1 " style="box-shadow: 4px 2px 28px 4px #888888;height: 400px;">
                             <div class="icon-style">
-                                <i class="fa fa-thumbs-up"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"><i class="fa fa-thumbs-up"></i>
+                                        Our service
+                                    </span></h4>
                             </div>
-                            <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;">Our service
-                                </span></h4>
                             <p>is an index (it is a very easy roadmap) which will make the search process easier for
                                 you to reach only the best English courses available on YouTube just by making a few
                                 clicks on our index.</p>
@@ -116,16 +121,25 @@
                         </div>
                     </div>
 
-
-
                 </div>
             </div>
+            <div class="col-xl-5 col-lg-4 ps-lg-5 mt-lg-0 mt-5">
+                <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
+                    offering</h3>
+                <p class="text-para">
+
+                </p>
+                <img src="/assets/images/service.jpeg" style="transform: scaleX(-1);width: 31vw;min-width: 300px;box-shadow: 10px 10px #fd746c;border-radius: 10%;">
+            </div>
+
 
         </div>
     </div>
+
+    </div>
+    </div>
 </section>
 <!-- 4grids with content block -->
-
 <!-- stats -->
 <section class="w3_stats py-5" id="index">
     <div class="container py-md-5 py-5">
@@ -203,7 +217,7 @@
                 if ($category['id'] == 1) {
 
                     $free = 'FREE TRIAL';
-                    $img = '<img src="assets/images/green2.gif" style="width: 30px;">';
+                    $img = '<img src="/assets/images/green2.gif" style="width: 30px;">';
                 } else {
                     $free = '';
                     $img = '';
@@ -212,7 +226,7 @@
             ?>
                 <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 380px;">
                     <a href="topics">
-                        <img src="assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
+                        <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                     </a>
                     <h4 style="text-align: center;"><a href="topics" style="font-size: 16px;font-weight: bold;">
                             <span style="font-size: 16px;"> <?= $category['id']; ?> - <?= $category['cat_name']; ?> </span>
@@ -246,14 +260,14 @@
 
         <br><br>
 
-        <p style="font-size:18px;">The road-map is an outcome of more than 1000 hours of hard work. It was not
-            created by sitting overnight on the internet.</p>
+        <h4>The road-map is an outcome of more than 1000 hours of hard work. It was not
+            created by sitting overnight on the internet.</h4>
 
         <br><br>
         <div class="row top-cont-grid align-items-center">
             <div class="col-lg-5">
                 <div class="right-img">
-                    <img src="assets/images/about111.jpeg" alt="" class="img-fluid" />
+                    <img src="/assets/images/about111.jpeg" alt="" class="img-fluid" />
                 </div>
             </div>
             <div class="col-lg-1">
@@ -351,7 +365,7 @@
             </div>
             <div class="col-lg-5 order-lg-last order-first">
                 <div class="right-img sec-img-ab">
-                    <img src="assets/images/banner3.jpeg" alt="" class="img-fluid" />
+                    <img src="/assets/images/banner3.jpeg" alt="" class="img-fluid" />
                 </div>
             </div>
         </div>
@@ -384,11 +398,6 @@
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
             <h3 class="title-style">Testimonials</h3>
         </div>
-
-
-
-
-
         <div class="testi-wrap">
             <div class="client-single active position-1" data-position="position-1">
                 <div class="client-img mb-4">
@@ -517,7 +526,7 @@
         <div class="row no-gutters pt-4">
 
 
-            <div class="col-lg-4 box-pricing featured">
+            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured">
                 <h3 class="text-price">Basic</h3>
                 <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
                 <h4> ₹ 849/- <span> </span></h4>
@@ -557,7 +566,6 @@
                 <h3 class="text-price">Premium</h3>
                 <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
                 <h4> ₹ 1,599/- <span> </span></h4>
-                <br>
                 <h5 class="text-white">Only ₹ 71/- per month</h5>
                 <br>
                 <ul>
@@ -580,16 +588,11 @@
 <!-- //pricing block -->
 
 <!-- testimonial section -->
-<section class="testimonial-area pt-5" id="faq">
+<section id="faq">
     <div class="container pt-md-5 pt-4">
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
             <h3 class="title-style">FAQ</h3>
         </div>
-
-        <br><br>
-        <div class="testi-wrap">
-
-
             <style>
                 /*.accordion .accordion-item {
   border-bottom: 1px solid #fd746c;
@@ -604,7 +607,7 @@
                     width: 100%;
                     padding: 1em 0;
                     color: #FFF;
-                    font-size: 1.15rem;
+                    font-size: 1.5rem;
                     font-weight: 400;
                     border: none;
                     background: #242952;
@@ -686,7 +689,7 @@
                 }
 
                 .accordion .accordion-content p {
-                    font-size: 1rem;
+                    font-size: 16px;
 
                     padding: 20px;
                 }
@@ -695,9 +698,6 @@
             <br><br>
 
             <div class="accordion">
-
-
-
                 <div class="accordion-item" style="margin-bottom: 20px;">
                     <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
                             have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
@@ -780,13 +780,7 @@
                             then it is done, and you become a member.</p>
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
             <script>
                 const items = document.querySelectorAll(".accordion button");
 
@@ -804,20 +798,10 @@
 
                 items.forEach(item => item.addEventListener('click', toggleAccordion));
             </script>
-
-
-
-
-
             <br><br>
-
         </div>
-    </div>
 </section>
 <!-- //testimonial section -->
-
-
-<div></div>
 <!-- contact -->
 <section class="contact py-5" id="contact">
     <div class="container pt-md-5 pt-4">
@@ -825,26 +809,21 @@
             <h3 class="title-style">Contact Us</h3>
         </div>
         <div class="main-grid-contact">
+        <h5 class="p-3">
+                            Bring your English journey on the right track!
+                            Don't fall victim to demotivation and procrastination.
+                            Get started fresh with this new journey towards better command on the English language
+                            If you have any doubts or suggestions.
+                            Please reach out to us by filling this form.
+            </h5>
             <div class="row">
                 <!-- map -->
                 <div class="col-lg-6 mt-lg-0 mt-3 ">
-                    <img class="image-responsive img-fluid" src="assets/images/contact.png" height="400" width="600" />
+                    <img class="image-responsive img-fluid" src="/assets/images/contact.png" height="400" width="600" />
                 </div>
                 <!-- contact form -->
                 <div class="col-lg-6 content-form-right p-0 ">
                     <div class="form-w3ls p-5">
-                        <span class="mb-4 sec-title-w3" style="font-size: 15px;">
-                            Bring your English journey on the right track!
-                            Don't fall victim to demotivation and procrastination.
-
-                            Get started fresh with this new journey towards better command on the English language
-                            If you have any doubts or suggestions.
-
-                            Please reach out to us by filling this form
-                        </span>
-
-
-
                         <form method="post" action="">
 
                             <div class="form-group mb-3">

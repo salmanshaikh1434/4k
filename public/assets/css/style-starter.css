@@ -18480,6 +18480,13 @@ h4.title-head a {
     top: 105px;
 }
 
+@media screen and (max-width: 736px) {
+    .client-single.position-2 {
+        left: -70px;
+        top: 105px;
+    }
+}
+
 .client-single.position-3 {
     left: -60px;
     top: 240px;
@@ -18850,7 +18857,7 @@ p.count-text {
 
 .pricing-w3l .box-pricing {
     padding: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     box-shadow: var(--box-shadow);
     background: var(--bg-color);
     border-radius: var(--border-radius);
@@ -18929,13 +18936,6 @@ p.count-text {
 @media (max-width: 767px) {
     .pricing-w3l .box-pricing {
         max-width: 80%;
-        margin: 0 auto 30px auto;
-    }
-}
-
-@media (max-width: 420px) {
-    .pricing-w3l .box-pricing {
-        max-width: 100%;
         margin: 0 auto 30px auto;
     }
 }
