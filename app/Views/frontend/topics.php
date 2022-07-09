@@ -35,15 +35,16 @@
 
                                 </style>
                                 <tr class="spacer" style="background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
-                                    <td style="background-color:#6c757d ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
+                                    <td style="background-color:#fd746c ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
                                     <td><a href="topics_details.php?topic=<?= $category['id'] ?>" style="color: #fff;text-decoration: none;">
+
                                             <?= $category['cat_name'] ?>
                                             <br><span style="color: red;font-weight: bold;">
                                                 <?php echo $img; ?>
                                                 <?php echo $free; ?>
                                             </span></a></td>
-                                    <td style="text-align: center;"><?= $category['videos'] ?></td>
-                                    <td style="text-align: center;"><?= $category['hours'] ?></td>
+                                    <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos</td>
+                                    <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                     <td>
                                         <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock" style="background-color: #22274e;color: white;border: 0px;">

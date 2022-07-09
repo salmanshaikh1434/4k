@@ -6,8 +6,6 @@
     <meta charset="utf-8" />
     <title>English 4000 Hours</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Maulana Azad College Of Arts Science and commerce" name="description" />
-    <meta content="Sublime Technologies" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets/backend/images/logo.png">
 
@@ -88,14 +86,54 @@
                     <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <!-- Department section from here -->
-                       
                             <li>
-                                <a href="/admin/store_dashboard/" class=" waves-effect">
+                                <a href="/admin/dashboard/" class=" waves-effect">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                         
+                            <li>
+                                <a href="" class=" waves-effect">
+                                    <i class="mdi mdi-content-save"></i>
+                                    <span>Pages</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/dashboard/users" class=" waves-effect">
+                                    <i class="mdi mdi-account-supervisor"></i>
+                                    <span>Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/topics/" class=" waves-effect">
+                                    <i class="mdi mdi-format-list-bulleted"></i>
+                                    <span>Topics</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class=" waves-effect">
+                                    <i class="mdi mdi-cash"></i>
+                                    <span>Payment</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class=" waves-effect">
+                                    <i class="mdi mdi-email-multiple"></i>
+                                    <span>Inbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class=" waves-effect">
+                                    <i class="mdi mdi-settings"></i>
+                                    <span>Setting</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout?is_admin=true" onclick="return confirm('Are you sure want to logout?');" class=" waves-effect">
+                                    <i class="mdi mdi-logout"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
