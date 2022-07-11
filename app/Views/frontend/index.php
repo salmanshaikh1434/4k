@@ -4,8 +4,8 @@
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
             <div class="container pt-md-0 pt-5">
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
-                    <p class="mb-1" style="font-size: 30px;font-weight: bold;">LEARN ENGLISH BY YOURSELF</p>
-                    <h3 class="mobile-only-h1" style="font-size: 20px;">
+                    <p class="mb-1" style="font-size: 30px;font-weight: bold;font-family:'Gill Sans'">LEARN ENGLISH BY YOURSELF</p>
+                    <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
                         <span class="txt-rotate" data-period="2000" data-rotate='["35 TOPICS", "4,700 STUDY HOURS", "16,667  VIDEOS", "75 TUTORS", "10,000 WORDS", "15,000 PHRASES", "American & British ACCENT"]'></span>
                     </h3>
 
@@ -53,7 +53,7 @@
                 <p class="text-para">
 
                 </p>
-                <img src="/assets/images/service.jpeg" style="width: 31vw;min-width: 300px;box-shadow: 10px 10px #fd746c;border-radius: 10%;">
+                <img  class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 10%;">
             </div>
 
 
@@ -129,7 +129,7 @@
                 <p class="text-para">
 
                 </p>
-                <img src="/assets/images/service.jpeg" style="transform: scaleX(-1);width: 31vw;min-width: 300px;box-shadow: 10px 10px #fd746c;border-radius: 10%;">
+                <img class="img-fluid" src="/assets/images/service.jpeg" style="transform: scaleX(-1);box-shadow: 10px 10px #fd746c;border-radius: 10%;">
             </div>
 
 
@@ -378,7 +378,7 @@
         width: 165px;
         color: #fff;
         background-color: #fd746c;
-        padding: 35px;
+        padding: 22px;
         border-radius: 50%;
         border: 2px solid #fd746c
     }
@@ -498,7 +498,7 @@
 
             <div class="client-single inactive position-7" data-position="position-7">
                 <div class="client-img mb-4">
-                    <h3 id="test">Bessy Alexander</h3>
+                    <h3 id="test" class="text-center">Bessy Alexander</h3>
                 </div>
                 <div class="client-info">
                     <h3></h3>
@@ -526,7 +526,7 @@
         <div class="row no-gutters pt-4">
 
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured">
+            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
                 <h3 class="text-price">Basic</h3>
                 <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
                 <h4> ₹ 849/- <span> </span></h4>
@@ -545,7 +545,7 @@
                     Started</a>
             </div>
 
-            <div class="col-lg-4 box-pricing ">
+            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -30px;padding-top: 65px;">
                 <h3 class="text-price">Pro</h3>
                 <h5><del>6000/- </del>Now (% 78 off) </h5>
                 <h4> ₹ 1299/- <span> </span></h4>
@@ -562,7 +562,7 @@
                 <a href="sign_in.php" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
             </div>
 
-            <div class="col-lg-4 box-pricing featured">
+            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
                 <h3 class="text-price">Premium</h3>
                 <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
                 <h4> ₹ 1,599/- <span> </span></h4>

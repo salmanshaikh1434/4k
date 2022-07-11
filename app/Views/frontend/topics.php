@@ -11,7 +11,7 @@
   border-spacing: 0 1em;">
                         <tbody>
                             <tr>
-                                <th id="table_sup_head" style="background-color: #6c757d ;color: white;text-align:center"> Sr</th>
+                                <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> Sr</th>
                                 <th id="table_sup_head" style="background-color: #242952;color: #fff;">Topics </th>
                                 <th id="table_sup_head" style="background-color: #242952;color: #fff;"> Videos</th>
                                 <th id="table_sup_head" style="background-color: #242952;color: #fff;">Hours</th>
@@ -47,9 +47,9 @@
                                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                     <td>
-                                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock" style="background-color: #22274e;color: white;border: 0px;">
+                                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-lg" style="background-color: #22274e;color: white;border: 0px;">
                                             </button> <?php } else { ?>
-                                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock" style="background-color: #22274e;color: white;border: 0px;">
+                                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-lg" style="background-color: #22274e;color: white;border: 0px;">
                                             </button>
                                         <?php } ?>
                                     </td>
@@ -63,7 +63,7 @@
 
 
                 <!-- contact form -->
-                <div class="col-lg-6 content-form-right p-0 order-lg-last ">
+                <div class="col-lg-7 content-form-right p-0 order-lg-last ">
 
                     <br><br>
                     <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4">
