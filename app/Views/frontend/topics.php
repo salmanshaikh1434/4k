@@ -4,11 +4,11 @@
             <!-- map -->
 
             <div class="row">
-                <div class="col-lg-5 order-first">
+                <div class="col-lg-5 order-first"  style="overflow:scroll; height:calc(100vh - 40px);
+">
 
 
-                    <table class="table table-striped table-advance table-hover " style=" border-collapse:separate; 
-  border-spacing: 0 1em;">
+                    <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 1em;">
                         <tbody>
                             <tr>
                                 <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> Sr</th>

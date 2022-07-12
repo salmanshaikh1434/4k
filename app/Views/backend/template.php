@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets/backend/images/logo.png">
-
-    <link href="/assets/backend/libs/chartist/chartist.min.css" rel="stylesheet" type="text/css" />
     <!-- DataTables -->
     <link href="/assets/backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/backend/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -26,6 +24,8 @@
     <link href="/assets/backend/css/select2.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body data-topbar="dark">
@@ -79,6 +79,8 @@
         </header>
 
         <!-- ========== Left Sidebar Start ========== -->
+       
+
         <div class="vertical-menu">
             <div data-simplebar class="h-100">
                 <!--- Sidemenu -->
@@ -88,52 +90,67 @@
                         <!-- Department section from here -->
                             <li>
                                 <a href="/admin/dashboard/" class=" waves-effect">
-                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <i class="mdi mdi-view-dashboard mdi-24px"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class=" waves-effect">
-                                    <i class="mdi mdi-content-save"></i>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="mdi mdi-shopping mdi-24px"></i>
                                     <span>Pages</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="/admin/dashboard/huyb">Our Services</a></li>
+                                    <li><a href="/admin/dashboard/jnjh">The Benefit</a></li>
+                                    <li><a href="/admin/dashboard/jjh">FAQ</a></li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="/admin/dashboard/users" class=" waves-effect">
-                                    <i class="mdi mdi-account-supervisor"></i>
-                                    <span>Users</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/topics/" class=" waves-effect">
-                                    <i class="mdi mdi-format-list-bulleted"></i>
-                                    <span>Topics</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class=" waves-effect">
-                                    <i class="mdi mdi-cash"></i>
-                                    <span>Payment</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class=" waves-effect">
-                                    <i class="mdi mdi-email-multiple"></i>
-                                    <span>Inbox</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class=" waves-effect">
-                                    <i class="mdi mdi-settings"></i>
-                                    <span>Setting</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/logout?is_admin=true" onclick="return confirm('Are you sure want to logout?');" class=" waves-effect">
-                                    <i class="mdi mdi-logout"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-account-supervisor mdi-24px"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="/admin/users">All Users</a></li>
+                                <li><a href="/admin/dashboard/iuihuh">Mailing List Subscribers</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/admin/topics/" class=" waves-effect">
+                                <i class="mdi mdi-format-list-bulleted mdi-24px"></i>
+                                <span>Topics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class=" waves-effect">
+                                <i class="mdi mdi-cash mdi-24px"></i>
+                                <span>Payment</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/dashboard/oh" class=" waves-effect">
+                                <i class="mdi mdi-email-multiple"></i>
+                                <span>Inbox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-settings mdi-24px"></i>
+                                <span>Setting</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="/admin/settings">Site Setting</a></li>
+                                <li><a href="/admin/settings/s">Email Setting</a></li>
+                                <li><a href="/admin/settings/social">Social Links</a></li>
+                                <li><a href="/admin/settings/my_account">My Account</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/logout?is_admin=true" onclick="return confirm('Are you sure want to logout?');" class=" waves-effect">
+                                <i class="mdi mdi-logout mdi-24px"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -235,7 +252,7 @@
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-   
+
 </body>
 
 </html>

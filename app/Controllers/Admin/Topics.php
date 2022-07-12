@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Admin;
 
-use App\Controllers\BaseController;
+use App\Controllers\AdminAuth;
 
-class Topics extends BaseController
+class Topics extends AdminAuth
 {
     public function index()
     {

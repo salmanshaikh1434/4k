@@ -47,7 +47,7 @@
     </style>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="/">
                 <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
             </a>

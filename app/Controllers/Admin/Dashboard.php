@@ -2,18 +2,14 @@
 
 namespace App\Controllers\Admin;
 
-use App\Controllers\BaseController;
+use App\Controllers\AdminAuth;
 
-class Dashboard extends BaseController
+class Dashboard extends AdminAuth
 {
     public function index()
     {
         $data['page'] = view('backend/dashboard');
         return view("backend/template", $data);
     }
-    public function users()
-    {
-        $data['page'] = view('backend/user_list');
-        return view("backend/template", $data);
-    }
+   
 }

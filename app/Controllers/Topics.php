@@ -17,7 +17,7 @@ class Topics extends BaseController
         $category=new Category();
         $videos=new Video();
         $page['categories']=$category->findAll();  
-        $page['video_categories']=$category->paginate(8);
+        $page['video_categories']=$category->paginate(4);
         $page['pager']=$category->pager;
 
         $page['videos']=$videos->findAll();
