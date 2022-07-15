@@ -23,8 +23,6 @@
 
                             foreach ($categories as $category) {
                                 if ($category['id'] == 1) {
-                                    $free = 'FREE TRIAL';
-                                    $img = '<img src="/assets/images/green2.gif" style="width: 30px;">';
                                 } else {
                                     $free = '';
                                     $img = '';
@@ -40,8 +38,6 @@
 
                                             <?= $category['cat_name'] ?>
                                             <br><span style="color: red;font-weight: bold;">
-                                                <?php echo $img; ?>
-                                                <?php echo $free; ?>
                                             </span></a></td>
                                     <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos</td>
                                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
@@ -49,7 +45,7 @@
                                     <td>
                                         <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-lg" style="background-color: #22274e;color: white;border: 0px;">
                                             </button> <?php } else { ?>
-                                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-lg" style="background-color: #22274e;color: white;border: 0px;">
+                                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
                                             </button>
                                         <?php } ?>
                                     </td>
@@ -167,7 +163,7 @@
                                         <a class="btn" data-idvideo="">
                                             <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                                         </a>
-                                        <h4 style="text-align: center;"><a href="topics_details.php?topic=<?= $category['id']; ?>" style="font-size: 16px;font-weight: bold;">
+                                        <h4 style="text-align: center;"><a href="home/#membership" style="font-size: 16px;font-weight: bold;">
                                                 <span style="font-size: 16px;"><?= $category['id']; ?> - <?= $category['cat_name']; ?> </span>
                                             </a></h4>
                                     </div>
@@ -210,7 +206,7 @@
                                     var closeBtn = document.createElement("div");
                                     videoBox.classList.add("video");
                                     closeBtn.classList.add("close");
-                                    videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                                    videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '" frameborder="0" controls="0"; allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                                     popups.appendChild(videoBox);
                                     popups.appendChild(closeBtn);
                                     closeBtn.addEventListener("click", closePopups);

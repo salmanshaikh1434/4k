@@ -18340,7 +18340,7 @@ span.video-play-icon:hover {
 
 .home-about-w3l .grids-1 {
     background: var(--bg-color);
-    padding: 35px;
+    padding: 10px;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     transition: .5s;
