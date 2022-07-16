@@ -18857,6 +18857,7 @@ p.count-text {
 
 .pricing-w3l .box-pricing {
     padding: 40px;
+    margin: -30px -5px 0 -5px;
     margin-bottom: 0px;
     box-shadow: var(--box-shadow);
     background: var(--bg-color);
@@ -18935,8 +18936,14 @@ p.count-text {
 
 @media (max-width: 767px) {
     .pricing-w3l .box-pricing {
-        max-width: 80%;
+        max-width: 90%;
         margin: 0 auto 30px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .servic {
+        font-size: 20px;
     }
 }
 

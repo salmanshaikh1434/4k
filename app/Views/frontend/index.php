@@ -286,7 +286,7 @@
                                 <h4 class="title-head"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
                                         Self-learning </span></h4>
                             </div>
-                            <p style="color:#000">is now available for everyone who has the same passion for learning, and YouTube has
+                            <p class="servic" style="color:#000">is now available for everyone who has the same passion for learning, and YouTube has
                                 made it easy today, but YouTube is a bottomless ocean with all kinds of videos
                                 including educational content for the English language.</p>
                         </div>
@@ -298,7 +298,7 @@
                                         YouTube
                                     </span></h4>
                             </div>
-                            <p style="color:#fff">has very valuable educational content for the English language, but this content is
+                            <p class="servic" style="color:#fff">has very valuable educational content for the English language, but this content is
                                 lost amid a huge amount of ineffective content.<br><br></p>
                         </div>
                     </div>
@@ -308,7 +308,7 @@
                                 <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-line-chart" style="color: #fd746c;"></i> Our goal
                                     </span></h4>
                             </div>
-                            <p style="color:#000">is to provide easy access to the valuable content available on YouTube for learning
+                            <p class="servic" style="color:#000">is to provide easy access to the valuable content available on YouTube for learning
                                 English for those interested.
                                 <br><br>
                             </p>
@@ -321,7 +321,7 @@
                                         Our service
                                     </span></h4>
                             </div>
-                            <p style="color:#fff">is an index (it is a very easy roadmap) which will make the search process easier for
+                            <p class="servic" style="color:#fff">is an index (it is a very easy roadmap) which will make the search process easier for
                                 you to reach only the best English courses available on YouTube just by making a few
                                 clicks on our index.</p>
                         </div>
@@ -405,11 +405,39 @@
                 .shadow {
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 }
+
+                .numberCircle {
+                    display: inline-block;
+                    border-radius: 50%;
+                    border: 2px solid;
+                    font-size: 32px;
+                    padding: 8px;
+                    color: white;
+                    font-size: 22px;
+                    background-color: #fd746c;
+                    padding: 8px;
+                }
+
+                .numberCircle:before,
+                .numberCircle:after {
+                    content: '\200B';
+                    display: inline-block;
+                    line-height: 0px;
+                    padding-top: 50%;
+                    padding-bottom: 50%;
+                }
+
+                .numberCircle:before {
+                    padding-left: 8px;
+                }
+
+                .numberCircle:after {
+                    padding-right: 8px;
+                }
             </style>
             <?php
             foreach ($categories as $category) {
                 if ($category['id'] == 1) {
-                    $img = '<img src="/assets/images/green2.gif" style="width: 30px;">';
                 }
 
             ?>
@@ -417,8 +445,10 @@
                     <a href="/topics">
                         <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                     </a>
-                    <h4 class="mt-3" style="text-align: center;"><a href="/topics" style="">
-                            <span style="font-size: 1.5rem;"> <?= $category['id']; ?> - <?= $category['cat_name']; ?> </span>
+                    <h4 class="mt-3" style=""><a href="/topics" style="">
+
+                            
+                            <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
                             <br>
                             <div class="row">
                                 <div class="col-8">
@@ -429,11 +459,14 @@
                                         <a href="#" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
                                     </p>
                                 </div>
-                                <div class="col-4 mt-4" >
-                                    <i class="fas fa-lock fa-2x"></i>
+                                <div class="col-4 mt-2">
+                                    <?php if ($category['id'] == 1) { ?>
+                                        <img src="/assets/images/unlock.png" height="81px" width="100%">
+                                    <?php } else { ?>
+                                        <img src="/assets/images/lock.png" height="81px" width="100%">
+                                    <?php } ?>
                                 </div>
                             </div>
-
                             <span style="color: red;font-weight: bold;"></span>
                         </a></h4>
                 </div>
@@ -718,11 +751,11 @@
         <div class="row no-gutters pt-4">
 
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
                 <h3 class="text-price">Basic</h3>
                 <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
                 <h4> ₹ 849/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 44/- per month</h5>
+                <h5 class="text-white">Only ₹ 71/- per month</h5>
                 <br>
                 <ul>
                     <li><i class="fas fa-check-circle"></i> 1 Year Access</li>
@@ -737,7 +770,7 @@
                     Started</a>
             </div>
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -30px;padding-top: 65px;">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 65px;">
                 <h3 class="text-price">Pro</h3>
                 <h5><del>6000/- </del>Now (% 78 off) </h5>
                 <h4> ₹ 1299/- <span> </span></h4>
@@ -754,11 +787,11 @@
                 <a href="sign_in.php" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
             </div>
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
                 <h3 class="text-price">Premium</h3>
                 <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
                 <h4> ₹ 1,599/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 71/- per month</h5>
+                <h5 class="text-white">Only ₹ 44/- per month</h5>
                 <br>
                 <ul>
                     <li><i class="fas fa-check-circle"></i> 3 Year Access</li>

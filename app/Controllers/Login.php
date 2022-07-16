@@ -32,7 +32,7 @@ class Login extends BaseController
             }
         }
 
-        $data['page'] = view('frontend/sign_in', $page);
-        return view("frontend/template", $data);
+        $data['page'] =view('frontend/sign_in', $page);
+        return view("frontend/sign_in", $data);
     }
 }

@@ -8,13 +8,14 @@
     <title><?= $site_info['site_name']; ?></title>
     
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="/assets/css/style-starter.css">
 
     <meta name="keywords" content="<?= $site_info['keyword']; ?>">
     <meta name="description" content="<?= $site_info['description']; ?>">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -98,7 +99,7 @@
 
 
                 <a href="login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
-                <a href="signup" class="btn btn-style" style="margin-left: 5px;">Sign Up</a>
+                <!-- <a href="signup" class="btn btn-style" style="margin-left: 5px;">Sign Up</a> -->
             </div>
 
         </nav>
@@ -177,13 +178,13 @@
                     </div>
                 </div>
             </div>
-            <div class="below-section text-center pt-lg-4 mt-5">
+            <!-- <div class="below-section text-center pt-lg-4 mt-5">
                 <p style="color: #fff;"> All rights reserved to <a href="index.php" style="color: #fd746c;"></a>
 
                     <br>programmed by <br><a href="https://eg-script.website/" target="_blank" style="font-weight: bold;font-size: 11px;color: #fd746c;"> EG-script.website</a>
                 </p>
 
-            </div>
+            </div> -->
         </div>
     </div>
 </footer>

@@ -4,35 +4,28 @@
             <!-- map -->
 
             <div class="row">
-                <div class="col-lg-5 order-first"  style="overflow:scroll; height:calc(100vh - 40px);
-">
-
-
+                <div class="col-lg-5 order-first" style="overflow:scroll; height:calc(100vh - 40px);">
                     <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 1em;">
-                        <tbody>
-                            <tr>
-                                <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> Sr</th>
-                                <th id="table_sup_head" style="background-color: #242952;color: #fff;">Topics </th>
-                                <th id="table_sup_head" style="background-color: #242952;color: #fff;"> Videos</th>
-                                <th id="table_sup_head" style="background-color: #242952;color: #fff;">Hours</th>
-                                <th id="table_sup_head" style="background-color: #242952;color: #fff;">L&U</th>
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> </th>
+                                <th colspan="5" id="table_sup_head" style="background-color: #242952;color: #fff;"><span style="font-size:22px"> Our Index (Our Road-map)</span><br />(35 Topics,16,667 Videos & 4,724 Hours)</th>
                             </tr>
-                            <?php
+                        </thead>
+                        <?php
 
-                            use App\Models\Category;
+                        use App\Models\Category;
 
-                            foreach ($categories as $category) {
-                                if ($category['id'] == 1) {
-                                } else {
-                                    $free = '';
-                                    $img = '';
-                                }
+                        foreach ($categories as $category) {
+                            if ($category['id'] == 1) {
+                            } else {
+                                $free = '';
+                                $img = '';
+                            }
 
-                            ?>
-                                <style>
-
-                                </style>
-                                <tr class="spacer" style="background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
+                        ?>
+                            <tbody>
+                                <tr class="spacer" style="overflow:scroll;background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
                                     <td style="background-color:#fd746c ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
                                     <td><a href="topics_details.php?topic=<?= $category['id'] ?>" style="color: #fff;text-decoration: none;">
 
@@ -43,7 +36,7 @@
                                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                     <td>
-                                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-lg" style="background-color: #22274e;color: white;border: 0px;">
+                                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
                                             </button> <?php } else { ?>
                                             <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
                                             </button>
@@ -51,8 +44,8 @@
                                     </td>
                                 </tr>
                             <?php
-                            } ?>
-                        </tbody>
+                        } ?>
+                            </tbody>
                     </table>
                 </div>
 
