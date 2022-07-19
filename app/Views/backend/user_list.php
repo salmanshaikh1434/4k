@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-12 col-xl-12">
         <div class="card">
+        <?= alertMessage() ?>
             <div class="card-body">
                 <div class="row col-md-12">
                     <div class="col-md-6">
@@ -9,7 +10,7 @@
                 </div>
                 <br>
                 <div class="table-responsive">
-                    <table class="table mb-0">
+                    <table id="datatable2" class="table mb-0">
                         <thead>
                             <tr class="text-center">
                                 <th>Id</th>
@@ -35,14 +36,13 @@
                                     <td><?= $user['country'] ?></td>
                                     <td><?= $user['date'] ?></td>
                                     <td> <?php if (1 == $user['payed']) { ?>
-                                            <i class="fa fa-check" style="color:green"></i><?php } else { ?>
-                                            <i class="fa fa-times" style="color:red"></i>
+                                        <a href="#" class="btn btn-success">  <i class="fa fa-check"></i></a><?php } else { ?>
+                                            <a href="#" class="btn btn-danger">  <i class="fa fa-times"></i></a>
                                         <?php } ?>
                                     </td>
                                     <td>
                                         <div class="">
-                                            <a href="/admin/users/add/" class=""><i class="fa fa-edit mr-2"></i></a>
-                                            <a href="/admin/users/delete/" onclick="return confirm('Are you sure want to delete this user ?');"><i class="fa fa-trash text-danger"></i></a>
+                                            <a href="/admin/users/delete/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this user ?');"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
                                     </td>
