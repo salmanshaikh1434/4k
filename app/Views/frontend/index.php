@@ -1,15 +1,12 @@
-<!-- hero slider Start -->
 <div class="banner-wrap" id="home">
     <div class="row m-0">
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
             <div class="container pt-md-0 pt-5">
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
-                    <p class="mb-1" style="font-size: 30px;font-weight: bold;font-family:'Gill Sans'">LEARN ENGLISH BY YOURSELF</p>
+                    <p class="mb-1" style="font-size: 30px;font-weight: bold;font-family:'Gill Sans'">ENGLISH SELF LEARNING</p>
                     <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
                         <span class="txt-rotate" data-period="2000" data-rotate='["35 TOPICS", "4,700 STUDY HOURS", "16,667  VIDEOS", "75 TUTORS", "10,000 WORDS", "15,000 PHRASES", "American & British ACCENT"]'></span>
                     </h3>
-
-
                 </div>
             </div>
         </div>
@@ -46,96 +43,293 @@
 <!-- 4grids with content block -->
 <section class="home-about-w3l pt-lg-5 pb-5" id="services">
     <div class="container py-md-5 py-4">
-        <div class="row align-items-center">
+        <div class="row">
 
-            <div class="col-xl-5 col-lg-4 col-md-12 ps-lg-5 mt-lg-0 mt-5">
-                <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
-                    offering</h3>
-                <p class="text-para">
+            <div class="col-xl-5 col-lg-4 col-md-12">
+                <div class="grids-1 shadow-lg bg-white rounded" style="">
+                    <div class="icon-style">
+                        <h3 class="title-style mb-lg-4" style="font-size: 34px;text-align: center;">Services We're
+                            offering</h3>
+                    </div>
+                </div>
+                <br />
+                <img class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 3%;height:360px;">
+                <br />
+                <br />
+                <div class="grids-1 shadow-lg bg-white rounded" style="">
+                    <div class="icon-style">
+                        <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
+                            offering (Hindi)</h3>
+                    </div>
+                    <p class="text-center">
+                        <a class="btn btn-style" style="background-color: #fff;color: #fd746c;" data-toggle="modal" data-target=".bd-example-modal-lg">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Popup modal -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content" style="background-color:black">
+                        <div class="modal-header" style="background-color: #fd746c;">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारी तरफ से दी जाने वाली सेवाएँ हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-times" style=" background-color: white;border-radius: 50%;border: 1px solid black;padding: 10px;"></i>
+                            </button>
+                        </div>
+                        <style>
+                            /* The actual timeline (the vertical ruler) */
+                            .main-timeline {
+                                position: relative;
+                            }
 
-                </p>
-                <img  class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 10%;">
+                            /* The actual timeline (the vertical ruler) */
+                            .main-timeline::after {
+                                content: '';
+                                position: absolute;
+                                width: 6px;
+                                background-color: white;
+                                top: 0;
+                                bottom: 0;
+                                left: 50%;
+                                margin-left: -3px;
+                            }
+
+                            /* Container around content */
+                            .timeline {
+                                position: relative;
+                                background-color: inherit;
+                                width: 50%;
+                            }
+
+                            /* The circles on the timeline */
+                            .timeline::after {
+                                content: '';
+                                position: absolute;
+                                width: 25px;
+                                height: 25px;
+                                right: -13px;
+                                background-color: #fd746c;
+                                border: 5px solid white;
+                                top: 15px;
+                                border-radius: 50%;
+                                z-index: 1;
+                            }
+
+                            /* Place the container to the left */
+                            .left {
+                                padding: 0px 40px 20px 0px;
+                                left: 0;
+                            }
+
+                            /* Place the container to the right */
+                            .right {
+                                padding: 0px 0px 20px 40px;
+                                left: 50%;
+                            }
+
+                            /* Add arrows to the left container (pointing right) */
+                            .left::before {
+                                content: " ";
+                                position: absolute;
+                                top: 18px;
+                                z-index: 1;
+                                right: 30px;
+                                border: medium solid white;
+                                border-width: 10px 0 10px 10px;
+                                border-color: transparent transparent transparent white;
+                            }
+
+                            /* Add arrows to the right container (pointing left) */
+                            .right::before {
+                                content: " ";
+                                position: absolute;
+                                top: 18px;
+                                z-index: 1;
+                                left: 30px;
+                                border: medium solid white;
+                                border-width: 10px 10px 10px 0;
+                                border-color: transparent white transparent transparent;
+                            }
+
+                            /* Fix the circle for containers on the right side */
+                            .right::after {
+                                left: -12px;
+                            }
+
+                            /* Media queries - Responsive timeline on screens less than 600px wide */
+                            @media screen and (max-width: 600px) {
+
+                                /* Place the timelime to the left */
+                                .main-timeline::after {
+                                    left: 31px;
+                                }
+
+                                /* Full-width containers */
+                                .timeline {
+                                    width: 100%;
+                                    padding-left: 70px;
+                                    padding-right: 25px;
+                                }
+
+                                /* Make sure that all arrows are pointing leftwards */
+                                .timeline::before {
+                                    left: 60px;
+                                    border: medium solid white;
+                                    border-width: 10px 10px 10px 0;
+                                    border-color: transparent white transparent transparent;
+                                }
+
+                                /* Make sure all circles are at the same spot */
+                                .left::after,
+                                .right::after {
+                                    left: 18px;
+                                }
+
+                                .left::before {
+                                    right: auto;
+                                }
+
+                                /* Make all right containers behave like the left ones */
+                                .right {
+                                    left: 0%;
+                                }
+                            }
+                        </style>
+                        <section style="background-color: #fd746c;">
+                            <div class="container py-5">
+                                <div class="main-timeline">
+                                    <div class="timeline left">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">यु-ट्युब इस सोशल मिडीया पर अंग्रेजी भाषा में शिक्षा क्षेत्र से संबंधी 2,00,000/- (दो लाख) से अधिक व्हीडीयो उपलब्ध हैं ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline right">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">यु-ट्युब पर उपलब्ध इन दो लाख व्हीडीयो का हमने अवलोकन (ब्राऊझ) किया और इन व्हीडीयो में से मूल्यवान ज्ञान-सामग्री हमने खोज निकाली और जो मूल्यहिन सामग्री थी उसे हमने उपेक्षा की ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline left">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">हमने अवलोकीत किए 16600 व्हीडीयो को जाँचा और उनका अध्ययन किया। हमने पाया की, यह व्हीडीयो 35 प्रकार के मुख्य विषयों पर प्रकाश डाल रहे हैं, जैसे की, व्याकरण, उच्चारण, ध्वनीबल, शब्दसंग्रह, मुहावरे, टीओईएफएल, आईईएलटीएस आदी ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline right">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">इसके पश्चात हमने इन अवलोकन किए हुए 16600 व्हीडीयो को फिर से व्हीडीयो के प्रकार के अनुसार 35 समूहों में क्रमबद्ध किया, और यह 16600 व्हीडीयो 35 समूहों में विभाजीत किए ।</p>
+                                                <p class="mb-0">जैसे की, हमने व्याकरण के व्हीडीयो एकत्रित किये, व्याकरण के ग्रुप में 2,142 व्हीडीयो एकत्रित हुए, जिनकी 550 अभ्यास तासिकाएं हुई। इस समूह को हमने व्याकरण पाठ्यक्रम का नाम दिया। शेष बचे व्हीडीयों को अन्य ग्रुप मे सम्मिलीत किया ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline left">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">हर 35 विषयोंमें 100 या 1000 व्हीडीयों में एक ही विषय की व्याख्या की गई थी। यह व्हीडीयो समूह में बहुत आसानी से एकत्रित किए गये हैं, जो भी व्हीडीयो देखना है, वह माऊस के कुछ क्लीक के भीतर ही आसानी से देखे जा सकते हैं ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline right">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">हमने हमारा सूचकांक बहुत ही समृद्ध बनाया है, जिसमें अंग्रेजी शिक्षण के क्षेत्र में 75 विशेषज्ञ अध्यापकों के द्वारा प्रस्तुत 35 विषयों को सम्मिलीत किया गया है। यह सभी 75 विशेषज्ञ अमरिकी तथा ब्रिटीश विशेषज्ञ है। इस सूचकांक में 16600 व्हीडीयो, 4700 से अधिक घंटों की शैक्षिक पढाई, तथा 10000 से अधिक शब्द और 15000 से अधिक उन्नत वाक्यांश सम्मिलीत किये गये हैं ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline left">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0"> हम ने बनायी इस शैक्षिक सूचकांक में व्हीडीयो को बहुत ही अच्छी तरह से एक लिंक के जरीये एकत्रित किये हैं, जिससे अंग्रेजी सिखने का प्रयोग करना बहुत ही आसान हो चुका हैं ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline right">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">इन 16600 व्हीडीओज को देखने के लिए हमने तैय्यार किये सूचकांक का आसानी से इस्तेमाल कर सकते हैं, और आप को ज्यादा खोजने की आवश्यकता नहीं पड़ेंगी, क्योंकी हमने बहुत ही आसान सूचकांक तैय्यार किया है, इस सूचकांक में से आप संबंधित लिंक को क्लीक करने के पश्चात आप को 16600 व्हीडीयो में से जो व्हीडीयो अपेक्षित हैं, उसे आप आसानी से देख सकोगे ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline left">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">बहुत ही अच्छी तरह से एकत्रित की गई व्हीडीयो की उपलब्ध सूचकांक, इसमे सम्मीलीत व्हीडीयोज के साथ हैं । आप को केवल इस सूचकांक की सहाय्यता से आपके अंग्रेजी सीखने की यात्रा को बहुत ही सहज तरीके से शुरू करना है, जिससे आप को "बहुत मुल्यवान और समृद्ध ज्ञान की सामग्री प्राप्त होगी ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline right">
+                                        <div class="card">
+                                            <div class="card-body p-4">
+                                                <p class="mb-0">आप की सेवा में 200000 व्हीडीयोज को एकत्रित करने सूचकांक की सेवा प्रस्तुत करने के लिए हमें बहुत प्रयास करने पड़े और लगभग 1000 घंटों से भी अधिक लंबा समय लगा । 200000 व्हीडीयोज में से मूल्यवान ज्ञान की सामग्री इकठ्ठा करने की प्रक्रिया के लिए इस सूचकांक को बनाने हेतू, तथा इस मूल्यवान ज्ञान की सामग्री को छाँटने के लिए, और इस सामग्री के विविध विषय बनाकर, सभी सामग्र व्यवस्थीत और आसान तरीके से मिलने के लि अंत में आपको एक बहुत ही मूल्यवान और उपयोगी अनुक्रमणिका प्राप्तः होगी, जिसकी सहायता से आप बहुत ही मजेदार और आसान तरीके से समृद्ध अंग्रेजी भाषा सिखने तथा इस समृद्ध भाषा में का ज्ञान प्राप्त करने की यात्रा अधिकतर सफल होगी। बस अभी से इस का यात्रा की शुरुवात करें ।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
             </div>
 
 
             <div class="col-xl-7 col-lg-8 mt-lg-0 mt-5">
                 <div class="row">
 
-                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
-                        <div class="grids-1" style="box-shadow: 4px 2px 28px 4px #888888;background-color: #fd746c;height: 400px;">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <div class="grids-1 shadow-lg bg-white rounded" style="">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color: #fff;"></i>
+                                <h4 class="title-head"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
                                         Self-learning </span></h4>
                             </div>
-                            <p>is now available for everyone who has the same passion for learning, and YouTube has
+                            <p class="servic" style="color:#000">is now available for everyone who has the same passion for learning, and YouTube has
                                 made it easy today, but YouTube is a bottomless ocean with all kinds of videos
                                 including educational content for the English language.</p>
-
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6  col-md-12 mt-2">
-                        <div class="grids-1 " style="box-shadow: 4px 2px 28px 4px #888888;height: 400px;">
+                    <div class="col-lg-12 col-sm-12  col-md-12 mt-2">
+                        <div class="grids-1 shadow-lg rounded" style="background-color: #fd746c;">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube" style="color: #fff;"></i>
                                         YouTube
                                     </span></h4>
                             </div>
-                            <p>has very valuable educational content for the English language, but this content is
+                            <p class="servic" style="color:#fff">has very valuable educational content for the English language, but this content is
                                 lost amid a huge amount of ineffective content.<br><br></p>
-
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div style="padding: 7px;"></div>
-        <div class="row align-items-center">
-
-            <div class="col-xl-7 col-lg-8 mt-lg-0 mt-5">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
-                        <div class="grids-1" style="box-shadow: 4px 2px 28px 4px #888888;background-color: #fd746c;height: 400px;">
+                    <div class="col-lg-12 col-sm-12 col-md-12 mt-2">
+                        <div class="grids-1 shadow-lg bg-white rounded" style="">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-line-chart" style="color: #fff;"></i> Our goal
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-line-chart" style="color: #fd746c;"></i> Our goal
                                     </span></h4>
-
-
                             </div>
-                            <p>is to provide easy access to the valuable content available on YouTube for learning
+                            <p class="servic" style="color:#000">is to provide easy access to the valuable content available on YouTube for learning
                                 English for those interested.
                                 <br><br>
                             </p>
-
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6 col-md-12 mt-2">
-                        <div class="grids-1 " style="box-shadow: 4px 2px 28px 4px #888888;height: 400px;">
+                    <div class="col-lg-12 col-sm-12 col-md-12 mt-2">
+                        <div class="grids-1 shadow-lg rounded" style="background-color: #fd746c;">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"><i class="fa fa-thumbs-up"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"><i class="fa fa-thumbs-up" style="color: #fff;"></i>
                                         Our service
                                     </span></h4>
                             </div>
-                            <p>is an index (it is a very easy roadmap) which will make the search process easier for
+                            <p class="servic" style="color:#fff">is an index (it is a very easy roadmap) which will make the search process easier for
                                 you to reach only the best English courses available on YouTube just by making a few
                                 clicks on our index.</p>
-
                         </div>
                     </div>
-
                 </div>
             </div>
-            <div class="col-xl-5 col-lg-4 ps-lg-5 mt-lg-0 mt-5">
-                <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
-                    offering</h3>
-                <p class="text-para">
-
-                </p>
-                <img class="img-fluid" src="/assets/images/service.jpeg" style="transform: scaleX(-1);box-shadow: 10px 10px #fd746c;border-radius: 10%;">
-            </div>
-
-
         </div>
-    </div>
 
     </div>
     </div>
@@ -212,33 +406,69 @@
                 .shadow {
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 }
+
+                .numberCircle {
+                    display: inline-block;
+                    border-radius: 50%;
+                    border: 2px solid;
+                    font-size: 32px;
+                    padding: 8px;
+                    color: white;
+                    font-size: 22px;
+                    background-color: #fd746c;
+                    padding: 8px;
+                }
+
+                .numberCircle:before,
+                .numberCircle:after {
+                    content: '\200B';
+                    display: inline-block;
+                    line-height: 0px;
+                    padding-top: 50%;
+                    padding-bottom: 50%;
+                }
+
+                .numberCircle:before {
+                    padding-left: 8px;
+                }
+
+                .numberCircle:after {
+                    padding-right: 8px;
+                }
             </style>
             <?php
             foreach ($categories as $category) {
                 if ($category['id'] == 1) {
-
-                    $free = 'FREE TRIAL';
-                    $img = '<img src="/assets/images/green2.gif" style="width: 30px;">';
-                } else {
-                    $free = '';
-                    $img = '';
                 }
 
             ?>
                 <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 380px;">
-                    <a href="topics">
+                    <a href="/topics/videos/<?= $category['id']; ?>">
                         <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                     </a>
-                    <h4 style="text-align: center;"><a href="topics" style="font-size: 16px;font-weight: bold;">
-                            <span style="font-size: 16px;"> <?= $category['id']; ?> - <?= $category['cat_name']; ?> </span>
+                    <h4 class="mt-3" style=""><a href="/topics" style="">
+
+                            
+                            <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
                             <br>
-                            Videos : <?= $category['videos']; ?>
-                            <br><br>
-                            <span style="width: 100%;text-align: center;background-color: #fd746c;padding: 10px;color: #fff;border-radius: 10px;">
-                                Hours : <?= $category['hours']; ?>
-                            </span>
-                            <br><br>
-                            <span style="color: red;font-weight: bold;"><?= $img; ?> <?= $free; ?></span>
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="text-center mt-3">
+                                        <a href="#" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
+                                    </p>
+                                    <p class="text-center mt-2">
+                                        <a href="#" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
+                                    </p>
+                                </div>
+                                <div class="col-4 mt-2">
+                                    <?php if ($category['id'] == 1) { ?>
+                                        <img src="/assets/images/unlock.png" height="81px" width="100%">
+                                    <?php } else { ?>
+                                        <img src="/assets/images/lock.png" height="81px" width="100%">
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <span style="color: red;font-weight: bold;"></span>
                         </a></h4>
                 </div>
 
@@ -295,7 +525,7 @@
                         <h4 class="title-head mb-2"><i class="fa fa-bolt " style="color: var(--primary-color);font-size: 40px;margin-bottom: 15px;"></i> Quick
                             Access to topics</h4>
                         <p>You will get very quick access to any topic you want very easily, just within a few
-                            clicks (our index contains more than 35 topics & 16,600 videos). </p>
+                            clicks (our index contains 35 topics & 16,600 videos). </p>
 
                     </div>
 
@@ -307,7 +537,7 @@
 
                         <h4 class="title-head mb-2"><i class="fas fa-chalkboard-teacher" style="color: var(--primary-color);font-size: 40px;margin-bottom: 15px;"></i>
                             Road-map for lifetime</h4>
-                        <p>These 4,000 hours will not be lost from you anymore because they are well-indexed and
+                        <p>These 4,700 hours will not be lost from you anymore because they are well-indexed and
                             will always be available for all members.</p>
 
                     </div>
@@ -355,14 +585,9 @@
 
                     </div>
                     <br>
-
-
-
-
                 </div>
             </div>
             <div class="col-lg-1">
-
             </div>
             <div class="col-lg-5 order-lg-last order-first">
                 <div class="right-img sec-img-ab">
@@ -527,11 +752,11 @@
         <div class="row no-gutters pt-4">
 
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
                 <h3 class="text-price">Basic</h3>
                 <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
                 <h4> ₹ 849/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 44/- per month</h5>
+                <h5 class="text-white">Only ₹ 71/- per month</h5>
                 <br>
                 <ul>
                     <li><i class="fas fa-check-circle"></i> 1 Year Access</li>
@@ -545,7 +770,7 @@
                 <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -30px;padding-top: 65px;">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 65px;">
                 <h3 class="text-price">Pro</h3>
                 <h5><del>6000/- </del>Now (% 78 off) </h5>
                 <h4> ₹ 1299/- <span> </span></h4>
@@ -562,11 +787,11 @@
                 <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
             </div>
 
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
                 <h3 class="text-price">Premium</h3>
                 <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
                 <h4> ₹ 1,599/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 71/- per month</h5>
+                <h5 class="text-white">Only ₹ 44/- per month</h5>
                 <br>
                 <ul>
                     <li><i class="fas fa-check-circle"></i> 3 Year Access</li>
@@ -592,59 +817,59 @@
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
             <h3 class="title-style">FAQ</h3>
         </div>
-            <style>
-                /*.accordion .accordion-item {
+        <style>
+            /*.accordion .accordion-item {
   border-bottom: 1px solid #fd746c;
 }
 .accordion .accordion-item button[aria-expanded=true] {
   border-bottom: 1px solid #fd746c;
 }*/
-                .accordion button {
-                    position: relative;
-                    display: block;
-                    text-align: left;
-                    width: 100%;
-                    padding: 1em 0;
-                    color: #FFF;
-                    font-size: 1.5rem;
-                    font-weight: 400;
-                    border: none;
-                    background: #242952;
-                    outline: none;
-                    padding: 20px;
+            .accordion button {
+                position: relative;
+                display: block;
+                text-align: left;
+                width: 100%;
+                padding: 1em 0;
+                color: #FFF;
+                font-size: 1.5rem;
+                font-weight: 400;
+                border: none;
+                background: #242952;
+                outline: none;
+                padding: 20px;
 
-                    border-radius: 10px;
-                }
+                border-radius: 10px;
+            }
 
-                .accordion button:hover,
-                .accordion button:focus {
-                    cursor: pointer;
-                    color: #fd746c;
-                }
+            .accordion button:hover,
+            .accordion button:focus {
+                cursor: pointer;
+                color: #fd746c;
+            }
 
-                .accordion button:hover::after,
-                .accordion button:focus::after {
-                    cursor: pointer;
-                    color: #fd746c;
-                    border: 1px solid #fd746c;
-                }
+            .accordion button:hover::after,
+            .accordion button:focus::after {
+                cursor: pointer;
+                color: #fd746c;
+                border: 1px solid #fd746c;
+            }
 
-                .accordion button .accordion-title {
-                    padding: 1em 1.5em 1em 0;
-                }
+            .accordion button .accordion-title {
+                padding: 1em 1.5em 1em 0;
+            }
 
-                .accordion button .icon {
-                    display: inline-block;
-                    position: absolute;
-                    top: 18px;
-                    right: 0;
-                    width: 22px;
-                    height: 22px;
-                    /* border: 1px solid;*/
-                    border-radius: 22px;
-                }
+            .accordion button .icon {
+                display: inline-block;
+                position: absolute;
+                top: 18px;
+                right: 0;
+                width: 22px;
+                height: 22px;
+                /* border: 1px solid;*/
+                border-radius: 22px;
+            }
 
-                /*.accordion button .icon::before {
+            /*.accordion button .icon::before {
   display: block;
   position: absolute;
   content: "";
@@ -664,141 +889,141 @@
   height: 10px;
   background: currentColor;
 }*/
-                .accordion button[aria-expanded=true] {
-                    color: #fd746c;
-                }
+            .accordion button[aria-expanded=true] {
+                color: #fd746c;
+            }
 
-                .accordion button[aria-expanded=true] .icon::after {
-                    width: 0;
-                }
+            .accordion button[aria-expanded=true] .icon::after {
+                width: 0;
+            }
 
-                .accordion button[aria-expanded=true]+.accordion-content {
-                    opacity: 1;
-                    max-height: 60em;
-                    transition: all 200ms linear;
-                    will-change: opacity, max-height;
-                }
+            .accordion button[aria-expanded=true]+.accordion-content {
+                opacity: 1;
+                max-height: 60em;
+                transition: all 200ms linear;
+                will-change: opacity, max-height;
+            }
 
-                .accordion .accordion-content {
-                    opacity: 0;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: opacity 200ms linear, max-height 200ms linear;
-                    will-change: opacity, max-height;
-                }
+            .accordion .accordion-content {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity 200ms linear, max-height 200ms linear;
+                will-change: opacity, max-height;
+            }
 
-                .accordion .accordion-content p {
-                    font-size: 16px;
+            .accordion .accordion-content p {
+                font-size: 16px;
 
-                    padding: 20px;
-                }
-            </style>
+                padding: 20px;
+            }
+        </style>
 
-            <br><br>
+        <br><br>
 
-            <div class="accordion">
-                <div class="accordion-item" style="margin-bottom: 20px;">
-                    <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
-                            have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-                        <p>1. Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
-                            get you the best out of it and to make the index.<br>
-                            2. We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
-                            on YouTube.<br>
-                            3. We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
-                            videos available on YouTube.<br>
-                            4. We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
-                            into <b>35 topics</b> which are very easy to reach out.<br>
-                            5. If you do the search to get what we are guiding you through, then you will need a lot
-                            of time, and you will have to do a lot of searches (a waste of your time).<br>
-                            6. Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.<br>
-                            7. Just a few clicks on our index then very simply and quickly you will be reaching any
-                            topic and any video without doing the search process.<br>
-                            8. This index will be available for you every time and from anywhere.
+        <div class="accordion">
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
+                        have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <p>1. Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
+                        get you the best out of it and to make the index.<br>
+                        2. We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
+                        on YouTube.<br>
+                        3. We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
+                        videos available on YouTube.<br>
+                        4. We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
+                        into <b>35 topics</b> which are very easy to reach out.<br>
+                        5. If you do the search to get what we are guiding you through, then you will need a lot
+                        of time, and you will have to do a lot of searches (a waste of your time).<br>
+                        6. Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.<br>
+                        7. Just a few clicks on our index then very simply and quickly you will be reaching any
+                        topic and any video without doing the search process.<br>
+                        8. This index will be available for you every time and from anywhere.
 
 
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item" style="margin-bottom: 20px;">
-                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
-                            selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-                        <p>1. Not at all, we are not selling or charging for YouTube videos because they are free
-                            for everyone, and you can access to any videos on YouTube by yourself, you don’t need
-                            anyone’s help to use YouTube videos.<br>
-                            2. But we did a long research and put a lot of effort into it (we spent more <b>1,000
-                                hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
-                            hours) sorted in very well order.<br>
-                            3. All videos are embedded videos, and these videos open and play in the original
-                            channels (not in our website) but only in our website interface as pop-up window.<br>
-                            4. we are not changing for the videos but for the efforts we have put to create our
-                            index (we charge for our Road-map that made English learning easy for you)<br>
-                            5. We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
-                            these <b>16,600 videos</b> are organized and classified into 35 topics.<br>
-                            6. Once you pay then you will get membership to access our index and start using it.<br>
-                            7. So, you will pay for the index (for the road-map we have made) if you find this index
-                            is beneficial for you.<br>
-                            8. The index will help you to learn and improve your English language very effectively
-                            if you have the eager to study and learn.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item" style="margin-bottom: 20px;">
-                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
-                            benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-                        <p>1. You will get our service (it is a road-map) which will guide you to the most valuable
-                            <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
-                                videos</b>).<br>
-                            2. The content we have will surely help you to develop your English skills and master
-                            your English language to a higher level if you put a little effort in it.<br>
-                            3. You will gain the American and British accents through imitation.<br>
-                            4. You will gain listening skills for the American and British accents.<br>
-                            5. Anyone of your family members can benefit from the index for <b>free of cost.</b><br>
-                            6. You will get long-time access to this service hence to <b>4,700 hours</b> of English
-                            learning at a very <b>low cost</b>.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="accordion-item" style="margin-bottom: 20px;">
-                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
-                            payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-                        <p>Yes, it is very safe and payment will be through the Razorpay company, which is a very
-                            well-known and <b>trusted Payment Gateway.</b></p>
-                    </div>
-                </div>
-                <div class="accordion-item" style="margin-bottom: 20px;">
-                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
-                            membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-                        <p>Sign up 1st and you will get a user name & password, then choose your plan and buy it,
-                            then it is done, and you become a member.</p>
-                    </div>
+                    </p>
                 </div>
             </div>
-            <script>
-                const items = document.querySelectorAll(".accordion button");
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
+                        selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <p>1. Not at all, we are not selling or charging for YouTube videos because they are free
+                        for everyone, and you can access to any videos on YouTube by yourself, you don’t need
+                        anyone’s help to use YouTube videos.<br>
+                        2. But we did a long research and put a lot of effort into it (we spent more <b>1,000
+                            hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
+                        hours) sorted in very well order.<br>
+                        3. All videos are embedded videos, and these videos open and play in the original
+                        channels (not in our website) but only in our website interface as pop-up window.<br>
+                        4. we are not changing for the videos but for the efforts we have put to create our
+                        index (we charge for our Road-map that made English learning easy for you)<br>
+                        5. We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
+                        these <b>16,600 videos</b> are organized and classified into 35 topics.<br>
+                        6. Once you pay then you will get membership to access our index and start using it.<br>
+                        7. So, you will pay for the index (for the road-map we have made) if you find this index
+                        is beneficial for you.<br>
+                        8. The index will help you to learn and improve your English language very effectively
+                        if you have the eager to study and learn.
 
-                function toggleAccordion() {
-                    const itemToggle = this.getAttribute('aria-expanded');
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
+                        benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <p>1. You will get our service (it is a road-map) which will guide you to the most valuable
+                        <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
+                            videos</b>).<br>
+                        2. The content we have will surely help you to develop your English skills and master
+                        your English language to a higher level if you put a little effort in it.<br>
+                        3. You will gain the American and British accents through imitation.<br>
+                        4. You will gain listening skills for the American and British accents.<br>
+                        5. Anyone of your family members can benefit from the index for <b>free of cost.</b><br>
+                        6. You will get long-time access to this service hence to <b>4,700 hours</b> of English
+                        learning at a very <b>low cost</b>.
 
-                    for (i = 0; i < items.length; i++) {
-                        items[i].setAttribute('aria-expanded', 'false');
-                    }
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
+                        payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <p>Yes, it is very safe and payment will be through the Razorpay company, which is a very
+                        well-known and <b>trusted Payment Gateway.</b></p>
+                </div>
+            </div>
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
+                        membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <p>Sign up 1st and you will get a user name & password, then choose your plan and buy it,
+                        then it is done, and you become a member.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            const items = document.querySelectorAll(".accordion button");
 
-                    if (itemToggle == 'false') {
-                        this.setAttribute('aria-expanded', 'true');
-                    }
+            function toggleAccordion() {
+                const itemToggle = this.getAttribute('aria-expanded');
+
+                for (i = 0; i < items.length; i++) {
+                    items[i].setAttribute('aria-expanded', 'false');
                 }
 
-                items.forEach(item => item.addEventListener('click', toggleAccordion));
-            </script>
-            <br><br>
-        </div>
+                if (itemToggle == 'false') {
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            items.forEach(item => item.addEventListener('click', toggleAccordion));
+        </script>
+        <br><br>
+    </div>
 </section>
 <!-- //testimonial section -->
 <!-- contact -->
@@ -808,12 +1033,12 @@
             <h3 class="title-style">Contact Us</h3>
         </div>
         <div class="main-grid-contact">
-        <h5 class="p-3">
-                            Bring your English journey on the right track!
-                            Don't fall victim to demotivation and procrastination.
-                            Get started fresh with this new journey towards better command on the English language
-                            If you have any doubts or suggestions.
-                            Please reach out to us by filling this form.
+            <h5 class="p-3">
+                Bring your English journey on the right track!
+                Don't fall victim to demotivation and procrastination.
+                Get started fresh with this new journey towards better command on the English language
+                If you have any doubts or suggestions.
+                Please reach out to us by filling this form.
             </h5>
             <div class="row">
                 <!-- map -->

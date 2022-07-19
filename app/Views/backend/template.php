@@ -94,7 +94,7 @@
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="mdi mdi-shopping mdi-24px"></i>
                                     <span>Pages</span>
@@ -104,7 +104,7 @@
                                     <li><a href="/admin/dashboard/jnjh">The Benefit</a></li>
                                     <li><a href="/admin/dashboard/jjh">FAQ</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="mdi mdi-account-supervisor mdi-24px"></i>
