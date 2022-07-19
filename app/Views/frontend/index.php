@@ -442,7 +442,7 @@
 
             ?>
                 <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 380px;">
-                    <a href="/topics">
+                    <a href="/topics/videos/<?= $category['id']; ?>">
                         <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                     </a>
                     <h4 class="mt-3" style=""><a href="/topics" style="">
