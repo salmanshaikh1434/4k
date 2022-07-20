@@ -17,7 +17,8 @@
                             <span class="fa fa-play"></span>
                         </span>
                     </a>
-                    <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                
+                    dialog itself, mfp-hide class is required to make dialog hidden -->
                 <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
                     <iframe src="https://player.vimeo.com/video/119641053?h=6ddc880e8a" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
@@ -766,8 +767,7 @@
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
 
                 </ul>
-                <a href="sign_in.php" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get
-                    Started</a>
+                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
             <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 65px;">
@@ -784,7 +784,7 @@
                     <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
                 </ul>
-                <a href="sign_in.php" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
+                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
             </div>
 
             <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
@@ -801,8 +801,7 @@
                     <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
                 </ul>
-                <a href="sign_in.php" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get
-                    Started</a>
+                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
 
