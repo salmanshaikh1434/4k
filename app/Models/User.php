@@ -22,13 +22,16 @@ class User extends Model
         'email',
         'country',
         'pass',
+        'date',
         'confpass',
         'level',
         'payed',
+        'plan',
+        'amount',
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

@@ -103,9 +103,6 @@
             </div>
             <div class="col-md-6 login-form-2">
                 <h3>Sign Up</h3>
-
-
-
                 <form method="post" action="" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
@@ -119,7 +116,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Price: </b></label>
-                            <input type="text" class="form-control" name="amount" maxlength="60" id="amount" disabled required>
+                            <input type="text" class="form-control" name="amount" maxlength="60" id="amount" readonly required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Name : </b></label>

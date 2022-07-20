@@ -106,14 +106,14 @@
                                 </ul>
                             </li> -->
                             <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <a href="/admin/users" class=" waves-effect">
                                 <i class="mdi mdi-account-supervisor mdi-24px"></i>
                                 <span>Users</span>
                             </a>
-                            <ul class="sub-menu" aria-expanded="false">
+                            <!-- <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="/admin/users">All Users</a></li>
                                 <li><a href="/admin/dashboard/iuihuh">Mailing List Subscribers</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li>
                             <a href="/admin/topics/" class=" waves-effect">
@@ -127,13 +127,13 @@
                                 <span>Payment</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/admin/dashboard/oh" class=" waves-effect">
-                                <i class="mdi mdi-email-multiple"></i>
+                                <i class="mdi mdi-email-multiple mdi-24px"></i>
                                 <span>Inbox</span>
                             </a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="mdi mdi-settings mdi-24px"></i>
                                 <span>Setting</span>
@@ -144,7 +144,7 @@
                                 <li><a href="/admin/settings/social">Social Links</a></li>
                                 <li><a href="/admin/settings/my_account">My Account</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="/logout?is_admin=true" onclick="return confirm('Are you sure want to logout?');" class=" waves-effect">
                                 <i class="mdi mdi-logout mdi-24px"></i>

@@ -1,5 +1,5 @@
 <section class="contact py-5" id="not_select">
-    <div class="container pt-md-5 pt-4">
+    <div class="container pt-md-5 pt-4 mt-2">
         <div class="main-grid-contact">
             <div class="row d-lg-none">
                 <div class="col-lg-5 col-md-12  col-sm-12 order-first">
@@ -25,7 +25,7 @@
                                                 <?= $category['cat_name'] ?>
                                                 <br><span style="color: red;font-weight: bold;">
                                                 </span></a></td>
-                                        <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos</td>
+                                        <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos </div></td>
                                         <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                         <td>
@@ -88,6 +88,9 @@
 
            
             <!-- contact form -->
+            <div class="popups" style="z-index: 50;background-color: #fff;">
+            </div>
+
             <div class="col-lg-7 col-md-12  col-sm-12 content-form-right p-0 order-lg-last d-none d-lg-block">
                 <div class="title-heading-w3 text-center mx-auto mb-1">
                     <h3 class="title-style" style="font-size: 25px;text-align: center;border: 1px solid #000;margin-left: 30px;"><?= $cat_name['id'] ?> - <?= $cat_name['cat_name'] ?></h3>
@@ -128,7 +131,7 @@
                                 var closeBtn = document.createElement("div");
                                 videoBox.classList.add("video");
                                 closeBtn.classList.add("close");
-                                videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '?controls=0&showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                                videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                                 popups.appendChild(videoBox);
                                 popups.appendChild(closeBtn);
                                 closeBtn.addEventListener("click", closePopups);
@@ -156,8 +159,6 @@
 
 
 <!--popup -->
-<div class="popups" style="z-index: 50;background-color: #fff;">
-            </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

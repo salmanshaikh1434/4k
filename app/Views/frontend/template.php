@@ -52,16 +52,26 @@
             display: block;
         }
     </style>
+     <script>
+const navLinks = document.querySelectorAll('.nav-item')
+const menuToggle = document.getElementById('navbarResponsive')
+const bsCollapse = new bootstrap.Collapse(menuToggle)
+navLinks.forEach((l) => {
+    l.addEventListener('click', () => { bsCollapse.toggle() })
+})
+    </script>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <a class="navbar-brand" href="/">
-                <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-            </button>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
 

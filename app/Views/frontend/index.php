@@ -767,7 +767,7 @@
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
 
                 </ul>
-                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
+                <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
             <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 65px;">
@@ -784,7 +784,7 @@
                     <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
                 </ul>
-                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
+                <a href="/signup" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
             </div>
 
             <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
@@ -801,7 +801,7 @@
                     <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
                     <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
                 </ul>
-                <a href="/membership/checkout" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
+                <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
 

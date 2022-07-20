@@ -34,8 +34,8 @@
                                     <td><?= $category['hours'] ?></td>
                                     <td>
                                         <div class="">
-                                            <a href="/admin/topics/add/<?= $category['id'] ?>" class="btn btn-primary"><i class="fa fa-edit "></i></a>
-                                            <a href="/admin/topics/videos/<?= $category['id'] ?>" class="btn btn-danger"><i class="fa fa-video "></i></a>
+                                            <a href="/admin/topics/add/<?= $category['id'] ?>" class="btn btn-primary"><i class="fa fa-edit" tooltip="edit"></i></a>
+                                            <a href="/admin/topics/videos/<?= $category['id'] ?>" class="btn btn-danger"><i class="fa fa-video"></i></a>
                                             <a href="/admin/topics/delete/<?= $category['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Category ?');"><i class="fa fa-trash"></i></a>
 
                                         </div>
