@@ -1997,6 +1997,13 @@ progress {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#not_select {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none
+}
+
 .popups {
     max-width: 49vw;
     max-height: 90vh;
@@ -2075,17 +2082,6 @@ iframe {
 }
 
 @media screen and (max-width: 600px) {
-    #hide_mobile {
-        visibility: hidden;
-        clear: both;
-        float: left;
-        margin: 10px auto 5px 20px;
-        width: 28%;
-        display: none;
-    }
-    #desktop_hide {
-        display: block;
-    }
     .popups {
         max-width: 90vw;
         max-height: 90vh;
@@ -10834,11 +10830,6 @@ fieldset:disabled .btn {
 * {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.noscroll {
-    min-height: 100vh;
-    overflow: hidden;
 }
 
 html {
