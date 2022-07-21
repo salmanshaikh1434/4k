@@ -770,7 +770,7 @@
                 <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
 
-            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 65px;">
+            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 40px;">
                 <h3 class="text-price">Pro</h3>
                 <h5><del>6000/- </del>Now (% 78 off) </h5>
                 <h4> ₹ 1299/- <span> </span></h4>

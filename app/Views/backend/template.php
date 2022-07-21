@@ -61,7 +61,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <!-- item-->
-                            <!-- <a class="dropdown-item" href="/admin/change_password"><i class="dripicons-user d-inlne-block text-muted mr-2"></i> Change Password</a> -->
+                            <a class="dropdown-item" href="/admin/change_password"><i class="dripicons-user d-inlne-block text-muted mr-2"></i> Change Password</a>
                             <!-- <a class="dropdown-item d-block" href="#"><i class="dripicons-gear d-inlne-block text-muted mr-2"></i> Settings</a> -->
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout?is_admin=true"><i class="dripicons-exit d-inlne-block text-muted mr-2"></i> Logout</a>

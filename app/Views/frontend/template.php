@@ -85,7 +85,7 @@ navLinks.forEach((l) => {
                         <a class="nav-link" href="#services" style="margin-top: 9px;">Services</a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <div class="dropdown">
                             <span><a class="nav-link" style="text-decoration: none;margin-top: 9px;">Index</a> </span>
                             <div class="dropdown-content" style="width: 250px;color: #fd746c;">
@@ -93,6 +93,12 @@ navLinks.forEach((l) => {
                                 <p><a href="#benefit" style="text-decoration: none;padding: 13px;color: #fd746c;">The benefit of our index </a> </p>
                             </div>
                         </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#index" style="margin-top: 9px;">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefit" style="margin-top: 9px;">Benefits</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#membership" style="margin-top: 9px;">Membership</a>
@@ -347,8 +353,15 @@ navLinks.forEach((l) => {
     $(function() {
         $('.navbar-toggler').click(function() {
             $('body').toggleClass('noscroll');
+        }),
+
+        $('.nav-item').click(function() {
+            $('#navbarResponsive').removeClass('show');
         })
+       
     });
+
+
 </script>
 <!-- //disable body scroll which navbar is in active -->
 
