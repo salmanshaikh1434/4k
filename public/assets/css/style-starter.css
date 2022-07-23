@@ -17865,7 +17865,6 @@ span.video-play-icon:hover {
 .banner-info p {
     color: #fff;
     font-size: 18px;
-    text-transform: uppercase;
 }
 
 @media (max-width:1199px) {
@@ -18476,7 +18475,7 @@ p.count-text {
 /* pricing block */
 
 .pricing-w3l .box-pricing {
-    padding: 40px;
+    padding: 29px;
     margin: -30px -5px 0 -5px;
     margin-bottom: 0px;
     box-shadow: var(--box-shadow);
@@ -18556,7 +18555,7 @@ p.count-text {
 
 @media (max-width: 767px) {
     .pricing-w3l .box-pricing {
-        max-width: 90%;
+        max-width: 97%;
         margin: 0 auto 30px auto;
     }
 }
@@ -19081,3 +19080,74 @@ h4.inner-text-title {
 
 
 /* //contact page */
+
+
+/* image blinking */
+
+
+/* Firefox old*/
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* IE */
+
+@-ms-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Opera and prob css3 final iteration */
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink-image {
+    -moz-animation: blink normal 1s infinite ease-in-out;
+    /* Firefox */
+    -webkit-animation: blink normal 1s infinite ease-in-out;
+    /* Webkit */
+    -ms-animation: blink normal 1s infinite ease-in-out;
+    /* IE */
+    animation: blink normal 1s infinite ease-in-out;
+    /* Opera and prob css3 final iteration */
+}

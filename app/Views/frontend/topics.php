@@ -25,68 +25,71 @@
                                                 <?= $category['cat_name'] ?>
                                                 <br><span style="color: red;font-weight: bold;">
                                                 </span></a></td>
-                                        <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos </div></td>
-                                        <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
-
-                                        <td>
-                                            <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                                                </button> <?php } else { ?>
-                                                <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                                                </button>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                <?php
-                            } ?>
-                                </thead>
-                        </table>
+                                        <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos
                     </div>
+                    </td>
+                    <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
+
+                    <td>
+                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
+                            </button> <?php } else { ?>
+                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
+                            </button>
+                        <?php } ?>
+                    </td>
+                    </tr>
+                <?php
+                            } ?>
+                </thead>
+                </table>
                 </div>
             </div>
-            <!-- map -->
+        </div>
+        <!-- map -->
 
-            <div class="row">
-                <div class="col-lg-5 col-md-12  col-sm-12 order-first d-none d-lg-block">
-                    <div class="col">
-                        <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 0em;">
-                            <thead>
-                                <tr style="text-align: center;">
-                                    <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> </th>
-                                    <th colspan="5" id="table_sup_head" style="background-color: #242952;color: #fff;"><span style="font-size:22px"> Our Index (Our Road-map)</span><br />(35 Topics,16,667 Videos & 4,724 Hours)</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="col col-md-12  col-sm-12" style="overflow-y:auto; height:calc(100vh - 40px);">
-                        <table class=" " style=" border-collapse:separate;border-spacing: 0 1em;">
-                            <?php
-                            foreach ($categories as $category) { ?>
-                                <thead>
-                                    <tr class="spacer" style="background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
-                                        <td style="background-color:#fd746c ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
-                                        <td><a href="/topics/videos/<?= $category['id'] ?>" style="color: #fff;text-decoration: none;">
-                                                <?= $category['cat_name'] ?>
-                                                <br><span style="color: red;font-weight: bold;">
-                                                </span></a></td>
-                                        <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos</td>
-                                        <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
-
-                                        <td>
-                                            <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                                                </button> <?php } else { ?>
-                                                <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                                                </button>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                <?php
-                            } ?>
-                                </thead>
-                        </table>
-                    </div>
+        <div class="row">
+            <div class="col-lg-5 col-md-12  col-sm-12 order-first d-none d-lg-block">
+                <div class="col">
+                    <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 0em;">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> </th>
+                                <th colspan="5" id="table_sup_head" style="background-color: #242952;color: #fff;"><span style="font-size:22px"> Our Index (Our Road-map)</span><br />(35 Topics,16,667 Videos & 4,724 Hours)</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
+                <div class="col col-md-12  col-sm-12" style="overflow-y:auto; height:calc(100vh - 40px);">
+                    <table class=" " style=" border-collapse:separate;border-spacing: 0 1em;">
+                        <?php
+                        foreach ($categories as $category) { ?>
+                            <thead>
+                                <tr class="spacer" style="background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
+                                    <td style="background-color:#fd746c ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
+                                    <td><a href="/topics/videos/<?= $category['id'] ?>" style="color: #fff;text-decoration: none;">
+                                            <?= $category['cat_name'] ?>
+                                            <br><span style="color: red;font-weight: bold;">
+                                            </span></a></td>
+                                    <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos</td>
+                                    <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
-           
+                                    <td>
+                                        <?php if ($category['id'] == 1) { ?>
+                                            <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">
+                                        <?php } else { ?>
+                                            <img src="/assets/images/lock.png" height="40px" width="40px">
+                                        <?php } ?>
+
+                                    </td>
+                                </tr>
+                            <?php
+                        } ?>
+                            </thead>
+                    </table>
+                </div>
+            </div>
+
+
             <!-- contact form -->
             <div class="popups" style="z-index: 50;background-color: #fff;">
             </div>

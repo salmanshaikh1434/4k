@@ -24,16 +24,6 @@
                     </div>
                 </div> -->
                 <br>
-                <label class="control-label">Tutors :</label>
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <div class="input-group mb-12">
-                            <input type="text" id="tutors" name="tutors" value="<?= (isset($category)) ? $category['tutors'] : '' ?>" class="form-control" placeholder="How many Tutors" required>
-
-                        </div>
-                    </div>
-                </div>
-                <br>
                 <label class="control-label">Videos :</label>
                 <div class="row align-items-center">
                     <div class="col-6">

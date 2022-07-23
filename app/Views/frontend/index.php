@@ -3,7 +3,7 @@
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
             <div class="container pt-md-0 pt-5">
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
-                    <p class="mb-1" style="font-size: 30px;font-weight: bold;font-family:'Gill Sans'">ENGLISH SELF LEARNING</p>
+                    <p class="mb-1" style="font-size: 30px;font-weight: bold;">English Self Learning </p>
                     <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
                         <span class="txt-rotate" data-period="2000" data-rotate='["35 TOPICS", "4,700 STUDY HOURS", "16,667  VIDEOS", "75 TUTORS", "10,000 WORDS", "15,000 PHRASES", "American & British ACCENT"]'></span>
                     </h3>
@@ -58,11 +58,10 @@
                 <br />
                 <div class="grids-1 shadow-lg bg-white rounded" style="">
                     <div class="icon-style">
-                        <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">Services We're
-                            offering (Hindi)</h3>
+                        <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">हमारी तरफ से दी जाने वाली सेवाएँ</h3>
                     </div>
                     <p class="text-center">
-                        <a class="btn btn-style" style="background-color: #fff;color: #fd746c;" data-toggle="modal" data-target=".bd-example-modal-lg">Read More</a>
+                        <a class="btn btn-style" style="background-color: #fff;color: #fd746c;" data-toggle="modal" data-target=".bd-example-modal-lg">अधिक पढ़ें</a>
                     </p>
                 </div>
             </div>
@@ -71,7 +70,7 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content" style="background-color:black">
                         <div class="modal-header" style="background-color: #fd746c;">
-                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारी तरफ से दी जाने वाली सेवाएँ हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <i class="fa fa-times" style=" background-color: white;border-radius: 50%;border: 1px solid black;padding: 10px;"></i>
                             </button>
@@ -400,11 +399,22 @@
             <style>
                 #hove {
                     height: 200px;
-                    width: 335px;
                 }
 
                 .shadow {
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                }
+
+                .circle {
+                    border-radius: 46%;
+                    width: 7px;
+                    height: 7px;
+                    padding: 2px;
+                    background: #fd746c;
+                    border: 2px solid #000;
+                    color: #FFF;
+                    text-align: center;
+                    font: 15px Arial, sans-serif;
                 }
 
                 .numberCircle {
@@ -436,43 +446,42 @@
                     padding-right: 8px;
                 }
             </style>
+
             <?php
             foreach ($categories as $category) {
                 if ($category['id'] == 1) {
                 }
 
             ?>
-                <div class="card col-md-3 col-6 m-2 shadow p-4" style="margin-bottom: 40px;min-width: 380px;">
+                <div class="col-lg-4 col-md-3 col-12 ">
+                    <div class="card  shadow p-4 mt-4">
                     <a href="/topics/videos/<?= $category['id']; ?>">
                         <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
-                    </a>
-                    <h4 class="mt-3" style=""><a href="/topics" style="">
-
-                            
+                        <h4 class="mt-3">
                             <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
                             <br>
                             <div class="row">
                                 <div class="col-8">
                                     <p class="text-center mt-3">
-                                        <a href="#" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
+                                        <a href="javascript: void(0);" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
                                     </p>
                                     <p class="text-center mt-2">
-                                        <a href="#" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
+                                        <a href="javascript: void(0);" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
                                     </p>
                                 </div>
                                 <div class="col-4 mt-2">
                                     <?php if ($category['id'] == 1) { ?>
-                                        <img src="/assets/images/unlock.png" height="81px" width="100%">
+                                        <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
                                     <?php } else { ?>
                                         <img src="/assets/images/lock.png" height="81px" width="100%">
                                     <?php } ?>
                                 </div>
                             </div>
-                            <span style="color: red;font-weight: bold;"></span>
-                        </a></h4>
+                    </a></h4>
+                    </div>
                 </div>
-
             <?php     } ?>
+
         </div>
     </div>
 </section>
@@ -837,7 +846,6 @@
                 background: #242952;
                 outline: none;
                 padding: 20px;
-
                 border-radius: 10px;
             }
 
@@ -926,20 +934,20 @@
                 <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
                         have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p>1. Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
+                    <p><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
                         get you the best out of it and to make the index.<br>
-                        2. We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
+                        <span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
                         on YouTube.<br>
-                        3. We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
+                        <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
                         videos available on YouTube.<br>
-                        4. We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
+                        <span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
                         into <b>35 topics</b> which are very easy to reach out.<br>
-                        5. If you do the search to get what we are guiding you through, then you will need a lot
+                        <span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
                         of time, and you will have to do a lot of searches (a waste of your time).<br>
-                        6. Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.<br>
-                        7. Just a few clicks on our index then very simply and quickly you will be reaching any
+                        <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.<br>
+                        <span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
                         topic and any video without doing the search process.<br>
-                        8. This index will be available for you every time and from anywhere.
+                        <span class="circle">8</span> This index will be available for you every time and from anywhere.
 
 
                     </p>
@@ -949,22 +957,22 @@
                 <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
                         selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p>1. Not at all, we are not selling or charging for YouTube videos because they are free
+                    <p><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
                         for everyone, and you can access to any videos on YouTube by yourself, you don’t need
                         anyone’s help to use YouTube videos.<br>
-                        2. But we did a long research and put a lot of effort into it (we spent more <b>1,000
+                        <span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
                             hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
                         hours) sorted in very well order.<br>
-                        3. All videos are embedded videos, and these videos open and play in the original
+                        <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
                         channels (not in our website) but only in our website interface as pop-up window.<br>
-                        4. we are not changing for the videos but for the efforts we have put to create our
+                        <span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
                         index (we charge for our Road-map that made English learning easy for you)<br>
-                        5. We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
+                        <span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
                         these <b>16,600 videos</b> are organized and classified into 35 topics.<br>
-                        6. Once you pay then you will get membership to access our index and start using it.<br>
-                        7. So, you will pay for the index (for the road-map we have made) if you find this index
+                        <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.<br>
+                        <span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
                         is beneficial for you.<br>
-                        8. The index will help you to learn and improve your English language very effectively
+                        <span class="circle">8</span> The index will help you to learn and improve your English language very effectively
                         if you have the eager to study and learn.
 
                     </p>
@@ -974,15 +982,15 @@
                 <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
                         benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p>1. You will get our service (it is a road-map) which will guide you to the most valuable
+                    <p><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
                         <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
                             videos</b>).<br>
-                        2. The content we have will surely help you to develop your English skills and master
+                        <span class="circle">2</span> The content we have will surely help you to develop your English skills and master
                         your English language to a higher level if you put a little effort in it.<br>
-                        3. You will gain the American and British accents through imitation.<br>
-                        4. You will gain listening skills for the American and British accents.<br>
-                        5. Anyone of your family members can benefit from the index for <b>free of cost.</b><br>
-                        6. You will get long-time access to this service hence to <b>4,700 hours</b> of English
+                        <span class="circle">3</span> You will gain the American and British accents through imitation.<br>
+                        <span class="circle">4</span> You will gain listening skills for the American and British accents.<br>
+                        <span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br>
+                        <span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
                         learning at a very <b>low cost</b>.
 
                     </p>
@@ -992,7 +1000,7 @@
                 <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
                         payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p>Yes, it is very safe and payment will be through the Razorpay company, which is a very
+                    <p><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
                         well-known and <b>trusted Payment Gateway.</b></p>
                 </div>
             </div>
@@ -1000,7 +1008,7 @@
                 <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
                         membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p>Sign up 1st and you will get a user name & password, then choose your plan and buy it,
+                    <p><span class="circle">1</span> Sign up 1st and you will get a user name & password, then choose your plan and buy it,
                         then it is done, and you become a member.</p>
                 </div>
             </div>
@@ -1072,4 +1080,28 @@
         </div>
     </div>
 </section>
+<style>
+    .float {
+        position: fixed;
+        width: 45px;
+        height: 44px;
+        bottom: 43px;
+        right: 15px;
+        background-image: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 23px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 17px;
+        background-image: url("/assets/images/demo.png");
+    }
+</style>
+<a href="/topics/videos/1" class="float">
+    <img class="img-fluid" src="/assets/images/demo.png" class="my-float">
+</a>
 <!-- //contact -->

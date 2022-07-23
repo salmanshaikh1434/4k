@@ -18,7 +18,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>Categories Name</th>
-                                <th>Tutors</th>
                                 <th>Videos</th>
                                 <th>Hours</th>
                                 <th>Action</th>
@@ -29,7 +28,6 @@
                                 <tr>
                                     <th scope="row"><?= $category['id'] ?></th>
                                     <td><?= $category['cat_name'] ?></td>
-                                    <td><?= $category['tutors'] ?></td>
                                     <td><?= $category['videos'] ?></td>
                                     <td><?= $category['hours'] ?></td>
                                     <td>

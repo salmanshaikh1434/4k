@@ -18,7 +18,6 @@ class Category extends Model
         'id',
         'cat_name',
         'photo',
-        'tutors',
         'videos',
         'hours',
     ];

@@ -62,15 +62,16 @@ navLinks.forEach((l) => {
     </script>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">
                     <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
+                
             </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
@@ -111,13 +112,17 @@ navLinks.forEach((l) => {
                     <li class="nav-item">
                         <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
                     </li>
-                </ul>
-
-
-                <a href="login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
-                <!-- <a href="signup" class="btn btn-style" style="margin-left: 5px;">Sign Up</a> -->
+                    <?php if (!NULL == session()->get('id')) { ?>
+                            <li class="nav-item">
+                            <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="menu-item">
+                            <a href="login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
+                            </li>
+                        <?php } ?>
+                </ul>     
             </div>
-
         </nav>
     </div>
 
