@@ -10,7 +10,7 @@
         "description": "Test Transaction",
         "image": "https://example.com/your_logo",
         "order_id": "<?= $razorpayOrder['id'] ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "callback_url": "<?php echo base_url('/checkout/payment_status/'."$customer_id") ?>",
+        "callback_url": "<?php echo base_url('/memberships/payment_status/'."$customer_id") ?>",
         "prefill": {
             "name": "<?= $customer_name ?>",
             "email": "<?= $email ?>",

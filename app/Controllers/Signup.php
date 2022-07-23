@@ -31,7 +31,7 @@ class Signup extends BaseController
                     unset($post["deleted_at"]);
                     session()->set($post);
                     session()->set('is_loggedin', true);
-                    return redirect()->to('/checkout');
+                    return redirect()->to('/membership');
                 } else {
                     $page['error_message'] = "Failed to add Vendors Details please try again !";
                 }
