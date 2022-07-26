@@ -46,7 +46,7 @@
         <div class="row">
 
             <div class="col-xl-5 col-lg-4 col-md-12">
-                <div class="grids-1 shadow-lg bg-white rounded" >
+                <div class="grids-1 shadow-lg bg-white rounded">
                     <div class="icon-style">
                         <h3 class="title-style mb-lg-4" style="font-size: 34px;text-align: center;">Services We're
                             offering</h3>
@@ -56,7 +56,7 @@
                 <img class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 3%;height:360px;">
                 <br />
                 <br />
-                <div class="grids-1 shadow-lg bg-white rounded" >
+                <div class="grids-1 shadow-lg bg-white rounded">
                     <div class="icon-style">
                         <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">हमारी तरफ से दी जाने वाली सेवाएँ</h3>
                     </div>
@@ -69,11 +69,11 @@
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content" style="background-color:black">
-                        <div class="modal-header" style="background-color: #fd746c;">
-                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
+                        <div class="modal-header text-center" style="background-color: #fd746c;">
+                            <h4 class="modal-title" id="exampleModalLabel" style="color:#fff; margin-left:30%;">हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ !</h4>
                             <button type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <style>
                             /* The actual timeline (the vertical ruler) */
@@ -407,16 +407,20 @@
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 }
 
+                .mydiv {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
                 .circle {
-                    border-radius: 46%;
-                    width: 7px;
-                    height: 7px;
-                    padding: 2px;
-                    background: #fd746c;
-                    border: 2px solid #000;
-                    color: #FFF;
+                    height: 25px;
+                    width: 25px;
+                    background-color: #fd746c;
+                    border-radius: 50%;
+                    display: inline-block;
                     text-align: center;
-                    font: 15px Arial, sans-serif;
+
                 }
 
                 .numberCircle {
@@ -456,8 +460,9 @@
 
             ?>
                 <div class="col-lg-4 col-md-3 col-12 ">
-                    <div class="card  shadow p-4 mt-4">
-                        <a href="/topics/videos/<?= $category['id']; ?>">
+                    <a href="/topics/videos/<?= $category['id']; ?>">
+                        <div class="card  shadow p-4 mt-4">
+
                             <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                             <h4 class="mt-3">
                                 <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
@@ -465,25 +470,26 @@
                                 <div class="row">
                                     <div class="col-8">
                                         <p class="text-center mt-3">
-                                            <a href="javascript: void(0);" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
+                                            <a href="/topics/videos/<?= $category['id']; ?>" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
                                         </p>
                                         <p class="text-center mt-2">
-                                            <a href="javascript: void(0);" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
+                                            <a href="/topics/videos/<?= $category['id']; ?>" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
                                         </p>
                                     </div>
                                     <div class="col-4 mt-2">
-                                        <?php if ($category['id'] == 1 && null== session()->get('expiry_date'))  { ?>
+                                        <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
                                             <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
-                                        <?php } ?>
-                                        <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
-                                            <img  src="/assets/images/unlockg.png" height="81px" width="100%">
                                         <?php } else { ?>
                                             <img src="/assets/images/lock.png" height="81px" width="100%">
+                                        <?php }  ?> <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                            <img src="/assets/images/unlockg.png" height="81px" width="100%">
                                         <?php } ?>
+
                                     </div>
                                 </div>
-                        </a></h4>
-                    </div>
+
+                        </div>
+                    </a>
                 </div>
             <?php     } ?>
 
@@ -757,73 +763,73 @@
 <!-- //testimonial section -->
 
 <?php if (NULL == session()->get('id')) { ?>
-<!-- pricing block -->
-<section class="pricing-w3l py-lg-5 py-2" id="membership">
-    <div class="container">
-        <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4 pb-md-1" style="max-width:500px;">
-            <h3 class="title-style">Membership</h3>
+    <!-- pricing block -->
+    <section class="pricing-w3l py-lg-5 py-2" id="membership">
+        <div class="container">
+            <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4 pb-md-1" style="max-width:500px;">
+                <h3 class="title-style">Membership</h3>
+            </div>
+            <div class="row no-gutters pt-4">
+
+
+                <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
+                    <h3 class="text-price">Basic</h3>
+                    <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
+                    <h4> ₹ 849/- <span> </span></h4>
+                    <h5 class="text-white">Only ₹ 71/- per month</h5>
+                    <br>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 1 Year Access</li>
+                        <li><i class="fas fa-check-circle"></i> 3 devices</li>
+                        <li><i class="fas fa-check-circle"></i> 35 topics</li>
+                        <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
+                        <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
+                        <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
+
+                    </ul>
+                    <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
+                </div>
+
+                <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 40px;">
+                    <h3 class="text-price">Pro</h3>
+                    <h5><del>6000/- </del>Now (% 78 off) </h5>
+                    <h4> ₹ 1299/- <span> </span></h4>
+                    <h5>Only ₹ 54/- per month</h5>
+                    <br>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 2 Year Access</li>
+                        <li><i class="fas fa-check-circle"></i> 5 devices</li>
+                        <li><i class="fas fa-check-circle"></i> 35 topics</li>
+                        <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
+                        <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
+                        <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
+                    </ul>
+                    <a href="/signup" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
+                </div>
+
+                <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
+                    <h3 class="text-price">Premium</h3>
+                    <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
+                    <h4> ₹ 1,599/- <span> </span></h4>
+                    <h5 class="text-white">Only ₹ 44/- per month</h5>
+                    <br>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 3 Year Access</li>
+                        <li><i class="fas fa-check-circle"></i> 8 devices</li>
+                        <li><i class="fas fa-check-circle"></i> 35 topics</li>
+                        <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
+                        <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
+                        <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
+                    </ul>
+                    <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
+                </div>
+
+
+
+            </div>
         </div>
-        <div class="row no-gutters pt-4">
-
-
-            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
-                <h3 class="text-price">Basic</h3>
-                <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
-                <h4> ₹ 849/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 71/- per month</h5>
-                <br>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> 1 Year Access</li>
-                    <li><i class="fas fa-check-circle"></i> 3 devices</li>
-                    <li><i class="fas fa-check-circle"></i> 35 topics</li>
-                    <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
-                    <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
-                    <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
-
-                </ul>
-                <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
-            </div>
-
-            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 40px;">
-                <h3 class="text-price">Pro</h3>
-                <h5><del>6000/- </del>Now (% 78 off) </h5>
-                <h4> ₹ 1299/- <span> </span></h4>
-                <h5>Only ₹ 54/- per month</h5>
-                <br>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> 2 Year Access</li>
-                    <li><i class="fas fa-check-circle"></i> 5 devices</li>
-                    <li><i class="fas fa-check-circle"></i> 35 topics</li>
-                    <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
-                    <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
-                    <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
-                </ul>
-                <a href="/signup" class="btn btn-style mt-4" style="color: #fff;background-color: #fd746c;">Get Started</a>
-            </div>
-
-            <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
-                <h3 class="text-price">Premium</h3>
-                <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
-                <h4> ₹ 1,599/- <span> </span></h4>
-                <h5 class="text-white">Only ₹ 44/- per month</h5>
-                <br>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> 3 Year Access</li>
-                    <li><i class="fas fa-check-circle"></i> 8 devices</li>
-                    <li><i class="fas fa-check-circle"></i> 35 topics</li>
-                    <li><i class="fas fa-check-circle"></i> 4,700 study hours</li>
-                    <li><i class="fas fa-check-circle"></i> 16,667 downloadable videos</li>
-                    <li><i class="fas fa-check-circle"></i> 75 expert tutors</li>
-                </ul>
-                <a href="/signup" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
-            </div>
-
-
-
-        </div>
-    </div>
-</section>
-<!-- //pricing block -->
+    </section>
+    <!-- //pricing block -->
 <?php } ?>
 <!-- testimonial section -->
 <section id="faq">
@@ -903,7 +909,8 @@
   background: currentColor;
 }*/
             .accordion button[aria-expanded=true] {
-                color: #fd746c;
+                background: #fd746c;
+                color: #fff;
             }
 
             .accordion button[aria-expanded=true] .icon::after {
@@ -930,6 +937,10 @@
 
                 padding: 20px;
             }
+
+            li {
+                padding: 5px;
+            }
         </style>
 
         <br><br>
@@ -939,20 +950,22 @@
                 <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
                         have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
-                        get you the best out of it and to make the index.<br>
-                        <span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
-                        on YouTube.<br>
-                        <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
-                        videos available on YouTube.<br>
-                        <span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
-                        into <b>35 topics</b> which are very easy to reach out.<br>
-                        <span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
-                        of time, and you will have to do a lot of searches (a waste of your time).<br>
-                        <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.<br>
-                        <span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
-                        topic and any video without doing the search process.<br>
-                        <span class="circle">8</span> This index will be available for you every time and from anywhere.
+                    <ul>
+                        <li><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
+                            get you the best out of it and to make the index.</li>
+                        <li><span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
+                            on YouTube.</li>
+                        <li> <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
+                            videos available on YouTube.</li>
+                        <li><span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
+                            into <b>35 topics</b> which are very easy to reach out.</li>
+                        <li><span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
+                            of time, and you will have to do a lot of searches (a waste of your time).</li>
+                        <li> <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.</li>
+                        <li><span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
+                            topic and any video without doing the search process.</li>
+                        <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
+                    </ul>
 
 
                     </p>
@@ -962,25 +975,25 @@
                 <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
                         selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
-                        for everyone, and you can access to any videos on YouTube by yourself, you don’t need
-                        anyone’s help to use YouTube videos.<br>
-                        <span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
-                            hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
-                        hours) sorted in very well order.<br>
-                        <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
-                        channels (not in our website) but only in our website interface as pop-up window.<br>
-                        <span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
-                        index (we charge for our Road-map that made English learning easy for you)<br>
-                        <span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
-                        these <b>16,600 videos</b> are organized and classified into 35 topics.<br>
-                        <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.<br>
-                        <span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
-                        is beneficial for you.<br>
-                        <span class="circle">8</span> The index will help you to learn and improve your English language very effectively
-                        if you have the eager to study and learn.
-
-                    </p>
+                    <ul>
+                        <li><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
+                            for everyone, and you can access to any videos on YouTube by yourself, you don’t need
+                            anyone’s help to use YouTube videos.</li>
+                        <li><span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
+                                hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
+                            hours) sorted in very well order.</li>
+                        <li> <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
+                            channels (not in our website) but only in our website interface as pop-up window.</li>
+                        <li><span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
+                            index (we charge for our Road-map that made English learning easy for you)</li>
+                        <li><span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
+                            these <b>16,600 videos</b> are organized and classified into 35 topics.</li>
+                        <li> <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.</li>
+                        <li><span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
+                            is beneficial for you.</li>
+                        <li><span class="circle">8</span> The index will help you to learn and improve your English language very effectively
+                            if you have the eager to study and learn.</li>
+                    </ul>
                 </div>
             </div>
             <div class="accordion-item" style="margin-bottom: 20px;">
@@ -1106,7 +1119,7 @@
         background-image: url("/assets/images/demo.png");
     }
 </style>
-<a href="/topics/videos/1" class="float">
+<a href="/topics/videos/1" class="float d-lg-none">
     <img class="img-fluid" src="/assets/images/demo.png" class="my-float">
 </a>
 <!-- //contact -->

@@ -22,7 +22,7 @@ class Topics extends BaseController
         $page['site_info']=$site_info->first();
         $page['social']=$social->first();
         $data['page'] = view('frontend/topics', $page);
-        return view("frontend/template", $data);
+        return view("frontend/topics", $data);
     }
     public function videos($id=Null)
     {
@@ -37,7 +37,7 @@ class Topics extends BaseController
         $page['site_info']=$site_info->first();
         $page['social']=$social->first();
         $data['page'] = view('frontend/topics', $page);
-        return view("frontend/template", $data);
+        return view("frontend/topics", $data);
     }
 
     public function mobile_videos($id=Null)
@@ -52,7 +52,7 @@ class Topics extends BaseController
         $page['site_info']=$site_info->first();
         $page['social']=$social->first();
         $data['page'] = view('frontend/topics_mobile', $page);
-        return view("frontend/template", $data);
+        return view("frontend/topics", $data);
     }
     
     

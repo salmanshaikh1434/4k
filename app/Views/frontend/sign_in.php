@@ -176,7 +176,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <span id="errorMessage"></span>
 
-    <script>
+    <!-- <script>
         Swal.fire({
             position: 'center',
             icon: 'success',
@@ -184,7 +184,7 @@
             showConfirmButton: false,
             timer: 2000
         })
-    </script>
+    </script> -->
 
     <!--content-->
 
