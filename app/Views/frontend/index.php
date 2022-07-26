@@ -71,9 +71,9 @@
                     <div class="modal-content" style="background-color:black">
                         <div class="modal-header" style="background-color: #fd746c;">
                             <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <i class="fa fa-times" style=" background-color: white;border-radius: 50%;border: 1px solid black;padding: 10px;"></i>
-                            </button>
+                            <button type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                         </div>
                         <style>
                             /* The actual timeline (the vertical ruler) */
@@ -283,7 +283,7 @@
                     <div class="col-lg-12 col-sm-12 col-md-12">
                         <div class="grids-1 shadow-lg bg-white rounded" style="">
                             <div class="icon-style">
-                                <h4 class="title-head"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
                                         Self-learning </span></h4>
                             </div>
                             <p class="servic" style="color:#000">is now available for everyone who has the same passion for learning, and YouTube has
@@ -294,7 +294,7 @@
                     <div class="col-lg-12 col-sm-12  col-md-12 mt-2">
                         <div class="grids-1 shadow-lg rounded" style="background-color: #fd746c;">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube" style="color: #fff;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube-play" style="color: #fff;"></i>
                                         YouTube
                                     </span></h4>
                             </div>
@@ -454,31 +454,32 @@
 
             ?>
                 <div class="col-lg-4 col-md-3 col-12 ">
-                    <div class="card  shadow p-4 mt-4">
-                    <a href="/topics/videos/<?= $category['id']; ?>">
-                        <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
-                        <h4 class="mt-3">
-                            <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
-                            <br>
-                            <div class="row">
-                                <div class="col-8">
-                                    <p class="text-center mt-3">
-                                        <a href="javascript: void(0);" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
-                                    </p>
-                                    <p class="text-center mt-2">
-                                        <a href="javascript: void(0);" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
-                                    </p>
+                <a href="/topics/videos/<?= $category['id']; ?>">
+                        <div class="card  shadow p-4 mt-4">
+                            <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
+                            <h4 class="mt-3">
+                                <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
+                                <br>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="text-center mt-3">
+                                            <a href="/topics/videos/<?= $category['id']; ?>" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
+                                        </p>
+                                        <p class="text-center mt-2">
+                                            <a href="/topics/videos/<?= $category['id']; ?>" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 mt-2">
+                                        <?php if ($category['id'] == 1) { ?>
+                                            <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
+                                        <?php } else { ?>
+                                            <img src="/assets/images/lock.png" height="81px" width="100%">
+                                        <?php } ?>
+                                    </div>
                                 </div>
-                                <div class="col-4 mt-2">
-                                    <?php if ($category['id'] == 1) { ?>
-                                        <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
-                                    <?php } else { ?>
-                                        <img src="/assets/images/lock.png" height="81px" width="100%">
-                                    <?php } ?>
-                                </div>
-                            </div>
-                    </a></h4>
-                    </div>
+                            </h4>
+                        </div>
+                        </a>
                 </div>
             <?php     } ?>
 
