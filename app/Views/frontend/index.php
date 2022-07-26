@@ -200,6 +200,7 @@
                                     <div class="timeline left">
                                         <div class="card">
                                             <div class="card-body p-4">
+
                                                 <p class="mb-0">यु-ट्युब इस सोशल मिडीया पर अंग्रेजी भाषा में शिक्षा क्षेत्र से संबंधी 2,00,000/- (दो लाख) से अधिक व्हीडीयो उपलब्ध हैं ।</p>
                                             </div>
                                         </div>
@@ -286,6 +287,7 @@
                                 <h4 class="title-head"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
                                         Self-learning </span></h4>
                             </div>
+
                             <p class="servic" style="color:#000">is now available for everyone who has the same passion for learning, and YouTube has
                                 made it easy today, but YouTube is a bottomless ocean with all kinds of videos
                                 including educational content for the English language.</p>
@@ -455,29 +457,32 @@
             ?>
                 <div class="col-lg-4 col-md-3 col-12 ">
                     <div class="card  shadow p-4 mt-4">
-                    <a href="/topics/videos/<?= $category['id']; ?>">
-                        <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
-                        <h4 class="mt-3">
-                            <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
-                            <br>
-                            <div class="row">
-                                <div class="col-8">
-                                    <p class="text-center mt-3">
-                                        <a href="javascript: void(0);" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
-                                    </p>
-                                    <p class="text-center mt-2">
-                                        <a href="javascript: void(0);" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
-                                    </p>
+                        <a href="/topics/videos/<?= $category['id']; ?>">
+                            <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
+                            <h4 class="mt-3">
+                                <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
+                                <br>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="text-center mt-3">
+                                            <a href="javascript: void(0);" class="btn btn-style" style="background-color: #fff;color: #fd746c;width: 150px;"> Videos : <?= $category['videos']; ?></a>
+                                        </p>
+                                        <p class="text-center mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-style" style="width: 150px;"> Hours : <?= $category['hours']; ?></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 mt-2">
+                                        <?php if ($category['id'] == 1 && null== session()->get('expiry_date'))  { ?>
+                                            <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
+                                        <?php } ?>
+                                        <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                            <img  src="/assets/images/unlockg.png" height="81px" width="100%">
+                                        <?php } else { ?>
+                                            <img src="/assets/images/lock.png" height="81px" width="100%">
+                                        <?php } ?>
+                                    </div>
                                 </div>
-                                <div class="col-4 mt-2">
-                                    <?php if ($category['id'] == 1) { ?>
-                                        <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
-                                    <?php } else { ?>
-                                        <img src="/assets/images/lock.png" height="81px" width="100%">
-                                    <?php } ?>
-                                </div>
-                            </div>
-                    </a></h4>
+                        </a></h4>
                     </div>
                 </div>
             <?php     } ?>
@@ -751,7 +756,7 @@
 </section>
 <!-- //testimonial section -->
 
-
+<?php if (NULL == session()->get('id')) { ?>
 <!-- pricing block -->
 <section class="pricing-w3l py-lg-5 py-2" id="membership">
     <div class="container">
@@ -819,7 +824,7 @@
     </div>
 </section>
 <!-- //pricing block -->
-
+<?php } ?>
 <!-- testimonial section -->
 <section id="faq">
     <div class="container pt-md-5 pt-4">

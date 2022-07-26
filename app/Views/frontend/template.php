@@ -52,26 +52,28 @@
             display: block;
         }
     </style>
-     <script>
-const navLinks = document.querySelectorAll('.nav-item')
-const menuToggle = document.getElementById('navbarResponsive')
-const bsCollapse = new bootstrap.Collapse(menuToggle)
-navLinks.forEach((l) => {
-    l.addEventListener('click', () => { bsCollapse.toggle() })
-})
+    <script>
+        const navLinks = document.querySelectorAll('.nav-item')
+        const menuToggle = document.getElementById('navbarResponsive')
+        const bsCollapse = new bootstrap.Collapse(menuToggle)
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                bsCollapse.toggle()
+            })
+        })
     </script>
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">
                     <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
                 </a>
-                
+
             </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
@@ -80,48 +82,44 @@ navLinks.forEach((l) => {
                         <a class="btn btn-style" style="background: #242952;" href="topics_details.php?topic=1">Demo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#home" style="margin-top: 9px;">Home</a>
+                        <a class="nav-link" href="/index.php#home" style="margin-top: 9px;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services" style="margin-top: 9px;">Services</a>
-                    </li>
+                  
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php#services" style="margin-top: 9px;">Services</a>
+                        </li>
 
-                    <!-- <li class="nav-item">
-                        <div class="dropdown">
-                            <span><a class="nav-link" style="text-decoration: none;margin-top: 9px;">Index</a> </span>
-                            <div class="dropdown-content" style="width: 250px;color: #fd746c;">
-                                <p><a href="#index" style="text-decoration: none;padding: 13px;color: #fd746c;">Our Index</a> </p>
-                                <p><a href="#benefit" style="text-decoration: none;padding: 13px;color: #fd746c;">The benefit of our index </a> </p>
-                            </div>
-                        </div>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#index" style="margin-top: 9px;">Index</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#benefit" style="margin-top: 9px;">Benefits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#membership" style="margin-top: 9px;">Membership</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq" style="margin-top: 9px;">FAQ</a>
-                    </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php#index" style="margin-top: 9px;">Index</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php#benefit" style="margin-top: 9px;">Benefits</a>
+                        </li>
+                        <?php if (NULL == session()->get('id')) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php#membership" style="margin-top: 9px;">Membership</a>
+                        </li>
+                        <?php } ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php#faq" style="margin-top: 9px;">FAQ</a>
+                        </li>
+                 
                     <li class="nav-item">
                         <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
                     </li>
                     <?php if (!NULL == session()->get('id')) { ?>
-                            <li class="nav-item">
+                        <li class="nav-item">
+                            <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
-                            </li>
-                        <?php } else { ?>
-                            <li class="menu-item">
-                            <a href="login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
-                            </li>
-                        <?php } ?>
-                </ul>     
+                        </li>
+                    <?php } else { ?>
+                        <li class="menu-item">
+                            <a href="/login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
+                        </li>
+                    <?php } ?>
+                </ul>
             </div>
         </nav>
     </div>
@@ -357,16 +355,14 @@ navLinks.forEach((l) => {
 <script>
     $(function() {
         $('.navbar-toggler').click(function() {
-            $('body').toggleClass('noscroll');
-        }),
+                $('body').toggleClass('noscroll');
+            }),
 
-        $('.nav-item').click(function() {
-            $('#navbarResponsive').removeClass('show');
-        })
-       
+            $('.nav-item').click(function() {
+                $('#navbarResponsive').removeClass('show');
+            })
+
     });
-
-
 </script>
 <!-- //disable body scroll which navbar is in active -->
 

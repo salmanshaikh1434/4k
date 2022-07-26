@@ -175,28 +175,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <span id="errorMessage"></span>
-    <?php
 
-    if (isset($_SESSION["doneregister"])) {
-        //----------------------
+    <script>
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: ' Success Done ',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    </script>
 
-    ?>
-        <script>
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: ' Success Done ',
-                showConfirmButton: false,
-                timer: 2000
-            })
-        </script>
-    <?php
-        unset($_SESSION['doneregister']);
-
-        //------------------
-    } else {
-    }
-    ?>
     <!--content-->
 
     <!-- contact -->
@@ -216,7 +205,7 @@
                         <input type="text" class="form-control" name="email" placeholder="Your Email *" value="" maxlength="60" required="" />
                     </div>
                     <div class="form-group mb-3">
-                        <input type="password" id="pass" name="password" class="form-control" placeholder="Your Password *" value="" minlength="8" maxlength="150" required="" />
+                        <input type="password" id="pass" name="password" class="form-control" placeholder="Your Password *" value="" maxlength="150" required="" />
                     </div>
                     <script>
                         const pass = document.querySelector('#pass')

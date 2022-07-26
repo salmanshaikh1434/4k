@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\SiteInfo;
 use App\Models\Social;
 use App\Models\User;
 use App\Models\Membership;
+use App\Models\Subscription;
 use App\Controllers\BaseController;
+
 require APPPATH . 'views/razorpay/Razorpay.php';
 
 use Razorpay\Api\Api;
@@ -15,26 +18,29 @@ class Memberships extends BaseController
 {
     public function index()
     {
-        $site_info=new SiteInfo();
-        $social=new Social();
-        $membership=new Membership();
-        $page['memberships']=$membership->findAll();
-        $page['social']=$social->first();
-        $page['site_info']=$site_info->first();
-        $data['page'] = view('frontend/membership',$page);
+        $site_info = new SiteInfo();
+        $social = new Social();
+        $membership = new Membership();
+        $page['memberships'] = $membership->findAll();
+        $page['social'] = $social->first();
+        $page['site_info'] = $site_info->first();
+        $data['page'] = view('frontend/membership', $page);
         return view("frontend/template", $data);
     }
-    public function checkout($id=Null)
+
+    public function checkout($id = Null)
     {
-        
-        $membership=new Membership();
-        $membership=$membership->find($id);
+
+        $membership = new Membership();
+        $membership = $membership->find($id);
         $amount = $membership['priceing'];
-        $page['amount']=$membership['priceing'];
-        $page['customer_id']=session()->get('id');
-        $page['customer_name']=session()->get('firstname');
-        $page['name']=session()->get('firstname');
-        $page['email'] =session()->get('email');
+        $page['membership_id']  = $membership['id'];
+        $page['amount'] = $membership['priceing'];
+        $page['customer_id'] = session()->get('id');
+
+        $page['customer_name'] = session()->get('firstname');
+        $page['name'] = session()->get('firstname');
+        $page['email'] = session()->get('email');
         $page['contact'] = session()->get('contact');
         $key_id = 'rzp_test_t4AiT3u3UUTSi9';
         $secret = 'ElCTJ6v2l9cxv66SRzJn7Ekb';
@@ -49,13 +55,20 @@ class Memberships extends BaseController
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
     }
-    public function payment_status($id)
+    public function payment_status($id = null, $membership_id = null)
     {
-        print_r($_POST);
-        exit();
-        $post['payed'] = 1;
-        $post['date'] = date('d-m-Y');
-        $user = new User();
-        $page['videos'] = $user->update($id, $post);
+
+        $data['payment_id'] = $_POST['razorpay_payment_id'];
+        $data['subscription_date'] = date('Y-m-d');
+        $data['user_id'] = $id;
+        $data['plan_id'] = $membership_id;
+        $membership = new Membership();
+        $members = $membership->find($membership_id);
+        $days  = '+' . $members['year'] . ' days';
+        $data['price'] = $members['priceing'];
+        $data['expiry_date'] = date('Y-m-d', strtotime($days));
+      
+        $subscription = new Subscription();
+        $subscription->insert($data);
     }
 }

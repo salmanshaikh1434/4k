@@ -8,6 +8,7 @@ use App\Models\User;
 
 
 use App\Controllers\BaseController;
+use App\Models\Subscription;
 
 class Login extends BaseController
 {
@@ -19,11 +20,18 @@ class Login extends BaseController
         $page['social'] = $social->first();
         if ($this->request->getMethod() == 'post') {
             $user = new User();
+            $subscription = new Subscription();
             $post = $this->request->getPost();
             $user = $user->where('email', $post['email'])->first();
             if (!empty($user)) {
-                if ($user['pass'] == md5(md5($post['password']) . 'nicebank1000')) {
+                if ($user['pass'] == md5($post['password'])) {
                     // remove unnesessory array parameters
+                    $subscription->where('user_id', $user['id']);
+                    $subscription->select('expiry_date');
+                    $active = $subscription->first();
+                    if(isset($active)){
+                        $user['expiry_date'] = $active['expiry_date'];
+                    }
                     unset($user['password']);
                     session()->set('is_loggedin', true);
                     session()->set($user);
@@ -32,7 +40,7 @@ class Login extends BaseController
             }
         }
 
-        $data['page'] =view('frontend/sign_in', $page);
+        $data['page'] = view('frontend/sign_in', $page);
         return view("frontend/sign_in", $data);
     }
 }

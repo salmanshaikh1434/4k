@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\SiteInfo;
 use App\Models\Social;
-
 use App\Controllers\BaseController;
 use App\Models\User;
 

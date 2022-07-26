@@ -8,11 +8,11 @@
 
         <div class="row no-gutters pt-4">
         <?php foreach($memberships as $membership) { ?>
-            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
+            <div class="col-lg-4 col-md-10 col-md-offset-1 box-pricing <?= $membership['id'] == 2 ? null.'mt-2' : 'featured'  ?> bg-white shadow-lg rounded ">
                     <h3 class="text-price"><?= $membership['titel']?></h3>
-                    <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
+                    <h5 class="<?= $membership['id'] == 2 ? null : 'text-white'  ?>"><del>3500/- </del>Now (% 76 off)</h5>
                     <h4> ₹ <?= $membership['priceing']?>/- <span> </span></h4>
-                    <h5 class="text-white">Only ₹ 44/- per month</h5>
+                    <h5 class="<?= $membership['id'] == 2 ? null : 'text-white'  ?>">Only ₹ 44/- per month</h5>
                     <br>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> <?= $membership['year']?></li>

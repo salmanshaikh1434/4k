@@ -4,6 +4,7 @@
             <div class="row d-lg-none">
                 <div class="col-lg-5 col-md-12  col-sm-12 order-first">
                     <div class="col">
+
                         <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 0em;">
                             <thead>
                                 <tr style="text-align: center;">
@@ -31,10 +32,13 @@
                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                     <td>
-                        <?php if ($category['id'] == 1) { ?><button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-unlock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                            </button> <?php } else { ?>
-                            <button onClick='changeLockButtonStyle()' id="LockButton" class="fa fa-lock fa-2x" style="background-color: #22274e;color: white;border: 0px;">
-                            </button>
+                        <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
+                            <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">
+                        <?php } ?>
+                        <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                            <img src="/assets/images/unlockg.png" height="40px" width="40px">
+                        <?php } else { ?>
+                            <img src="/assets/images/lock.png" height="40px" width="40px">
                         <?php } ?>
                     </td>
                     </tr>
@@ -74,8 +78,11 @@
                                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                     <td>
-                                        <?php if ($category['id'] == 1) { ?>
+                                         <?php if ($category['id'] == 1 && null== session()->get('expiry_date'))  { ?>
                                             <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">
+                                        <?php } ?>
+                                        <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                            <img  src="/assets/images/unlockg.png" height="40px" width="40px">
                                         <?php } else { ?>
                                             <img src="/assets/images/lock.png" height="40px" width="40px">
                                         <?php } ?>
@@ -96,7 +103,9 @@
 
             <div class="col-lg-7 col-md-12  col-sm-12 content-form-right p-0 order-lg-last d-none d-lg-block">
                 <div class="title-heading-w3 text-center mx-auto mb-1">
-                    <h3 class="title-style" style="font-size: 25px;text-align: center;border: 1px solid #000;margin-left: 30px;"><?= $cat_name['id'] ?> - <?= $cat_name['cat_name'] ?></h3>
+                    <?php if (isset($cat_name)) { ?>
+                        <h3 class="title-style" style="font-size: 25px;text-align: center;border: 1px solid #000;margin-left: 30px;"><?= $cat_name['id'] ?> - <?= $cat_name['cat_name'] ?></h3>
+                    <?php } ?>
                 </div>
                 <br />
                 <div class="col-lg-12 form-w3ls" style="overflow-y:auto; height:calc(100vh - 40px);">
@@ -104,7 +113,12 @@
                         <?php foreach ($videos as $video) { ?>
                             <div class="col-md-12 col-lg-6 mb-4">
                                 <div class="m-1 shadow p-2">
-                                    <?php if ($video['categories'] == 1) { ?>
+                                    <?php if ($video['categories'] == 1 && null == session()->get('expiry_date')) { ?>
+                                        <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
+                                            <img src="<?= $video['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
+                                        </a>
+                                    <?php }
+                                    if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
                                         <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
                                             <img src="<?= $video['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                                         </a>
@@ -117,7 +131,7 @@
                                     <h4 style="text-align: center;"><a href="#" style="font-size: 16px;font-weight: bold;">
                                             <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
                                         </a></h4>
-                                    <?php if ($video['categories'] != 1) { ?>
+                                    <?php if ($video['categories'] != 1 && null == session()->get('expiry_date')) { ?>
                                         <a class="btn btn-style" data-toggle="modal" data-target="#exampleModal">Upgrade Your Account to Watch</a>
                                     <?php } ?>
                                 </div>
