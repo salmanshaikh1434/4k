@@ -9,9 +9,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="/assets/css/style-starter.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <meta name="keywords" content="<?= $site_info['keyword']; ?>">
     <meta name="description" content="<?= $site_info['description']; ?>">
@@ -51,6 +51,15 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        .videoWrapper {
+            height: 610px;
+            overflow: hidden;
+        }
+
+        iframe {
+            margin-top: -65px;
+        }
     </style>
     <script>
         const navLinks = document.querySelectorAll('.nav-item')
@@ -64,17 +73,17 @@
     </script>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-            </button>
-            <div class="navbar-header">
+           
+            
                 <a class="navbar-brand" href="/">
                     <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
                 </a>
-
-            </div>
+                <button class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-bars"></span>
+            </button>
+            
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
 

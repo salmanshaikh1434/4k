@@ -46,7 +46,7 @@
         <div class="row">
 
             <div class="col-xl-5 col-lg-4 col-md-12">
-                <div class="grids-1 shadow-lg bg-white rounded" style="">
+                <div class="grids-1 shadow-lg bg-white rounded" >
                     <div class="icon-style">
                         <h3 class="title-style mb-lg-4" style="font-size: 34px;text-align: center;">Services We're
                             offering</h3>
@@ -56,7 +56,7 @@
                 <img class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 3%;height:360px;">
                 <br />
                 <br />
-                <div class="grids-1 shadow-lg bg-white rounded" style="">
+                <div class="grids-1 shadow-lg bg-white rounded" >
                     <div class="icon-style">
                         <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">हमारी तरफ से दी जाने वाली सेवाएँ</h3>
                     </div>
@@ -71,9 +71,9 @@
                     <div class="modal-content" style="background-color:black">
                         <div class="modal-header" style="background-color: #fd746c;">
                             <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;color:#fff">हमारा मुल्यवान सुचकांक (INDEX) कैसे तैय्यार हुआ..........</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <i class="fa fa-times" style=" background-color: white;border-radius: 50%;border: 1px solid black;padding: 10px;"></i>
-                            </button>
+                            <button type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                         </div>
                         <style>
                             /* The actual timeline (the vertical ruler) */
@@ -282,9 +282,9 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-sm-12 col-md-12">
-                        <div class="grids-1 shadow-lg bg-white rounded" style="">
+                        <div class="grids-1 shadow-lg bg-white rounded">
                             <div class="icon-style">
-                                <h4 class="title-head"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-graduation-cap" style="color:  #fd746c;"></i>
                                         Self-learning </span></h4>
                             </div>
 
@@ -296,7 +296,7 @@
                     <div class="col-lg-12 col-sm-12  col-md-12 mt-2">
                         <div class="grids-1 shadow-lg rounded" style="background-color: #fd746c;">
                             <div class="icon-style">
-                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube" style="color: #fff;"></i>
+                                <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-youtube-play" style="color: #fff;"></i>
                                         YouTube
                                     </span></h4>
                             </div>
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12 col-md-12 mt-2">
-                        <div class="grids-1 shadow-lg bg-white rounded" style="">
+                        <div class="grids-1 shadow-lg bg-white rounded">
                             <div class="icon-style">
                                 <h4 class="title-head mb-2"><span style="font-weight: bold;font-size: 25px;"> <i class="fa fa-line-chart" style="color: #fd746c;"></i> Our goal
                                     </span></h4>

@@ -78,11 +78,11 @@
                                     <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
 
                                     <td>
-                                         <?php if ($category['id'] == 1 && null== session()->get('expiry_date'))  { ?>
+                                        <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
                                             <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">
                                         <?php } ?>
                                         <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
-                                            <img  src="/assets/images/unlockg.png" height="40px" width="40px">
+                                            <img src="/assets/images/unlockg.png" height="40px" width="40px">
                                         <?php } else { ?>
                                             <img src="/assets/images/lock.png" height="40px" width="40px">
                                         <?php } ?>
