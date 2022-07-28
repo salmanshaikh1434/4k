@@ -11,15 +11,14 @@
 
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="/assets/css/style-starter.css">
+    <link rel="stylesheet/scss" href="/assets/css/scrolling.scss">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
     <meta name="keywords" content="<?= $site_info['keyword']; ?>">
     <meta name="description" content="<?= $site_info['description']; ?>">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -29,6 +28,7 @@
             font-size: 16px;
         }
     </style>
+
 </head>
 
 <header id="site-header" class="fixed-top">
@@ -73,17 +73,17 @@
     </script>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-           
-            
-                <a class="navbar-brand" href="/">
-                    <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
+
+
+            <a class="navbar-brand" href="/">
+                <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
-                </a>
-                <button class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            </a>
+            <button class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                 <span class="navbar-toggler-icon fa icon-close fa-bars"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
 
@@ -93,26 +93,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/index.php#home" style="margin-top: 9px;">Home</a>
                     </li>
-                  
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.php#services" style="margin-top: 9px;">Services</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.php#index" style="margin-top: 9px;">Index</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.php#benefit" style="margin-top: 9px;">Benefits</a>
-                        </li>
-                        <?php if (NULL == session()->get('id')) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.php#services" style="margin-top: 9px;">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.php#index" style="margin-top: 9px;">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.php#benefit" style="margin-top: 9px;">Benefits</a>
+                    </li>
+                    <?php if (NULL == session()->get('id')) { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/index.php#membership" style="margin-top: 9px;">Membership</a>
                         </li>
-                        <?php } ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.php#faq" style="margin-top: 9px;">FAQ</a>
-                        </li>
-                 
+                    <?php } ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.php#faq" style="margin-top: 9px;">FAQ</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
                     </li>
@@ -473,6 +473,11 @@
         })
 
     })
+
+
+   
+
 </script>
+
 
 </html>

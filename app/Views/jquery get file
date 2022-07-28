@@ -1,5 +1,0 @@
-/* Get all transaction list from transaction controller*/
-$.get(url + 'account/getTransactions?page=' + page, function(data) {
-    $('.transactionList').html(data);
-    $(".tableLoading").fadeOut();
-});

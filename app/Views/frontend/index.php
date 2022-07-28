@@ -5,7 +5,18 @@
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
                     <p class="mb-1" style="font-size: 30px;font-weight: bold;">English Self Learning </p>
                     <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
-                        <span class="txt-rotate" data-period="2000" data-rotate='["35 TOPICS", "4,700 STUDY HOURS", "16,667  VIDEOS", "75 TUTORS", "10,000 WORDS", "15,000 PHRASES", "American & British ACCENT"]'></span>
+                        <div class="scroller">
+                            <span>
+                                35 TOPICS<br />
+                                4,700 STUDY HOURS<br />
+                                16,667 VIDEOS<br />
+                                75 TUTORS<br />
+                                10,000 WORDS</br>
+                                15,000 PHRASES</br>
+                                American & British ACCENT</br>
+                            </span>
+                        </div>
+                        <!-- <span class="txt-rotate" data-period="2000" data-rotate='["35 TOPICS", "4,700 STUDY HOURS", "16,667  VIDEOS", "75 TUTORS", "10,000 WORDS", "15,000 PHRASES", "American & British ACCENT"]'></span> -->
                     </h3>
                 </div>
             </div>
@@ -37,14 +48,10 @@
     </div>
 </div>
 <!-- hero slider end -->
-
-
-
 <!-- 4grids with content block -->
 <section class="home-about-w3l pt-lg-5 pb-5" id="services">
     <div class="container py-md-5 py-4">
         <div class="row">
-
             <div class="col-xl-5 col-lg-4 col-md-12">
                 <div class="grids-1 shadow-lg bg-white rounded">
                     <div class="icon-style">
@@ -56,7 +63,7 @@
                 <img class="img-fluid" src="/assets/images/service.jpeg" style="box-shadow: 10px 10px #fd746c;border-radius: 3%;height:360px;">
                 <br />
                 <br />
-                <div class="grids-1 shadow-lg bg-white rounded">
+                <div class="grids-1 shadow-lg bg-white rounded d-none d-lg-block">
                     <div class="icon-style">
                         <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">हमारी तरफ से दी जाने वाली सेवाएँ</h3>
                     </div>
@@ -75,125 +82,6 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <style>
-                            /* The actual timeline (the vertical ruler) */
-                            .main-timeline {
-                                position: relative;
-                            }
-
-                            /* The actual timeline (the vertical ruler) */
-                            .main-timeline::after {
-                                content: '';
-                                position: absolute;
-                                width: 6px;
-                                background-color: white;
-                                top: 0;
-                                bottom: 0;
-                                left: 50%;
-                                margin-left: -3px;
-                            }
-
-                            /* Container around content */
-                            .timeline {
-                                position: relative;
-                                background-color: inherit;
-                                width: 50%;
-                            }
-
-                            /* The circles on the timeline */
-                            .timeline::after {
-                                content: '';
-                                position: absolute;
-                                width: 25px;
-                                height: 25px;
-                                right: -13px;
-                                background-color: #fd746c;
-                                border: 5px solid white;
-                                top: 15px;
-                                border-radius: 50%;
-                                z-index: 1;
-                            }
-
-                            /* Place the container to the left */
-                            .left {
-                                padding: 0px 40px 20px 0px;
-                                left: 0;
-                            }
-
-                            /* Place the container to the right */
-                            .right {
-                                padding: 0px 0px 20px 40px;
-                                left: 50%;
-                            }
-
-                            /* Add arrows to the left container (pointing right) */
-                            .left::before {
-                                content: " ";
-                                position: absolute;
-                                top: 18px;
-                                z-index: 1;
-                                right: 30px;
-                                border: medium solid white;
-                                border-width: 10px 0 10px 10px;
-                                border-color: transparent transparent transparent white;
-                            }
-
-                            /* Add arrows to the right container (pointing left) */
-                            .right::before {
-                                content: " ";
-                                position: absolute;
-                                top: 18px;
-                                z-index: 1;
-                                left: 30px;
-                                border: medium solid white;
-                                border-width: 10px 10px 10px 0;
-                                border-color: transparent white transparent transparent;
-                            }
-
-                            /* Fix the circle for containers on the right side */
-                            .right::after {
-                                left: -12px;
-                            }
-
-                            /* Media queries - Responsive timeline on screens less than 600px wide */
-                            @media screen and (max-width: 600px) {
-
-                                /* Place the timelime to the left */
-                                .main-timeline::after {
-                                    left: 31px;
-                                }
-
-                                /* Full-width containers */
-                                .timeline {
-                                    width: 100%;
-                                    padding-left: 70px;
-                                    padding-right: 25px;
-                                }
-
-                                /* Make sure that all arrows are pointing leftwards */
-                                .timeline::before {
-                                    left: 60px;
-                                    border: medium solid white;
-                                    border-width: 10px 10px 10px 0;
-                                    border-color: transparent white transparent transparent;
-                                }
-
-                                /* Make sure all circles are at the same spot */
-                                .left::after,
-                                .right::after {
-                                    left: 18px;
-                                }
-
-                                .left::before {
-                                    right: auto;
-                                }
-
-                                /* Make all right containers behave like the left ones */
-                                .right {
-                                    left: 0%;
-                                }
-                            }
-                        </style>
                         <section style="background-color: #fd746c;">
                             <div class="container py-5">
                                 <div class="main-timeline">
@@ -272,7 +160,6 @@
                                 </div>
                             </div>
                         </section>
-
                     </div>
                 </div>
             </div>
@@ -326,6 +213,16 @@
                             <p class="servic" style="color:#fff">is an index (it is a very easy roadmap) which will make the search process easier for
                                 you to reach only the best English courses available on YouTube just by making a few
                                 clicks on our index.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-md-12 mt-2">
+                        <div class="grids-1 shadow-lg bg-white rounded d-lg-none">
+                            <div class="icon-style">
+                                <h3 class="title-style mb-lg-4 mb-3" style="font-size: 34px;text-align: center;">हमारी तरफ से दी जाने वाली सेवाएँ</h3>
+                            </div>
+                            <p class="text-center">
+                                <a class="btn btn-style" style="background-color: #fff;color: #fd746c;" data-toggle="modal" data-target=".bd-example-modal-lg">अधिक पढ़ें</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -398,61 +295,6 @@
             <h3 class="title-style">35 Topics</h3>
         </div>
         <div class="row">
-            <style>
-                #hove {
-                    height: 200px;
-                }
-
-                .shadow {
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                }
-
-                .mydiv {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .circle {
-                    height: 25px;
-                    width: 25px;
-                    background-color: #fd746c;
-                    border-radius: 50%;
-                    display: inline-block;
-                    text-align: center;
-
-                }
-
-                .numberCircle {
-                    display: inline-block;
-                    border-radius: 50%;
-                    border: 2px solid;
-                    font-size: 32px;
-                    padding: 8px;
-                    color: white;
-                    font-size: 22px;
-                    background-color: #fd746c;
-                    padding: 8px;
-                }
-
-                .numberCircle:before,
-                .numberCircle:after {
-                    content: '\200B';
-                    display: inline-block;
-                    line-height: 0px;
-                    padding-top: 50%;
-                    padding-bottom: 50%;
-                }
-
-                .numberCircle:before {
-                    padding-left: 8px;
-                }
-
-                .numberCircle:after {
-                    padding-right: 8px;
-                }
-            </style>
-
             <?php
             foreach ($categories as $category) {
                 if ($category['id'] == 1) {
@@ -618,26 +460,6 @@
     </div>
 </section>
 <!-- image with text section -->
-
-<style>
-    #test {
-        width: 165px;
-        color: #fff;
-        background-color: #fd746c;
-        padding: 22px;
-        border-radius: 50%;
-        border: 2px solid #fd746c
-    }
-
-    #test:hover {
-        width: 165px;
-        color: #fd746c;
-        background-color: #fff;
-        padding: 35px;
-        border-radius: 50%;
-        border: 2px solid #fd746c
-    }
-</style>
 <!-- testimonial section -->
 <section class="testimonial-area pt-5" id="testimonials">
     <div class="container pt-md-5 pt-4">
@@ -831,120 +653,20 @@
     </section>
     <!-- //pricing block -->
 <?php } ?>
+<script>
+    $('.collapse').on('shown.bs.collapse', function(e) {
+        var $card = $(this).closest('.card');
+        $('html,body').animate({
+            scrollTop: $card.offset().top
+        }, 500);
+    });
+</script>
 <!-- testimonial section -->
 <section id="faq">
     <div class="container pt-md-5 pt-4">
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
             <h3 class="title-style">FAQ</h3>
         </div>
-        <style>
-            /*.accordion .accordion-item {
-  border-bottom: 1px solid #fd746c;
-}
-.accordion .accordion-item button[aria-expanded=true] {
-  border-bottom: 1px solid #fd746c;
-}*/
-            .accordion button {
-                position: relative;
-                display: block;
-                text-align: left;
-                width: 100%;
-                padding: 1em 0;
-                color: #FFF;
-                font-size: 1.5rem;
-                font-weight: 400;
-                border: none;
-                background: #242952;
-                outline: none;
-                padding: 20px;
-                border-radius: 10px;
-            }
-
-            .accordion button:hover,
-            .accordion button:focus {
-                cursor: pointer;
-                color: #fd746c;
-            }
-
-            .accordion button:hover::after,
-            .accordion button:focus::after {
-                cursor: pointer;
-                color: #fd746c;
-                border: 1px solid #fd746c;
-            }
-
-            .accordion button .accordion-title {
-                padding: 1em 1.5em 1em 0;
-            }
-
-            .accordion button .icon {
-                display: inline-block;
-                position: absolute;
-                top: 18px;
-                right: 0;
-                width: 22px;
-                height: 22px;
-                /* border: 1px solid;*/
-                border-radius: 22px;
-            }
-
-            /*.accordion button .icon::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
-}
-.accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}*/
-            .accordion button[aria-expanded=true] {
-                background: #fd746c;
-                color: #fff;
-            }
-
-            .accordion button[aria-expanded=true] .icon::after {
-                width: 0;
-            }
-
-            .accordion button[aria-expanded=true]+.accordion-content {
-                opacity: 1;
-                max-height: 60em;
-                transition: all 200ms linear;
-                will-change: opacity, max-height;
-            }
-
-            .accordion .accordion-content {
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: opacity 200ms linear, max-height 200ms linear;
-                will-change: opacity, max-height;
-            }
-
-            .accordion .accordion-content p {
-                font-size: 16px;
-
-                padding: 20px;
-            }
-
-            li {
-                padding: 5px;
-            }
-        </style>
-
-        <br><br>
-
         <div class="accordion">
             <div class="accordion-item" style="margin-bottom: 20px;">
                 <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
