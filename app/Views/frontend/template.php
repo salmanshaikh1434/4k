@@ -258,6 +258,73 @@
 <!-- testimonial script -->
 <script>
     $(document).ready(function() {
+        
+        $('#accordion-button-1').click(function() {
+            function myFunction(x) {
+            if (x.matches) { // If media query matches
+                window.scrollTo(0, 25170)
+            } 
+            else{
+                window.scrollTo(0, 11100)
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+           
+        });
+        $('#accordion-button-2').click(function() {
+            function myFunction(x) {
+            if (x.matches) { // If media query matches
+                window.scrollTo(0, 25300)
+            } 
+            else{
+                window.scrollTo(0, 11200)
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+        });
+        $('#accordion-button-3').click(function() {
+            function myFunction(x) {
+            if (x.matches) { // If media query matches
+                window.scrollTo(0, 25490)
+            } 
+            else{
+                window.scrollTo(0, 11300)
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+        });
+        $('#accordion-button-4').click(function() {
+            function myFunction(x) {
+            if (x.matches) { // If media query matches
+                window.scrollTo(0, 25650)
+            } 
+            else{
+                window.scrollTo(0, 11400)
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+        });
+        $('#accordion-button-5').click(function() {
+            function myFunction(x) {
+            if (x.matches) { // If media query matches
+                window.scrollTo(0, 25720)
+            } 
+            else{
+                window.scrollTo(0, 11500)
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+        });
 
         $('.client-single').on('click', function(event) {
             event.preventDefault();
@@ -473,10 +540,6 @@
         })
 
     })
-
-
-   
-
 </script>
 
 

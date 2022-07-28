@@ -2012,9 +2012,9 @@ progress {
 }
 
 .popups {
-    max-width: 49vw;
+    max-width: 90vw;
     max-height: 90vh;
-    padding: 20px;
+    padding: 0px;
     border-radius: 8px;
     position: fixed;
     box-shadow: 0 0 20px #000;
@@ -2092,7 +2092,7 @@ iframe {
     .popups {
         max-width: 90vw;
         max-height: 90vh;
-        padding: 20px;
+        padding: 0px;
         border-radius: 8px;
         position: fixed;
         box-shadow: 0 0 20px #000;

@@ -72,7 +72,7 @@ class Topics extends BaseController
             echo '  <div class="col-md-12 col-lg-6 mb-2">
                     <div class="m-1 shadow p-2">';
             if ($video['categories'] == 1 || !null == session()->get('expiry_date')) {
-                echo '  <a class="btn" data-toggle="modal" data-target="#myLargeModalLabel" data-idvideo=" ' . $video['video_code'] . '">
+                echo '  <a data-toggle="modal" data-id="'.$video['video_code'].'" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel">
 
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image">
                             </a>
@@ -103,13 +103,13 @@ class Topics extends BaseController
         $social = new Social();
         $site_info = new SiteInfo();
         $category = new Category();
-        $videos = new Video();
+        $videos = new Video(); 
+        $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
-        $page['pager'] = $category->pager;
         $page['videos'] = $videos->where('categories', $id)->findAll();
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         $data['page'] = view('frontend/topics_mobile', $page);
-        return view("frontend/topics", $data);
+        return view("frontend/template", $data);
     }
 }

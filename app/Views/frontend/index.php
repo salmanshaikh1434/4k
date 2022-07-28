@@ -660,6 +660,7 @@
             scrollTop: $card.offset().top
         }, 500);
     });
+   
 </script>
 <!-- testimonial section -->
 <section id="faq">

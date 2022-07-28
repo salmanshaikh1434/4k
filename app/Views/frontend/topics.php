@@ -20,6 +20,64 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/counter.js"></script>
+    <script src="/assets/js/theme-change.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get('/topics/myvideos/' + 1, function(data) {
+                $('.mycontent').html(data);
+            });
+            $('.btn23').click(function() {
+                var id = $(this).attr('category_id');
+                $.get('/topics/myvideos/' + id, function(data) {
+                    $('.mycontent').html(data);
+                });
+
+            });
+
+            $(document).on("click", ".open-AddBookDialog", function() {
+                var myvideoid = $(this).data('id');
+                $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+            });
+
+            $(document).on("click", ".close", function() {
+                $(".iframeVideo").each(function() {
+                    var src = $(this).attr('src');
+                    $(this).attr('src', src);
+                });
+            });
+        });
+
+        const navLinks = document.querySelectorAll('.nav-item')
+        const menuToggle = document.getElementById('navbarResponsive')
+        const bsCollapse = new bootstrap.Collapse(menuToggle)
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                bsCollapse.toggle()
+            })
+        });
+    </script>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <header id="site-header" class="fixed-top">
     <div class="container-fluid">
@@ -84,58 +142,49 @@
         </nav>
     </div>
 </header>
+
 <body>
     <section class="contact py-5" id="not_select">
         <div class="container-fluid pt-md-5 pt-4 mt-2" style="padding: 31px;">
             <div class="main-grid-contact">
                 <!-- For Mobile Only -->
                 <div class="row d-lg-none">
-                    <div class=" col-12 order-first">
-                        <div class="col">
-                            <table class="table table-striped table-advance table-hover " style=" border-collapse:separate;border-spacing: 0 0em;">
-                                <thead>
-                                    <tr style="text-align: center;">
-                                        <th id="table_sup_head" style="background-color: #fd746c ;color: white;text-align:center"> </th>
-                                        <th colspan="5" id="table_sup_head" style="background-color: #242952;color: #fff;"><span style="font-size:22px"> Our Index (Our Road-map)</span><br />(35 Topics,16,667 Videos & 4,724 Hours)</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                        <div class="col" style="overflow-y:auto; height:calc(100vh - 40px);">
-                            <table class=" " style=" border-collapse:separate;border-spacing: 0 1em;">
-                                <?php
-                                foreach ($categories as $category) { ?>
-                                    <thead>
-                                        <tr class="spacer" style="background-color: #242952;color: #fff;border-bottom: 1px solid #fd746c; ">
-                                            <td style="background-color:#fd746c ;border:none;font-size: 20px;;text-align:center;vertical-align:middle"><span class=""><?= $category['id'] ?></span></td>
-                                            <td><a href="/topics/mobile_videos/<?= $category['id'] ?>" style="color: #fff;text-decoration: none;">
-
-                                                    <?= $category['cat_name'] ?>
-                                                    <br><span style="color: red;font-weight: bold;">
-                                                    </span></a></td>
-                                            <td style="text-align: center;white-space: nowrap;"><i class="fas fa-video-camera"></i><br><?= $category['videos'] ?> videos
-
-                                            </td>
-                                            <td style="text-align: center;white-space: nowrap;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</td>
-
-                                            <td>
-                                                <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
-                                                    <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">
-                                                <?php }
-                                                if (null == session()->get('expiry_date')) { ?>
-                                                    <img src="/assets/images/lock.png" height="40px" width="40px">
-                                                <?php }
-
-                                                if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
-                                                    <img src="/assets/images/unlockg.png" height="40px" width="40px">
-                                                <?php } ?>
-                                            </td>
-                                        </tr>
-                                    <?php
-                                } ?>
-                                    </thead>
-                            </table>
-                        </div>
+                    <div class=" col-12 order-first" style="background-color: #f5f3f3;">
+                        <li class="">
+                            <div class="">
+                                <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
+                                        <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-search" aria-hidden="true"></i></p>
+                                    </span><span style="margin-bottom: 11px;text-align:center;font-weight:bold">
+                                        <span style="font-size: 10px;"> Our Index (Our Road-map)<br />(35 Topics,16,667 Videos & 4,724 Hours)</span>
+                                    </span>
+                                    <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-33px;height: 66px;"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <div style="border:0.5px solid #f1f1f1;margin-top: -84px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;    background: white;"></div>
+                        <?php
+                        foreach ($categories as $category) { ?>
+                            <li class="m-3">
+                                <div class="">
+                                    <div style="display:flex;justify-content: space-between;align-items:center; color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative; margin-left:-16px">
+                                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
+                                        </span><span style="margin-bottom: 11px;width: 56%;margin-left: -12px;">
+                                            <p><a href="/topics/mobile_videos/<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-size:4vw;"><?= $category['cat_name'] ?></a></p>
+                                            <span style="color:#242952;font-size:3vw;"><?= $category['videos'] ?>Videos </span><span style="color:#242952;font-size:3vw;">|<?= $category['hours'] ?> Hours</span>
+                                        </span><span style=" top:25%;height: 38px;margin-bottom: 10px;border-right: 1px solid grey;"></span>
+                                        <span style="margin-bottom: 11px;"> <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
+                                                <img class="blink-image" src="/assets/images/unlockg.png" height="30px" width="30px">
+                                            <?php } elseif (null == session()->get('expiry_date')) { ?>
+                                                <img src="/assets/images/lock.png" height="30px" width="30px">
+                                            <?php }
+                                                                            if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                                <img src="/assets/images/unlockg.png" height="30px" width="30px">
+                                            <?php } ?></span><span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-50px;height: 66px;"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="" style="border:0.5px solid #cbc4c4;margin-top: -99px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;background: white;"></div>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- map -->
@@ -194,8 +243,8 @@
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:90%">
             <div style=" pointer-events: none !important;"></div>
-            <div class="modal-content" style="background-color:black;height:100%;">
-                <iframe width="960" height="315" src="https://www.youtube.com/embed/CCrqvfIzOJk" title="YouTube video player" id="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;">
+
             </div>
         </div>
     </div>
@@ -233,18 +282,10 @@
             bsCollapse.toggle()
         })
     });
+</script>
 
-
-    $(document).ready(function() {
-        $('.btn23').click(function() {
-            var id = $(this).attr('category_id');
-            $.get('/topics/myvideos/' + id, function(data) {
-                $('.mycontent').html(data);
-            });
-
-        });
-    });
-
+<!-- MENU-JS -->
+<script>
     var buttons = document.querySelectorAll(".btn1");
     var popups = document.querySelector(".popups");
 
@@ -254,7 +295,7 @@
             var closeBtn = document.createElement("div");
             videoBox.classList.add("video");
             closeBtn.classList.add("close");
-            videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/' + idVideo + '?controls=0&showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
             popups.appendChild(videoBox);
             popups.appendChild(closeBtn);
             closeBtn.addEventListener("click", closePopups);
@@ -272,4 +313,84 @@
             getPopup(idVideo);
         });
     }
+
+    $(function() {
+        $('.navbar-toggler').click(function() {
+                $('body').toggleClass('noscroll');
+            }),
+
+            $('.nav-item').click(function() {
+                $('#navbarResponsive').removeClass('show');
+            })
+
+    });
+
+    const navLinks = document.querySelectorAll('.nav-item')
+    const menuToggle = document.getElementById('navbarResponsive')
+    const bsCollapse = new bootstrap.Collapse(menuToggle)
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => {
+            bsCollapse.toggle()
+        })
+    });
+
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+
+    $(function() {
+        $('.navbar-toggler').click(function() {
+                $('body').toggleClass('noscroll');
+            }),
+
+            $('.nav-item').click(function() {
+                $('#navbarResponsive').removeClass('show');
+            })
+
+    });
 </script>
