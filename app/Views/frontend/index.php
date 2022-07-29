@@ -842,7 +842,7 @@
         background-image: url("/assets/images/demo.png");
     }
 </style>
-<a href="/topics/videos/1" class="float d-lg-none">
+<!-- <a href="/topics/videos/1" class="float d-lg-none">
     <img class="img-fluid" src="/assets/images/demo.png" class="my-float">
-</a>
+</a> -->
 <!-- //contact -->

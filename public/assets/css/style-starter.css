@@ -17672,6 +17672,18 @@ header.nav-fixed {
     transition: all 1.8s ease-in-out;
 }
 
+.btn-m-style {
+    padding: 3px 2px;
+    font-size: 16px;
+    color: #fff;
+    /* border-radius: var(--border-radius-full); */
+    font-weight: bold;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    background: var(--primary-color);
+    transition: all 1.8s ease-in-out;
+}
+
 .btn-style:hover {
     color: var(--primary-color);
     border-color: var(--primary-color);

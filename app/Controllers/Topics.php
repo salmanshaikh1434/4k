@@ -104,6 +104,7 @@ class Topics extends BaseController
         $site_info = new SiteInfo();
         $category = new Category();
         $videos = new Video(); 
+        $page['footer']=false;
         $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
         $page['videos'] = $videos->where('categories', $id)->findAll();

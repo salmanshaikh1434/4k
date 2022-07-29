@@ -79,6 +79,7 @@
                 <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
             </a>
+            <a class="btn btn-m-style  d-lg-none" style="background-color: #fff;color: #fd746c;" href="topics_details.php?topic=1">Demo</a>
             <button class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                 <span class="navbar-toggler-icon fa icon-close fa-bars"></span>
@@ -138,91 +139,91 @@
 <body>
     <?= $page ?>
 </body>
-
-<!-- footer -->
-<footer class="w3l-footer">
-    <div class="shape-footer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
-            <path fill-opacity="1">
-                <animate attributeName="d" dur="20000ms" repeatCount="indefinite" values="M0,160L48,181.3C96,203,192,245,288,261.3C384,277,480,267,576,234.7C672,203,768,149,864,117.3C960,85,1056,75,1152,90.7C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z; M0,160L48,181.3C96,203,192,245,288,234.7C384,224,480,160,576,133.3C672,107,768,117,864,138.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;												 M0,64L48,74.7C96,85,192,107,288,133.3C384,160,480,192,576,170.7C672,149,768,75,864,80C960,85,1056,171,1152,181.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+<?php if ($footer) { ?>
+    <!-- footer -->
+    <footer class="w3l-footer">
+        <div class="shape-footer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+                <path fill-opacity="1">
+                    <animate attributeName="d" dur="20000ms" repeatCount="indefinite" values="M0,160L48,181.3C96,203,192,245,288,261.3C384,277,480,267,576,234.7C672,203,768,149,864,117.3C960,85,1056,75,1152,90.7C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z; M0,160L48,181.3C96,203,192,245,288,234.7C384,224,480,160,576,133.3C672,107,768,117,864,138.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;												 M0,64L48,74.7C96,85,192,107,288,133.3C384,160,480,192,576,170.7C672,149,768,75,864,80C960,85,1056,171,1152,181.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                                              M0,160L48,181.3C96,203,192,245,288,261.3C384,277,480,267,576,234.7C672,203,768,149,864,117.3C960,85,1056,75,1152,90.7C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;" />
 
-            </path>
-        </svg>
-    </div>
-    <div class="w3l-footer-16 py-5">
-        <div class="container">
-            <div class="row footer-p">
-                <div class="col-lg-4 pe-lg-5">
-                    <h3>Address:</h3>
-                    <p class="mt-3">18-12-222 lane no 4 Qaisar colony, behind junior Zakir Hussain school, Aurangabad (MS) 410013, India.</p>
-                    <p class="mt-3">Mobile : +91 8767578712 Opens in your application.</p>
-                    <p class="mt-3">Email : info@english4000hours.com</p>
-                    <div class="columns-2 mt-4 pt-1">
+                </path>
+            </svg>
+        </div>
+        <div class="w3l-footer-16 py-5">
+            <div class="container">
+                <div class="row footer-p">
+                    <div class="col-lg-4 pe-lg-5">
+                        <h3>Address:</h3>
+                        <p class="mt-3">18-12-222 lane no 4 Qaisar colony, behind junior Zakir Hussain school, Aurangabad (MS) 410013, India.</p>
+                        <p class="mt-3">Mobile : +91 8767578712 Opens in your application.</p>
+                        <p class="mt-3">Email : info@english4000hours.com</p>
+                        <div class="columns-2 mt-4 pt-1">
 
-                        <ul class="social">
-                            <li><a href="<?= $social['facebook']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li><a href="<?= $social['twitter']; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li><a href="<?= $social['youtube']; ?>" target="_blank"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li><a href="<?= $social['google']; ?>" target="_blank"><i class="fab fa-instagram "></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-lg-0 mt-5">
-                    <div class="row">
-                        <div class="col-xl-5 col-6 column">
-                            <h3>Quick Link</h3>
-                            <ul class="footer-gd-16">
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="#index">Our Index </a></li>
-                                <li><a href="#membership">Membership</a></li>
-                                <li><a href="#contact">Contact us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xl-5 col-6 column">
-                            <h3>Quick Link</h3>
-                            <ul class="footer-gd-16">
-                                <li><a href="privacy_policy">Privacy Policy</a></li>
-                                <li><a href="terms_condition">Terms and Conditions </a></li>
-                                <li><a href="refund">Refunds and Returns</a></li>
-                                <li><a href="notes">Notes for the members</a></li>
+                            <ul class="social">
+                                <li><a href="<?= $social['facebook']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="<?= $social['twitter']; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li><a href="<?= $social['youtube']; ?>" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li><a href="<?= $social['google']; ?>" target="_blank"><i class="fab fa-instagram "></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-7 col-sm-8 column mt-lg-0 mt-4 pl-xl-0">
-                    <h3>Newsletter </h3>
-                    <div class="end-column">
+                    <div class="col-lg-5 mt-lg-0 mt-5">
+                        <div class="row">
+                            <div class="col-xl-5 col-6 column">
+                                <h3>Quick Link</h3>
+                                <ul class="footer-gd-16">
+                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="#index">Our Index </a></li>
+                                    <li><a href="#membership">Membership</a></li>
+                                    <li><a href="#contact">Contact us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-5 col-6 column">
+                                <h3>Quick Link</h3>
+                                <ul class="footer-gd-16">
+                                    <li><a href="/home/privacy_policy">Privacy Policy</a></li>
+                                    <li><a href="/home/terms_condition">Terms and Conditions </a></li>
+                                    <li><a href="/home/refund">Refunds and Returns</a></li>
+                                    <li><a href="/home/notes">Notes for the members</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-7 col-sm-8 column mt-lg-0 mt-4 pl-xl-0">
+                        <h3>Newsletter </h3>
+                        <div class="end-column">
 
-                        <form action="" class="subscribe" method="post">
-                            <input type="email" name="subscribe" placeholder="Email Address" maxlength="100" required="">
-                            <button name="subscribesim"><span class="fa fa-paper-plane" aria-hidden="true"></span></button>
-                        </form>
-                        <p class="mt-4">Subscribe to our mailing list and get updates to your email inbox.</p>
+                            <form action="" class="subscribe" method="post">
+                                <input type="email" name="subscribe" placeholder="Email Address" maxlength="100" required="">
+                                <button name="subscribesim"><span class="fa fa-paper-plane" aria-hidden="true"></span></button>
+                            </form>
+                            <p class="mt-4">Subscribe to our mailing list and get updates to your email inbox.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="below-section text-center pt-lg-4 mt-5">
+                <!-- <div class="below-section text-center pt-lg-4 mt-5">
                 <p style="color: #fff;"> All rights reserved to <a href="index.php" style="color: #fd746c;"></a>
 
                     <br>programmed by <br><a href="https://eg-script.website/" target="_blank" style="font-weight: bold;font-size: 11px;color: #fd746c;"> EG-script.website</a>
                 </p>
 
             </div> -->
+            </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
+<?php } ?>
 
 
 
 <!-- Js scripts -->
 <!-- move top -->
-<button onclick="topFunction()" id="movetop" title="Go to top">
+<button onclick="topFunction()" id="movetop" title="Go to top" class="mb-4 mr-3">
     <span class="fas fa-level-up-alt" aria-hidden="true"></span>
 </button>
 <script>
@@ -258,72 +259,67 @@
 <!-- testimonial script -->
 <script>
     $(document).ready(function() {
-        
+
         $('#accordion-button-1').click(function() {
             function myFunction(x) {
-            if (x.matches) { // If media query matches
-                window.scrollTo(0, 25170)
-            } 
-            else{
-                window.scrollTo(0, 11100)
+                if (x.matches) { // If media query matches
+                    window.scrollTo(0, 25170)
+                } else {
+                    window.scrollTo(0, 11100)
+                }
             }
-        }
-        var x = window.matchMedia("(max-width: 700px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
-           
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
+
         });
         $('#accordion-button-2').click(function() {
             function myFunction(x) {
-            if (x.matches) { // If media query matches
-                window.scrollTo(0, 25300)
-            } 
-            else{
-                window.scrollTo(0, 11200)
+                if (x.matches) { // If media query matches
+                    window.scrollTo(0, 25300)
+                } else {
+                    window.scrollTo(0, 11200)
+                }
             }
-        }
-        var x = window.matchMedia("(max-width: 700px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
         });
         $('#accordion-button-3').click(function() {
             function myFunction(x) {
-            if (x.matches) { // If media query matches
-                window.scrollTo(0, 25490)
-            } 
-            else{
-                window.scrollTo(0, 11300)
+                if (x.matches) { // If media query matches
+                    window.scrollTo(0, 25490)
+                } else {
+                    window.scrollTo(0, 11300)
+                }
             }
-        }
-        var x = window.matchMedia("(max-width: 700px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
         });
         $('#accordion-button-4').click(function() {
             function myFunction(x) {
-            if (x.matches) { // If media query matches
-                window.scrollTo(0, 25650)
-            } 
-            else{
-                window.scrollTo(0, 11400)
+                if (x.matches) { // If media query matches
+                    window.scrollTo(0, 25650)
+                } else {
+                    window.scrollTo(0, 11400)
+                }
             }
-        }
-        var x = window.matchMedia("(max-width: 700px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
         });
         $('#accordion-button-5').click(function() {
             function myFunction(x) {
-            if (x.matches) { // If media query matches
-                window.scrollTo(0, 25720)
-            } 
-            else{
-                window.scrollTo(0, 11500)
+                if (x.matches) { // If media query matches
+                    window.scrollTo(0, 25720)
+                } else {
+                    window.scrollTo(0, 11500)
+                }
             }
-        }
-        var x = window.matchMedia("(max-width: 700px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
         });
 
         $('.client-single').on('click', function(event) {
@@ -542,5 +538,18 @@
     })
 </script>
 
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/62e38c4754f06e12d88be332/1g94dntuf';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
 
 </html>

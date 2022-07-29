@@ -12,6 +12,7 @@ class Signup extends BaseController
 {
     public function index()
     {
+        $page['footer']=false;
         $social = new Social();
         $site_info = new SiteInfo();
         $page['site_info'] = $site_info->first();
@@ -30,7 +31,7 @@ class Signup extends BaseController
                     unset($post["deleted_at"]);
                     session()->set($post);
                     session()->set('is_loggedin', true);
-                    return redirect()->to('/membership');
+                    return redirect()->to('/memberships');
                 } else {
                     $page['error_message'] = "Failed to add Vendors Details please try again !";
                 }

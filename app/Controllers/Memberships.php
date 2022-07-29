@@ -18,6 +18,7 @@ class Memberships extends BaseController
 {
     public function index()
     {
+        $page['footer']=true;
         $site_info = new SiteInfo();
         $social = new Social();
         $membership = new Membership();
@@ -37,7 +38,6 @@ class Memberships extends BaseController
         $page['membership_id']  = $membership['id'];
         $page['amount'] = $membership['priceing'];
         $page['customer_id'] = session()->get('id');
-
         $page['customer_name'] = session()->get('firstname');
         $page['name'] = session()->get('firstname');
         $page['email'] = session()->get('email');
@@ -62,8 +62,10 @@ class Memberships extends BaseController
         $data['subscription_date'] = date('Y-m-d');
         $data['user_id'] = $id;
         $data['plan_id'] = $membership_id;
+      
         $membership = new Membership();
         $members = $membership->find($membership_id);
+        
         $days  = '+' . $members['year'] . ' days';
         $data['price'] = $members['priceing'];
         $data['expiry_date'] = date('Y-m-d', strtotime($days));

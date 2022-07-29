@@ -172,8 +172,8 @@
                     <div class="clearfix"></div>
 
 
-                    <div class="input-group1 text-end mt-4">
-                        <button class="btn btn-style float-right" type="submit" name="submitup" style="background-color: #fff;color: #fd746c;">Sign Up </button>
+                    <div class="input-group1 text-center mt-4">
+                        <button class="btn btn-style " type="submit" name="submitup" style="background-color: #fff;color: #fd746c;">Sign Up </button>
                     </div>
 
                     <div class="clearfix"></div>

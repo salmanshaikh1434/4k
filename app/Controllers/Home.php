@@ -10,6 +10,7 @@ class Home extends BaseController
 {
     public function index()
     {
+        $page['footer']=true;
         $social=new Social();
         $site_info=new SiteInfo();
         $category=new Category();
@@ -22,6 +23,7 @@ class Home extends BaseController
     }
     public function privacy_policy()
     {
+        $page['footer']=true;
         $social=new Social();
         $site_info=new SiteInfo();
         $page['site_info']=$site_info->first();
@@ -32,6 +34,7 @@ class Home extends BaseController
     }
     public function terms_condition()
     {
+        $page['footer']=true;
         $social=new Social();
         $site_info=new SiteInfo();
         $page['site_info']=$site_info->first();
@@ -42,6 +45,7 @@ class Home extends BaseController
     }
     public function refund()
     {
+        $page['footer']=true;
         $social=new Social();
         $site_info=new SiteInfo();
         $page['site_info']=$site_info->first();
@@ -52,6 +56,7 @@ class Home extends BaseController
     }
     public function notes()
     {
+        $page['footer']=true;
         $social=new Social();
         $site_info=new SiteInfo();
         $page['site_info']=$site_info->first();
