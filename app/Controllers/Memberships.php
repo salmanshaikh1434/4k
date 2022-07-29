@@ -18,7 +18,7 @@ class Memberships extends BaseController
 {
     public function index()
     {
-        $page['footer']=true;
+        $page['footer'] = true;
         $site_info = new SiteInfo();
         $social = new Social();
         $membership = new Membership();
@@ -57,20 +57,26 @@ class Memberships extends BaseController
     }
     public function payment_status($id = null, $membership_id = null)
     {
-
         $data['payment_id'] = $_POST['razorpay_payment_id'];
         $data['subscription_date'] = date('Y-m-d');
         $data['user_id'] = $id;
         $data['plan_id'] = $membership_id;
-      
         $membership = new Membership();
         $members = $membership->find($membership_id);
-        
         $days  = '+' . $members['year'] . ' days';
         $data['price'] = $members['priceing'];
         $data['expiry_date'] = date('Y-m-d', strtotime($days));
-      
         $subscription = new Subscription();
         $subscription->insert($data);
+        $subscription->where('user_id', session()->get('user_id'));
+        $subscription->select('expiry_date');
+        $active = $subscription->first();
+        print_r($active);
+        exit();
+        if(isset($active)){
+            $user['expiry_date'] = $active['expiry_date'];
+        }
+        return redirect()->to('/topics');
+        
     }
 }
