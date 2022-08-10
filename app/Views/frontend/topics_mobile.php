@@ -24,8 +24,8 @@
     <script src="/assets/js/theme-change.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script>
-         $(document).ready(function() {
-        $(document).on("click", ".open-AddBookDialog", function() {
+        $(document).ready(function() {
+            $(document).on("click", ".open-AddBookDialog", function() {
                 var myvideoid = $(this).data('id');
                 $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
             });
@@ -43,7 +43,6 @@
                 });
             });
         });
-    
     </script>
     <style>
         .element {
@@ -69,47 +68,61 @@
         }
     </style>
 
-    
+
 </head>
 <section>
-    <div class="col-sm-12 element" style="background-color: white;">
+    <div class="col-sm-12 element" style="background-color: white;height:71px">
         <?php if (isset($category)) { ?>
+
             <li class="">
-                <a href="/topics/videos/3"><i class="fa fa-arrow-left" style=" background-color: white;border-radius: 50%;border: 1px solid grey;padding: 10px;" aria-hidden="true"></i></a>
-                <span class="circle2" style="color:black;font-weight:bold"><?= $category['id'] ?>.</span>
-                <span style="margin-bottom: 11px;text-align:center;font-weight:bold">
-                    <span style="margin-bottom: 11px;width: 60%;font-size: 4.5vw;"> <?= $category['cat_name'] ?></span>
-                </span>
+                <div class="">
+                    <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
+                            <a href="/topics/videos/4">
+                                <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
+                            </a>
+                        </span><span style="margin-bottom: 11px;text-align:center;">
+                            <span style="font-size: 4.5vw; font-weight:bold"> <?= $category['id'] ?>.<?= $category['cat_name'] ?></span></span>
+                        </span>
+                        <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
+                    </div>
+                </div>
             </li>
+
+
         <?php } ?>
     </div>
-    <div class="container-fluid" style="padding-top:58px ;">
+    <div class="container-fluid" style="padding-top:92px;background-color:#242952">
         <?php foreach ($videos as $video) { ?>
-            <div class="row mb-3">
-                <div class="col-6">
-                    <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                        <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel">
-                            <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;" id="hove">
-                        </a>
-                    <?php } else { ?>
-                        <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
-                            <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;filter:blur(4px);" id="hove">
-                        </a>
-                    <?php } ?>
-                </div>
-                <div class="col-6 ">
-                <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                    <h4 class="text_hide"> <a href="#" style="font-size: 16px;font-weight: bold;">
-                            <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
-                        </a></h4>
-                        <?php } else { ?>
-                            <h4 class="text_hide"> <a href="#" style="font-size: 16px;font-weight: bold;filter:blur(4px);">
-                            <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
-                        </a></h4>
-                        <?php } ?>
-                    <?php if ($video['categories'] != 1 && null == session()->get('expiry_date')) { ?>
-                        <a class="btn btn-style mt-2" style="width:100%;font-size: 12px;" data-toggle="modal" data-target="#exampleModalCenter">Buy Membership</a>
-                    <?php } ?>
+            <div class="card" style="margin-bottom: 7px;border-radius: 8px;">
+                <div class="card-body" style="padding: 0rem 0.5rem">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
+                                <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel">
+                                    <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;border-radius: 8px;" id="hove">
+                                </a>
+                            <?php } else { ?>
+                                <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
+                                    <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;filter:blur(4px);" id="hove">
+                                </a>
+                            <?php } ?>
+                        </div>
+                        <div class="col-6 ">
+                            <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
+                                <h4 class="text_hide"> <a href="#" style="font-size: 16px;">
+                                        <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
+                                    </a></h4>
+                            <?php } else { ?>
+                                <h4 class="text_hide"> <a href="#" style="font-size: 16px;filter:blur(4px);">
+                                        <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
+                                    </a></h4>
+                            <?php } ?>
+                            <?php if ($video['categories'] != 1 && null == session()->get('expiry_date')) { ?>
+                                <a class="btn btn-style mt-2" style="width:100%;font-size: 12px;" data-toggle="modal" data-target="#exampleModalCenter">Buy Membership</a>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php } ?>
@@ -136,7 +149,7 @@
         </div>
     </div>
     <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-   <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;
+        <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;
   border-radius: 50%;
   color:white;
   border: 1px solid grey;
@@ -180,5 +193,5 @@
             });
         }
     </script>
-    
+
 </section>

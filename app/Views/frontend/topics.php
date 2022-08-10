@@ -25,6 +25,32 @@
     <script src="/assets/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+            document.addEventListener("DOMContentLoaded", function() {
+
+                el_autohide = document.querySelector('.autohide');
+
+                // add padding-top to bady (if necessary)
+                navbar_height = document.querySelector('.navbar').offsetHeight;
+                document.body.style.paddingTop = navbar_height + 'px';
+
+                if (el_autohide) {
+                    var last_scroll_top = 0;
+                    window.addEventListener('scroll', function() {
+                        let scroll_top = window.scrollY;
+                        if (scroll_top < last_scroll_top) {
+                            el_autohide.classList.remove('scrolled-down');
+                            el_autohide.classList.add('scrolled-up');
+                        } else {
+                            el_autohide.classList.remove('scrolled-up');
+                            el_autohide.classList.add('scrolled-down');
+                        }
+                        last_scroll_top = scroll_top;
+                    });
+                    // window.addEventListener
+                }
+                // if
+
+            });
             $.get('/topics/myvideos/' + 1, function(data) {
                 $('.mycontent').html(data);
             });
@@ -83,9 +109,14 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .element {
+            position: fixed;
+            z-index: 100;
+            background-color: white;
+        }
     </style>
 </head>
-<header id="site-header" class="fixed-top">
+<header id="site-header" class="fixed-top d-none d-lg-block">
     <div class="container-fluid" style="background-color: white;">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
 
@@ -148,49 +179,50 @@
         </nav>
     </div>
 </header>
-
 <body>
-    <section class="contact pt-4" id="not_select">
-        <div class="container-fluid pt-md-5 pt-4 mt-2">
+    <section class="contact pt-5" id="not_select">
+        <div class="container-fluid pt-md-5">
             <div class="main-grid-contact">
                 <!-- For Mobile Only -->
                 <div class="row d-lg-none">
-                    <div class=" col-12 order-first" style="background-color: #f5f3f3;">
+                    <div class=" col-12 order-first element" style="background-color: #242952;">
                         <li class="">
                             <div class="">
                                 <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                                        <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-search" aria-hidden="true"></i></p>
-                                    </span><span style="margin-bottom: 11px;text-align:center;font-weight:bold">
-                                        <span style="font-size: 3.5vw;"> Our Index (Our Road-map)<br />(35 Topics,16,667 Videos & 4,724 Hours)</span>
+                                <a href="/"><p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p></a>
+                                    </span><span style="margin-bottom: 11px;text-align:center;">
+                                        <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 3.5vw;">(35 Topics,16,667 Videos & 4,724 Hours)</span></span>
                                     </span>
-                                    <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-4px;height: 66px;"></span>
+                                    <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
                                 </div>
                             </div>
                         </li>
                         <div style="border:0.5px solid #f1f1f1;margin-top: -84px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;    background: white;"></div>
-                        <?php
-                        foreach ($categories as $category) { ?>
-                            <li class="m-3">
-                                <div class="">
-                                    <div style="display:flex;justify-content: space-between;align-items:center; color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative; margin-left:-16px">
-                                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
-                                        </span><span style="margin-bottom: 11px;width: 56%;margin-left: -12px;">
-                                            <p><a href="/topics/mobile_videos/<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-size:4vw;"><?= $category['cat_name'] ?></a></p>
-                                            <span style="color:#242952;font-size:3vw;"><?= $category['videos'] ?> Videos </span><span style="color:#242952;font-size:3vw;"> | <?= $category['hours'] ?> Hours</span>
-                                        </span><span style=" top:25%;height: 38px;margin-bottom: 10px;border-right: 1px solid grey;"></span>
-                                        <span style="margin-bottom: 11px;"> <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
-                                                <img class="blink-image" src="/assets/images/unlockg.png" height="30px" width="30px">
-                                            <?php } elseif (null == session()->get('expiry_date')) { ?>
-                                                <img src="/assets/images/lock.png" height="30px" width="30px">
-                                            <?php }
-                                                                            if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
-                                                <img src="/assets/images/unlockg.png" height="30px" width="30px">
-                                            <?php } ?></span><span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-21px;height: 66px;"></span>
+                        <div class="mb-5" style="overflow-y:auto; height:100vh;">
+                            <?php
+                            foreach ($categories as $category) { ?>
+                                <li class="">
+                                    <div class="">
+                                        <div style="display:flex;justify-content: space-between;align-items:center; color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative; margin-left:2px;margin-bottom:9px">
+                                                <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
+                                            </span><span style="margin-bottom: 27px;width: 56%;margin-left: -12px;">
+                                                <span><a href="/topics/mobile_videos/<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-size:4vw;font-weight: bold;"><?= $category['cat_name'] ?></a></span><br>
+                                                <span style="color:#242952;font-size:3vw;"><?= $category['videos'] ?> Videos </span><span style="color:#242952;font-size:3vw;"> | <?= $category['hours'] ?> Hours</span>
+                                            </span><span style=" top:25%;height: 38px;margin-bottom:28px;border-right: 1px solid grey;"></span>
+                                            <span style="margin-bottom: 26px;"> <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
+                                                    <img class="blink-image" src="/assets/images/unlockg.png" height="30px" width="30px">
+                                                <?php } elseif (null == session()->get('expiry_date')) { ?>
+                                                    <img src="/assets/images/lock.png" height="30px" width="30px">
+                                                <?php }
+                                                                                if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                                    <img src="/assets/images/unlockg.png" height="30px" width="30px">
+                                                <?php } ?></span><span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 32px;margin-right:-7px;height: 66px;"></span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <div class="" style="border:0.5px solid #cbc4c4;margin-top: -99px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;background: white;"></div>
-                        <?php } ?>
+                                </li>
+                                <div class="" style="border:0.5px solid #cbc4c4;margin-top: -99px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;background: white;"></div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
                 <!-- map -->
@@ -219,7 +251,7 @@
                                         <div style="display:flex;justify-content: space-between;align-items:center; color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;bottom:3px">
                                                 <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
                                             </span><span style="margin-bottom: 20px;width: 34%;">
-                                                <p><a class="btn23" category_id="<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-weight: bold;"><?= $category['cat_name'] ?></a></p>
+                                                <p><a class="btn23" category_id="<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-weight: bold;font-size: 18px;"><?= $category['cat_name'] ?></a></p>
                                             </span><span style="text-align: center;margin-bottom: 27px;"><i class="fas fa-video-camera"></i><br /><?= $category['videos'] ?> Videos</span><span style=" top:25%;height: 38px;margin-bottom: 27px;border-right: 1px solid grey;"></span><span style="text-align: center;margin-bottom: 27px;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</span><span style=" top:25%;height: 38px;margin-bottom: 27px;border-right: 1px solid grey;"></span>
                                             <span style="margin-bottom: 24px;"> <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
                                                     <img class="blink-image" src="/assets/images/unlockg.png" height="40px" width="40px">

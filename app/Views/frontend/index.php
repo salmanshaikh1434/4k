@@ -303,11 +303,11 @@
             ?>
                 <div class="col-lg-4 col-md-3 col-12 ">
                     <a href="/topics/videos/<?= $category['id']; ?>">
-                        <div class="card  shadow p-4 mt-4">
+                        <div class="card  shadow p-4 mt-4" style="border: 1px solid black;">
 
                             <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                             <h4 class="mt-3">
-                                <span style="font-size: 1.5rem;display: block;"><span class="numberCircle"><?= $category['id']; ?></span> <?= $category['cat_name']; ?> </span>
+                                <span  class="topic_titles"><span class="numberCircle"><?= $category['id']; ?></span> <?= $category['cat_name']; ?> </span>
                                 <br>
                                 <div class="row">
                                     <div class="col-8">
@@ -662,7 +662,6 @@
     });
 </script>
 <!-- testimonial section -->
-
 <section class="home-about-w3l pt-lg-5 pb-5" id="faq">
     <div class="container pt-md-5 pt-4">
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">

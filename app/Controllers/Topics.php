@@ -70,7 +70,7 @@ class Topics extends BaseController
         <div class="row">';
         foreach ($videos as $video) {
             echo '  <div class="col-md-12 col-lg-6 mb-2">
-                    <div class="m-1 shadow p-2" style="min-height: 240px;background-color: white;">';
+                    <div class="m-1 shadow p-2" style="min-height: 240px;background-color: white;border-radius: 10px;">';
             if ($video['categories'] == 1 || !null == session()->get('expiry_date')) {
                 echo '  <a data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel">
 
