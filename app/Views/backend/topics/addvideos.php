@@ -23,7 +23,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <div class="input-group mb-12">
-                            <input type="text" id="video_code" name="video_code" value="" class="form-control" placeholder="Enter Video Code" required>
+                            <input type="text" id="video_code" name="video_code" value="" class="form-control" placeholder="Enter Video Code">
 
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <div class="input-group mb-12">
-                            <input type="text" id="titel" name="titel" value="" class="form-control" placeholder="Enter Video Title" required>
+                            <input type="text" id="titel" name="titel" value="" class="form-control" placeholder="Enter Video Title">
 
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -10,14 +11,40 @@
 
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="/assets/css/style-starter.css">
-    <link rel="stylesheet/scss" href="/assets/css/scrolling.scss">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <meta name="keywords" content="<?= $site_info['keyword']; ?>">
     <meta name="description" content="<?= $site_info['description']; ?>">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/counter.js"></script>
+    <script src="/assets/js/theme-change.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script>
+         $(document).ready(function() {
+        $(document).on("click", ".open-AddBookDialog", function() {
+                var myvideoid = $(this).data('id');
+                $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+            });
+
+            $(document).on("click", ".close", function() {
+                $(".iframeVideo").each(function() {
+                    var src = $(this).attr('src');
+                    $(this).attr('src', src);
+                });
+            });
+            $('#myLargeModalLabel').click(function() {
+                $(".iframeVideo").each(function() {
+                    var src = $(this).attr('src');
+                    $(this).attr('src', src);
+                });
+            });
+        });
+    
+    </script>
     <style>
         .element {
             position: fixed;
@@ -41,6 +68,8 @@
             }
         }
     </style>
+
+    
 </head>
 <section>
     <div class="col-sm-12 element" style="background-color: white;">
@@ -59,7 +88,7 @@
             <div class="row mb-3">
                 <div class="col-6">
                     <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                        <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
+                        <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel">
                             <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;" id="hove">
                         </a>
                     <?php } else { ?>
@@ -70,11 +99,11 @@
                 </div>
                 <div class="col-6 ">
                 <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                    <h4 class="text_hide"> <a href="home/#membership" style="font-size: 16px;font-weight: bold;">
+                    <h4 class="text_hide"> <a href="#" style="font-size: 16px;font-weight: bold;">
                             <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
                         </a></h4>
                         <?php } else { ?>
-                            <h4 class="text_hide"> <a href="home/#membership" style="font-size: 16px;font-weight: bold;filter:blur(4px);">
+                            <h4 class="text_hide"> <a href="#" style="font-size: 16px;font-weight: bold;filter:blur(4px);">
                             <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
                         </a></h4>
                         <?php } ?>
@@ -106,8 +135,20 @@
             </div>
         </div>
     </div>
-
-    <div class="popups" style="z-index: 50;background-color: #fff;">
+    <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+   <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;
+  border-radius: 50%;
+  color:white;
+  border: 1px solid grey;
+  padding: 10px;padding:20px">
+        </button>
+        <div class="modal-dialog modal-xl frame-content" style="height:40%">
+            <div style=" pointer-events: none !important;"></div>
+            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;top:50%">
+            </div>
+        </div>
+    </div>
+    <div class="popups" style="z-index: 50;background-color: black;">
     </div>
 
     <script>
@@ -139,4 +180,5 @@
             });
         }
     </script>
+    
 </section>

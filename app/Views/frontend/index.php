@@ -3,7 +3,7 @@
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
             <div class="container pt-md-0 pt-5">
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
-                <p class="mb-1" style="font-size: 30px;font-weight: bold;">English Self Learning </p>
+                    <h3>English Self Learning</h3>
                     <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
                         <div class="scroller">
                             <span>
@@ -662,6 +662,7 @@
     });
 </script>
 <!-- testimonial section -->
+
 <section class="home-about-w3l pt-lg-5 pb-5" id="faq">
     <div class="container pt-md-5 pt-4">
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
@@ -669,117 +670,117 @@
         </div>
         <div class="accordion">
             <div class="accordion-item" id="faq1" style="margin-top: 20px;margin-bottom: 20px;">
-                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
-                        have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
-                            get you the best out of it and to make the index.</li>
-                        <li><span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
-                            on YouTube.</li>
-                        <li> <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
-                            videos available on YouTube.</li>
-                        <li><span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
-                            into <b>35 topics</b> which are very easy to reach out.</li>
-                        <li><span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
-                            of time, and you will have to do a lot of searches (a waste of your time).</li>
-                        <li> <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.</li>
-                        <li><span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
-                            topic and any video without doing the search process.</li>
-                        <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-            <div class="accordion-item" id="#faq2" style="margin-bottom: 20px;">
-                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
-                        selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
-                            for everyone, and you can access to any videos on YouTube by yourself, you don’t need
-                            anyone’s help to use YouTube videos.</li>
-                        <li><span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
-                                hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
-                            hours) sorted in very well order.</li>
-                        <li> <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
-                            channels (not in our website) but only in our website interface as pop-up window.</li>
-                        <li><span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
-                            index (we charge for our Road-map that made English learning easy for you)</li>
-                        <li><span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
-                            these <b>16,600 videos</b> are organized and classified into 35 topics.</li>
-                        <li> <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.</li>
-                        <li><span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
-                            is beneficial for you.</li>
-                        <li><span class="circle">8</span> The index will help you to learn and improve your English language very effectively
-                            if you have the eager to study and learn.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item" id="faq3" style="margin-bottom: 20px;">
-                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
-                        benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
-                            <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
-                                videos</b>).<br>
-                        </li>
-                        <li><span class="circle">2</span> The content we have will surely help you to develop your English skills and master
-                            your English language to a higher level if you put a little effort in it.<br></li>
-                        <li><span class="circle">3</span> You will gain the American and British accents through imitation.<br></li>
-                        <li><span class="circle">4</span> You will gain listening skills for the American and British accents.<br></li>
-                        <li><span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br></li>
-                        <li><span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
-                            learning at a very <b>low cost</b>.</li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item" style="margin-bottom: 20px;">
-                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
-                        payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                <div class="accordion-content">
-                    <ul><li><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
-                        well-known and <b>trusted Payment Gateway.</b></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item" style="margin-bottom: 20px;">
-                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
-                        membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li><span class="circle">1</span> Click on membership.</li>
-                        <li><span class="circle">2</span> Choose the plan you like.</li>
-                        <li><span class="circle">3</span> Fill up the checkout page form.</li>
-                        <li><span class="circle">4</span> Choose the suitable payment option then pay .</li>
-                        <li><span class="circle">5</span> Now you have user name and password.
-                        </li>
-                        <li><span class="circle">6</span> Click on sign in then write your user &password and click on sign in.</li>
-                        <li><span class="circle">7</span> You became a member and start using the full index.</li>
-                    </ul>
-                </div>
+              <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">   <a href="#faq1" style="color:white">Why do I
+                            have to pay when everything is available on YouTube for free? </a></span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                    <div class="accordion-content">
+               
+                <ul>
+                    <li><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
+                        get you the best out of it and to make the index.</li>
+                    <li><span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
+                        on YouTube.</li>
+                    <li> <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
+                        videos available on YouTube.</li>
+                    <li><span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
+                        into <b>35 topics</b> which are very easy to reach out.</li>
+                    <li><span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
+                        of time, and you will have to do a lot of searches (a waste of your time).</li>
+                    <li> <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.</li>
+                    <li><span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
+                        topic and any video without doing the search process.</li>
+                    <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
+                </ul>
             </div>
         </div>
-        <script>
-            const items = document.querySelectorAll(".accordion button");
+        <div class="accordion-item" id="faq2" style="margin-bottom: 20px;">
+            <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
+                    selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+            <div class="accordion-content">
+                <ul>
+                    <li><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
+                        for everyone, and you can access to any videos on YouTube by yourself, you don’t need
+                        anyone’s help to use YouTube videos.</li>
+                    <li><span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
+                            hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
+                        hours) sorted in very well order.</li>
+                    <li> <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
+                        channels (not in our website) but only in our website interface as pop-up window.</li>
+                    <li><span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
+                        index (we charge for our Road-map that made English learning easy for you)</li>
+                    <li><span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
+                        these <b>16,600 videos</b> are organized and classified into 35 topics.</li>
+                    <li> <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.</li>
+                    <li><span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
+                        is beneficial for you.</li>
+                    <li><span class="circle">8</span> The index will help you to learn and improve your English language very effectively
+                        if you have the eager to study and learn.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item" id="faq3" style="margin-bottom: 20px;">
+            <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
+                    benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+            <div class="accordion-content">
+                <ul>
+                    <li><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
+                        <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
+                            videos</b>).<br>
+                    </li>
+                    <li><span class="circle">2</span> The content we have will surely help you to develop your English skills and master
+                        your English language to a higher level if you put a little effort in it.<br></li>
+                    <li><span class="circle">3</span> You will gain the American and British accents through imitation.<br></li>
+                    <li><span class="circle">4</span> You will gain listening skills for the American and British accents.<br></li>
+                    <li><span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br></li>
+                    <li><span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
+                        learning at a very <b>low cost</b>.</li>
 
-            function toggleAccordion() {
-                const itemToggle = this.getAttribute('aria-expanded');
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item" style="margin-bottom: 20px;">
+            <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
+                    payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+            <div class="accordion-content">
+                <ul>
+                    <li><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
+                        well-known and <b>trusted Payment Gateway.</b></li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item" style="margin-bottom: 20px;">
+            <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
+                    membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+            <div class="accordion-content">
+                <ul>
+                    <li><span class="circle">1</span> Click on membership.</li>
+                    <li><span class="circle">2</span> Choose the plan you like.</li>
+                    <li><span class="circle">3</span> Fill up the checkout page form.</li>
+                    <li><span class="circle">4</span> Choose the suitable payment option then pay .</li>
+                    <li><span class="circle">5</span> Now you have user name and password.
+                    </li>
+                    <li><span class="circle">6</span> Click on sign in then write your user &password and click on sign in.</li>
+                    <li><span class="circle">7</span> You became a member and start using the full index.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const items = document.querySelectorAll(".accordion button");
 
-                for (i = 0; i < items.length; i++) {
-                    items[i].setAttribute('aria-expanded', 'false');
-                }
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
 
-                if (itemToggle == 'false') {
-                    this.setAttribute('aria-expanded', 'true');
-                }
+            for (i = 0; i < items.length; i++) {
+                items[i].setAttribute('aria-expanded', 'false');
             }
 
-            items.forEach(item => item.addEventListener('click', toggleAccordion));
-        </script>
-        <br><br>
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
     </div>
 </section>
 <!-- //testimonial section -->
@@ -829,27 +830,6 @@
         </div>
     </div>
 </section>
-<style>
-    .float {
-        position: fixed;
-        width: 45px;
-        height: 44px;
-        bottom: 43px;
-        right: 15px;
-        background-image: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 23px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
-    }
-
-    .my-float {
-        margin-top: 17px;
-        background-image: url("/assets/images/demo.png");
-    }
-</style>
 <!-- <a href="/topics/videos/1" class="float d-lg-none">
     <img class="img-fluid" src="/assets/images/demo.png" class="my-float">
 </a> -->

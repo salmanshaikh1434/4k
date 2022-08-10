@@ -19582,3 +19582,23 @@ p {
     width: 100%;
     z-index: 100;
 }
+
+.float {
+    position: fixed;
+    width: 45px;
+    height: 44px;
+    bottom: 43px;
+    right: 15px;
+    background-image: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 23px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.my-float {
+    margin-top: 17px;
+    background-image: url("/assets/images/demo.png");
+}
