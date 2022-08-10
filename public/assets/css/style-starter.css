@@ -19205,7 +19205,7 @@ h4.inner-text-title {
     line-height: 1.2em;
     position: relative;
     overflow: hidden;
-    width: 10em;
+    width: 15em;
 }
 
 .scroller>span {
@@ -19485,6 +19485,11 @@ li {
     left: -12px;
 }
 
+.headtitle {
+    font-size: 50px;
+    font-weight: bold;
+}
+
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 
@@ -19492,6 +19497,16 @@ li {
     /* Place the timelime to the left */
     .main-timeline::after {
         left: 31px;
+    }
+    .headtitle {
+        font-size: 16px;
+    }
+    .fixed-top {
+        position: fixed;
+        top: -19px;
+        right: 0;
+        left: 0;
+        z-index: 1030;
     }
     /* Full-width containers */
     .timeline {
@@ -19530,12 +19545,14 @@ li {
 }
 
 #test {
-    width: 165px;
+    width: 188px;
     color: #fff;
     background-color: #fd746c;
-    padding: 22px;
+    padding-top: 38px;
+    padding-bottom: 38px;
     border-radius: 50%;
-    border: 2px solid #fd746c
+    height: 127px;
+    border: 2px solid #fd746c;
 }
 
 #test:hover {
@@ -19553,4 +19570,15 @@ body {
 
 p {
     font-size: 16px;
+}
+
+
+/*Faq*/
+
+.fixedElement {
+    background-color: #c0c0c0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }

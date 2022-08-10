@@ -30,10 +30,10 @@
                     <!-- map -->
                    
       <p style="white-space: break-spaces;padding: 40px;">
-1. Some links may stop working or may get changed from the main channel.
+1. Some links might be changed or removed from the original channel, and if this happens then that is beyond our control and we do not bear any responsibility.
 2. If any link doesn’t work, please inform us, and we will try to fix it if still available from the main channel.
 3. Only one person can access at the same time (1 device only).
-4. Membership only for 5 IP addresses.
+4. Membership will give access only for 3 or 5 or 8 IP addresses(devices).
 
 
           

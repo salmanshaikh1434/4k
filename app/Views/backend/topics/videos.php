@@ -45,7 +45,7 @@
                                             <?php } else { ?>
                                                 <a href="/admin/topics/approve/<?= $video['id'] ?>" class="btn btn-danger"><i class="fa fa-eye-slash" data-toggle="tooltip" data-placement="top" title="hide"></i></a>
                                             <?php } ?>
-                                            <a href="/admin/topics/delete/<?= $video['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Category ?');"><i class="fa fa-trash"></i></a>
+                                            <a href="/admin/topics/delete_video/<?= $video['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Video ?');"><i class="fa fa-trash"></i></a>
                                         </div>
 
                                     </td>

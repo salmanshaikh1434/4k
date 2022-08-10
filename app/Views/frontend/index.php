@@ -3,7 +3,7 @@
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
             <div class="container pt-md-0 pt-5">
                 <div class="banner-info ps-xxl-5 ps-xl-0 ps-5 ms-lg-5 py-md-0 py-5">
-                    <p class="mb-1" style="font-size: 30px;font-weight: bold;">English Self Learning </p>
+                <p class="mb-1" style="font-size: 30px;font-weight: bold;">English Self Learning </p>
                     <h3 class="mobile-only-h1" style="font-size: 20px;font-family:'Gill Sans'">
                         <div class="scroller">
                             <span>
@@ -307,7 +307,7 @@
 
                             <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                             <h4 class="mt-3">
-                                <span style="font-size: 1.5rem;display: block; text-align: center;"><span class="numberCircle"><?= $category['id']; ?></span> - <?= $category['cat_name']; ?> </span>
+                                <span style="font-size: 1.5rem;display: block;"><span class="numberCircle"><?= $category['id']; ?></span> <?= $category['cat_name']; ?> </span>
                                 <br>
                                 <div class="row">
                                     <div class="col-8">
@@ -660,16 +660,15 @@
             scrollTop: $card.offset().top
         }, 500);
     });
-   
 </script>
 <!-- testimonial section -->
-<section id="faq">
+<section class="home-about-w3l pt-lg-5 pb-5" id="faq">
     <div class="container pt-md-5 pt-4">
         <div class="title-heading-w3 text-center mx-auto mb-sm-5 mb-4" style="max-width:500px;">
             <h3 class="title-style">FAQ</h3>
         </div>
         <div class="accordion">
-            <div class="accordion-item" style="margin-bottom: 20px;">
+            <div class="accordion-item" id="faq1" style="margin-top: 20px;margin-bottom: 20px;">
                 <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why do I
                         have to pay when everything is available on YouTube for free?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
@@ -689,12 +688,10 @@
                             topic and any video without doing the search process.</li>
                         <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
                     </ul>
-
-
                     </p>
                 </div>
             </div>
-            <div class="accordion-item" style="margin-bottom: 20px;">
+            <div class="accordion-item" id="#faq2" style="margin-bottom: 20px;">
                 <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
                         selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
@@ -719,38 +716,49 @@
                     </ul>
                 </div>
             </div>
-            <div class="accordion-item" style="margin-bottom: 20px;">
+            <div class="accordion-item" id="faq3" style="margin-bottom: 20px;">
                 <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
                         benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
-                        <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
-                            videos</b>).<br>
-                        <span class="circle">2</span> The content we have will surely help you to develop your English skills and master
-                        your English language to a higher level if you put a little effort in it.<br>
-                        <span class="circle">3</span> You will gain the American and British accents through imitation.<br>
-                        <span class="circle">4</span> You will gain listening skills for the American and British accents.<br>
-                        <span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br>
-                        <span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
-                        learning at a very <b>low cost</b>.
+                    <ul>
+                        <li><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
+                            <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
+                                videos</b>).<br>
+                        </li>
+                        <li><span class="circle">2</span> The content we have will surely help you to develop your English skills and master
+                            your English language to a higher level if you put a little effort in it.<br></li>
+                        <li><span class="circle">3</span> You will gain the American and British accents through imitation.<br></li>
+                        <li><span class="circle">4</span> You will gain listening skills for the American and British accents.<br></li>
+                        <li><span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br></li>
+                        <li><span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
+                            learning at a very <b>low cost</b>.</li>
 
-                    </p>
+                    </ul>
                 </div>
             </div>
             <div class="accordion-item" style="margin-bottom: 20px;">
                 <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
                         payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
-                        well-known and <b>trusted Payment Gateway.</b></p>
+                    <ul><li><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
+                        well-known and <b>trusted Payment Gateway.</b></li>
+                    </ul>
                 </div>
             </div>
             <div class="accordion-item" style="margin-bottom: 20px;">
                 <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
                         membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
                 <div class="accordion-content">
-                    <p><span class="circle">1</span> Sign up 1st and you will get a user name & password, then choose your plan and buy it,
-                        then it is done, and you become a member.</p>
+                    <ul>
+                        <li><span class="circle">1</span> Click on membership.</li>
+                        <li><span class="circle">2</span> Choose the plan you like.</li>
+                        <li><span class="circle">3</span> Fill up the checkout page form.</li>
+                        <li><span class="circle">4</span> Choose the suitable payment option then pay .</li>
+                        <li><span class="circle">5</span> Now you have user name and password.
+                        </li>
+                        <li><span class="circle">6</span> Click on sign in then write your user &password and click on sign in.</li>
+                        <li><span class="circle">7</span> You became a member and start using the full index.</li>
+                    </ul>
                 </div>
             </div>
         </div>

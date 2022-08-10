@@ -49,16 +49,16 @@ class Topics extends BaseController
         if (isset($cat_name)) {
             echo '  <li class="m-3">
                 <div class="">
-                    <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('.'/assets/images/start1.png'.');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
+                    <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url(' . '/assets/images/start1.png' . ');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
                             <p class="circle2" style="margin-top:-11px;margin-left: -8px;">';
             echo $id;
             echo '</p>
                         </span><span style="margin-bottom: 11px;text-align:center;font-weight:bold">
                             <span style="margin-bottom: 11px;width: 34%;font-size:25px">';
-           echo  $cat_name['cat_name'];
+            echo  $cat_name['cat_name'];
             echo '</span>
                         </span>
-                        <span style="background-image:url('.'/assets/images/end.png'.');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-16px;height: 66px;"></span>
+                        <span style="background-image:url(' . '/assets/images/end.png' . ');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-16px;height: 66px;"></span>
                     </div>
                 </div>
             </li>
@@ -66,17 +66,17 @@ class Topics extends BaseController
         }
         echo '</div>
     <br />
-    <div class="col-lg-12 form-w3ls" style="overflow-y:auto; height:calc(60vh);">
+    <div class="col-lg-12 form-w3ls" style="overflow-y:auto; height:73vh;">
         <div class="row">';
         foreach ($videos as $video) {
             echo '  <div class="col-md-12 col-lg-6 mb-2">
-                    <div class="m-1 shadow p-2">';
+                    <div class="m-1 shadow p-2" style="min-height: 240px;background-color: white;">';
             if ($video['categories'] == 1 || !null == session()->get('expiry_date')) {
-                echo '  <a data-toggle="modal" data-id="'.$video['video_code'].'" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel">
+                echo '  <a data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel">
 
-                                <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image">
+                                <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             </a>
-                            <h4 style="text-align: center;"><a href="#" style="font-size: 16px;font-weight: bold;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
+                            <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
                                     <span style="font-size: 16px;">' . $video['id'] . ' - ' . $video['titel'] . '</span>
                                 </a></h4>';
             } else {
@@ -103,14 +103,13 @@ class Topics extends BaseController
         $social = new Social();
         $site_info = new SiteInfo();
         $category = new Category();
-        $videos = new Video(); 
-        $page['footer']=false;
+        $videos = new Video();
+        $page['footer'] = false;
         $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
         $page['videos'] = $videos->where('categories', $id)->findAll();
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
-        $data['page'] = view('frontend/topics_mobile', $page);
-        return view("frontend/template", $data);
+        return view('frontend/topics_mobile', $page);
     }
 }

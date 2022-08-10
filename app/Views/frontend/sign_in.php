@@ -132,10 +132,10 @@
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll">
 
                     <li class="nav-item">
-                        <a class="btn btn-style" style="background: #242952;" href="topics_details.php?topic=1">Demo</a>
+                        <a class="btn btn-style" style="background: #242952;" href="/topics/videos/1">Demo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#home" style="color:white; margin-top: 9px;">Home</a>
+                        <a class="nav-link" href="/" style="color:white; margin-top: 9px;">Home</a>
                     </li>
                 </ul>
 

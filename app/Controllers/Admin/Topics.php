@@ -72,8 +72,20 @@ class Topics extends AdminAuth
         $categories = $category->find($id);
         $imageName = $categories['photo'];
         if ($category->delete($id)) {
-            unlink('assets/backend/images/videos/' . $imageName);
+            unlink('assets/images/videos/' . $imageName);
             $massage = 'category Deleted Successfully';
+        }
+        return redirect()->back()->with('message', $massage);
+    }
+    public function delete_video($id)
+    {
+        $massage = "Failed to Delete";
+        $video = new Video();
+        $videos = $video->find($id);
+        $imageName = $videos['photo'];
+        if ($video->delete($id)) {
+            unlink('assets/images/videos/' . $imageName);
+            $massage = 'video Deleted Successfully';
         }
         return redirect()->back()->with('message', $massage);
     }
@@ -117,16 +129,43 @@ class Topics extends AdminAuth
         }
     }
 
-    public function add_video($id)
+    public function add_video()
     {
-        $massage = "Failed to Delete";
-        $videos = new Video();
-        if ($videos->delete($id)) {
-            $massage = 'Video Deleted Successfully';
+        helper('alert_helper');
+        $video=new Video();
+        $categories=new Category();
+        $validationRule = [
+            'photo' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[photo]'
+                    . '|is_image[photo]'
+                    . '|max_size[photo,1000]'
+                    . '|mime_in[photo,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+            ],
+        ];
+        if ($this->request->getMethod() == "post") {
+            $file = $this->request->getFile('photo');
+            if (!$this->validate($validationRule)) {
+                $data = $this->validator->getErrors();
+                return redirect()->to('/admin/topics/add_video')->with('message', $data['photo']);
+            }
+            if ($file->isValid()) {
+                $newName = $file->getRandomName();
+                $file->move('assets/images/videos/', $newName);
+            }
+            $post= $this->request->getPost();
+            $post['photo'] = $newName;
+            if ($video->insert($post)) {
+                return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');
+            } else {
+                $page['error_message'] = "Failed to add Video please try again !";
+            }
         }
-        return redirect()->back()->with('message', $massage);
-    }
 
+        $page['categories']=$categories->findAll();
+        $data['page'] = view('backend/topics/addvideos',$page);
+        return view("backend/template", $data);
+    }
 
     public function Video_delete($id)
     {

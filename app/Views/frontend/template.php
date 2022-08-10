@@ -79,7 +79,7 @@
                 <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
     border-radius: 10px;"></span>
             </a>
-            <a class="btn btn-m-style  d-lg-none" style="background-color: #fff;color: #fd746c;" href="topics_details.php?topic=1">Demo</a>
+            <a class="btn btn-m-style  d-lg-none" style="background-color: #fff;color: #fd746c;" href="/topics/videos/3">Demo</a>
             <button class="navbar-toggler float-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                 <span class="navbar-toggler-icon fa icon-close fa-bars"></span>
@@ -246,82 +246,10 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-<!-- //move top -->
-
-<!-- common jquery plugin -->
 <script src="/assets/js/jquery-3.3.1.min.js"></script>
-<!-- //common jquery plugin -->
-
-<!-- /counter-->
 <script src="/assets/js/counter.js"></script>
-<!-- //counter-->
-
-<!-- testimonial script -->
 <script>
     $(document).ready(function() {
-
-        $('#accordion-button-1').click(function() {
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    window.scrollTo(0, 25170)
-                } else {
-                    window.scrollTo(0, 11100)
-                }
-            }
-            var x = window.matchMedia("(max-width: 700px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
-
-        });
-        $('#accordion-button-2').click(function() {
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    window.scrollTo(0, 25300)
-                } else {
-                    window.scrollTo(0, 11200)
-                }
-            }
-            var x = window.matchMedia("(max-width: 700px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
-        });
-        $('#accordion-button-3').click(function() {
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    window.scrollTo(0, 25490)
-                } else {
-                    window.scrollTo(0, 11300)
-                }
-            }
-            var x = window.matchMedia("(max-width: 700px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
-        });
-        $('#accordion-button-4').click(function() {
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    window.scrollTo(0, 25650)
-                } else {
-                    window.scrollTo(0, 11400)
-                }
-            }
-            var x = window.matchMedia("(max-width: 700px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
-        });
-        $('#accordion-button-5').click(function() {
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    window.scrollTo(0, 25720)
-                } else {
-                    window.scrollTo(0, 11500)
-                }
-            }
-            var x = window.matchMedia("(max-width: 700px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
-        });
-
         $('.client-single').on('click', function(event) {
             event.preventDefault();
 
@@ -348,12 +276,7 @@
         });
 
     }(jQuery));
-</script>
-<!-- //testimonial script -->
 
-<!-- magnific popup -->
-<script src="/assets/js/jquery.magnific-popup.min.js"></script>
-<script>
     $(document).ready(function() {
         $('.popup-with-zoom-anim').magnificPopup({
             type: 'inline',
@@ -388,13 +311,7 @@
         });
     });
 </script>
-<!-- //magnific popup -->
-
-<!-- theme switch js (light and dark)-->
 <script src="/assets/js/theme-change.js"></script>
-<!-- //theme switch js (light and dark)-->
-
-<!-- MENU-JS -->
 <script>
     $(window).on("scroll", function() {
         var scroll = $(window).scrollTop();
@@ -421,9 +338,6 @@
         });
     });
 </script>
-<!-- //MENU-JS -->
-
-<!-- disable body scroll which navbar is in active -->
 <script>
     $(function() {
         $('.navbar-toggler').click(function() {
@@ -436,14 +350,7 @@
 
     });
 </script>
-<!-- //disable body scroll which navbar is in active -->
-
-<!-- bootstrap -->
 <script src="/assets/js/bootstrap.min.js"></script>
-<!-- //bootstrap -->
-<!-- //Js scripts -->
-
-
 <script>
     var TxtRotate = function(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -535,21 +442,14 @@
 
         })
 
-    })
-</script>
+    });
 
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-    (function() {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/62e38c4754f06e12d88be332/1g94dntuf';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
+    $('.ytp-watch-later-icon').click(function (e) { 
+        e.preventDefault();
+        var s = confirm('d');
+        return;
+        
+    });
 </script>
 
 </html>
