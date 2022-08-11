@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body ">
         <?= alertMessage() ?>
-            <h5 class="card-title">Add Videos</h5>
+            <h5 class="card-title">Add Playlist</h5>
             <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                 <br />
                 <label class="control-label">Select Categories</label>
@@ -19,23 +19,22 @@
                     </div>
                 </div>
                 <br>
-                <label class="control-label">Videos code :</label>
+                <label class="control-label">Playlist code :</label>
                 <div class="row align-items-center">
                     <div class="col-6">
                         <div class="input-group mb-12">
-                            <input type="text" id="video_code" name="video_code" value="" class="form-control" placeholder="Enter Video Code">
+                            <input type="text" id="video_code" name="video_code" value="" class="form-control" placeholder="Enter Video playlist Code">
 
                         </div>
                     </div>
                 </div>
                 <br>
-                
                 <div class="row">
                     <div class="col-6">
 
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">
-                                Add Video
+                                Add Playlist
                             </button>
                         </div>
                     </div>

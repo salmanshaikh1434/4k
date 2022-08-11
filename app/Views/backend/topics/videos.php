@@ -8,6 +8,7 @@
                         <h3 class="card-title"> Videos List</h3>
                     </div>
                     <div class="col-md-6">
+                    <a href="/admin/topics/add_playlist" class="btn btn-primary ml-3" style="float:right">Add Playlist</a>
                         <a href="/admin/topics/add_video" class="btn btn-primary" style="float:right">Add Videos</a>
                     </div>
                 </div>

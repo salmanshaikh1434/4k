@@ -64,7 +64,14 @@
 
             $(document).on("click", ".open-AddBookDialog", function() {
                 var myvideoid = $(this).data('id');
-                $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+                var video_type = $(this).attr('video_type');
+                
+                    if (video_type == 1) {
+                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+                     } else{
+                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/?listType=playlist&list=' + myvideoid + '" allowfullscreen></iframe>');
+               
+                }
             });
 
             $(document).on("click", ".close", function() {
@@ -109,6 +116,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .element {
             position: fixed;
             z-index: 100;
@@ -179,8 +187,9 @@
         </nav>
     </div>
 </header>
+
 <body>
-    <section class="contact pt-5" id="not_select">
+    <section class="contact pad" id="not_select">
         <div class="container-fluid pt-md-5">
             <div class="main-grid-contact">
                 <!-- For Mobile Only -->
@@ -189,7 +198,9 @@
                         <li class="">
                             <div class="">
                                 <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                                <a href="/"><p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p></a>
+                                        <a href="/">
+                                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
+                                        </a>
                                     </span><span style="margin-bottom: 11px;text-align:center;">
                                         <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 3.5vw;">(35 Topics,16,667 Videos & 4,724 Hours)</span></span>
                                     </span>
@@ -198,7 +209,7 @@
                             </div>
                         </li>
                         <div style="border:0.5px solid #f1f1f1;margin-top: -84px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;    background: white;"></div>
-                        <div class="mb-5" style="overflow-y:auto; height:100vh;">
+                        <div style="overflow-y:auto; height:100vh;">
                             <?php
                             foreach ($categories as $category) { ?>
                                 <li class="">
@@ -226,7 +237,6 @@
                     </div>
                 </div>
                 <!-- map -->
-
                 <div class="row">
                     <div class="col-lg-6 col-md-12  col-sm-12 order-first d-none d-lg-block" style="background-color: #242952;">
                         <div class="col">

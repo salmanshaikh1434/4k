@@ -31,6 +31,7 @@ class Topics extends BaseController
         $category = new Category();
         $videos = new Video();
         $page['categories'] = $category->findAll();
+        $page['videos'] = $videos->select('type')->findAll();
         $page['categories_id'] = $page['categories'][0]['id'];
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
@@ -72,7 +73,7 @@ class Topics extends BaseController
             echo '  <div class="col-md-12 col-lg-6 mb-2">
                     <div class="m-1 shadow p-2" style="min-height: 240px;background-color: white;border-radius: 10px;">';
             if ($video['categories'] == 1 || !null == session()->get('expiry_date')) {
-                echo '  <a data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel">
+                echo '  <a data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel" video_type="' . $video["type"] . '">
 
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             </a>
