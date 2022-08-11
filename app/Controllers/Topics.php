@@ -51,7 +51,7 @@ class Topics extends BaseController
             echo '  <li class="m-3">
                 <div class="">
                     <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url(' . '/assets/images/start1.png' . ');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;">';
+                            <p class="circle2" style="margin-top:-11px;margin-left: -10px;">';
             echo $id;
             echo '</p>
                         </span><span style="margin-bottom: 11px;text-align:center;font-weight:bold">
@@ -73,16 +73,16 @@ class Topics extends BaseController
             echo '  <div class="col-md-12 col-lg-6 mb-2">
                     <div class="m-1 shadow p-2" style="min-height: 240px;background-color: white;border-radius: 10px;">';
             if ($video['categories'] == 1 || !null == session()->get('expiry_date')) {
-                echo '  <a data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel" video_type="' . $video["type"] . '">
+                echo '  <div data-toggle="modal" data-id="' . $video['video_code'] . '" title="Add this item" class="open-AddBookDialog" href="#myLargeModalLabel" video_type="' . $video["type"] . '">
 
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
-                            </a>
+                            
                             <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
                                     <span style="font-size: 16px;">' . $video['id'] . ' - ' . $video['titel'] . '</span>
-                                </a></h4>';
+                                </a></h4></div>';
             } else {
-                echo '<a data-toggle="modal" data-target="#exampleModal" style="filter:blur(10px);" data-idvideo="' . $video['video_code'] . '">
-                                <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image">
+                echo '<a data-toggle="modal" data-target="#exampleModalCenter" style="filter:blur(16px);" data-idvideo="' . $video['video_code'] . '">
+                                <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             </a>
                             <h4 style="text-align: center;height: 44px;"><a href="#" style="font-size: 16px;font-weight: bold;filter:blur(10px);overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
                                     <span style="font-size: 16px;">' . $video['id'] . '-' . $video['titel'] . ' </span>

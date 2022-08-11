@@ -78,7 +78,7 @@
                 <div class="">
                     <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
                             <a href="/topics/videos/4">
-                                <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
+                                <p class="circle2" style="margin-top:-11px;margin-left: -10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
                             </a>
                         </span><span style="margin-bottom: 11px;text-align:center;">
                             <span style="font-size: 4.5vw; font-weight:bold"> <?= $category['id'] ?>.<?= $category['cat_name'] ?></span></span>
@@ -103,7 +103,7 @@
                                     <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;border-radius: 8px;" id="hove">
                                 </a>
                             <?php } else { ?>
-                                <a class="btn1" data-idvideo="<?= $video['video_code']; ?>">
+                                <a   data-toggle="modal" data-target="#exampleModalCenter" data-idvideo="<?= $video['video_code']; ?>">
                                     <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;filter:blur(4px);" id="hove">
                                 </a>
                             <?php } ?>
@@ -149,11 +149,7 @@
         </div>
     </div>
     <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;
-  border-radius: 50%;
-  color:white;
-  border: 1px solid grey;
-  padding: 10px;padding:20px">
+        <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:40%">
             <div style=" pointer-events: none !important;"></div>

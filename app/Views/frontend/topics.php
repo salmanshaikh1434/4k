@@ -202,14 +202,14 @@
                                             <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
                                         </a>
                                     </span><span style="margin-bottom: 11px;text-align:center;">
-                                        <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 3.5vw;">(35 Topics,16,667 Videos & 4,724 Hours)</span></span>
+                                    <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 2.5vw;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i> 4,724 Hours)</span></span>
                                     </span>
                                     <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
                                 </div>
                             </div>
                         </li>
                         <div style="border:0.5px solid #f1f1f1;margin-top: -84px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;    background: white;"></div>
-                        <div style="overflow-y:auto; height:100vh;">
+                        <div style="overflow-y:auto; height:95vh;">
                             <?php
                             foreach ($categories as $category) { ?>
                                 <li class="">
@@ -218,7 +218,7 @@
                                                 <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
                                             </span><span style="margin-bottom: 27px;width: 56%;margin-left: -12px;">
                                                 <span><a href="/topics/mobile_videos/<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-size:4vw;font-weight: bold;"><?= $category['cat_name'] ?></a></span><br>
-                                                <span style="color:#242952;font-size:3vw;"><?= $category['videos'] ?> Videos </span><span style="color:#242952;font-size:3vw;"> | <?= $category['hours'] ?> Hours</span>
+                                                <span style="color:#242952;font-size:3vw;"><i class="fas fa-video-camera m-1"></i> <?= $category['videos'] ?> Videos </span><span style="color:#242952;font-size:3vw;"> | <i class="fa fa-clock-o m-1"></i> <?= $category['hours'] ?> Hours</span>
                                             </span><span style=" top:25%;height: 38px;margin-bottom:28px;border-right: 1px solid grey;"></span>
                                             <span style="margin-bottom: 26px;"> <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
                                                     <img class="blink-image" src="/assets/images/unlockg.png" height="30px" width="30px">
@@ -242,12 +242,12 @@
                         <div class="col">
                             <li class="m-3">
                                 <div class="">
-                                    <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-search" aria-hidden="true"></i></p>
-                                        </span><span style="margin-bottom: 11px;text-align:center;font-weight:bold">
-                                            <span style="font-size: 20px;"> Our Index (Our Road-map)</span><br />(35 Topics,16,667 Videos & 4,724 Hours)
+                                    <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;margin-left:-17px">
+                                            <p class="circle2" style="margin-top:-11px;margin-left: -10px;"><i class="fa fa-search" aria-hidden="true"></i></p>
+                                        </span><span style="margin-bottom: 20px;text-align:center;">
+                                            <span style="font-size: 20px;font-weight:bold"> Our Index (Our Road-map)</span><br /><span style="font-size: 16px;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i>4,724 Hours)</span>
                                         </span>
-                                        <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-15px;height: 66px;"></span>
+                                        <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-17px;height: 66px;"></span>
                                     </div>
                                 </div>
                             </li>
@@ -256,10 +256,10 @@
                         <div class="col col-md-12  col-sm-12" style="overflow-y:auto; height:75vh;">
                             <?php
                             foreach ($categories as $category) { ?>
-                                <li class=" m-2">
+                                <li class="">
                                     <div class="">
                                         <div style="display:flex;justify-content: space-between;align-items:center; color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;bottom:3px">
-                                                <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><?= $category['id'] ?> </p>
+                                                <p class="circle2" style="margin-top:-11px;margin-left: -10px;"><?= $category['id'] ?> </p>
                                             </span><span style="margin-bottom: 20px;width: 34%;">
                                                 <p><a class="btn23" category_id="<?= $category['id'] ?>" style="text-decoration: none;color:#242952;font-weight: bold;font-size: 18px;"><?= $category['cat_name'] ?></a></p>
                                             </span><span style="text-align: center;margin-bottom: 27px;"><i class="fas fa-video-camera"></i><br /><?= $category['videos'] ?> Videos</span><span style=" top:25%;height: 38px;margin-bottom: 27px;border-right: 1px solid grey;"></span><span style="text-align: center;margin-bottom: 27px;"><i class="fa fa-clock-o"></i><br><?= $category['hours'] ?> Hours</span><span style=" top:25%;height: 38px;margin-bottom: 27px;border-right: 1px solid grey;"></span>
@@ -270,7 +270,7 @@
                                                 <?php }
                                                                                 if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
                                                     <img src="/assets/images/unlockg.png" height="40px" width="40px">
-                                                <?php } ?></span><span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 24px;margin-right:-27px;height: 66px;"></span>
+                                                <?php } ?></span><span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;margin-bottom: 34px;margin-right:-19px;height: 66px;"></span>
                                         </div>
                                     </div>
                                 </li>
@@ -286,12 +286,12 @@
             </div>
     </section>
     <!--popup -->
-    <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+    <div class="modal fade bd-example-modal-lg" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:90%">
             <div style=" pointer-events: none !important;"></div>
-            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;">
+            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;border:2px solid black">
 
             </div>
         </div>

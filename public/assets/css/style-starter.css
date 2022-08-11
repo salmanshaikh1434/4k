@@ -19506,9 +19506,10 @@ li {
     /* Place the timelime to the left */
     .pad {
         padding-top: 1px;
+        padding-bottom: 5px;
     }
     .topic_titles {
-        font-size: 1.0rem;
+        font-size: 1.3rem;
         display: block;
     }
     .main-timeline::after {

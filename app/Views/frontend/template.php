@@ -90,7 +90,7 @@
                 <ul class="navbar-nav mx-auto my-2 my-lg-0">
 
                     <li class="nav-item">
-                        <a class="btn btn-style" style="background: #242952;" href="topics_details.php?topic=1">Demo</a>
+                        <a class="btn btn-style" style="background: #242952;" href="/topics/videos/1">Demo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/index.php#home" style="margin-top: 9px;">Home</a>
