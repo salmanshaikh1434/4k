@@ -209,7 +209,7 @@
                             </div>
                         </li>
                         <div style="border:0.5px solid #f1f1f1;margin-top: -84px;margin-left: 0px;border-radius: 5px;height: 57px;margin-right: 0px;    background: white;"></div>
-                        <div style="overflow-y:auto; height:95vh;">
+                        <div style="overflow-y:auto; height:90vh;">
                             <?php
                             foreach ($categories as $category) { ?>
                                 <li class="">
