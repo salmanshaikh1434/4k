@@ -43,6 +43,7 @@ class Topics extends BaseController
     {
         $category = new Category();
         $videos = new Video();
+        $videos->orderBy('sort','ASC');
         $videos = $videos->where('categories', $id)->findAll();
         $cat_name = $category->where('id', $id)->first();
         echo '
@@ -78,15 +79,13 @@ class Topics extends BaseController
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             
                             <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
-                                    <span style="font-size: 16px;">' . $video['id'] . ' - ' . $video['titel'] . '</span>
+                                    <span style="font-size: 16px;">'.$video['titel'] . '</span>
                                 </a></h4></div>';
             } else {
                 echo '<a data-toggle="modal" data-target="#exampleModalCenter" style="filter:blur(16px);" data-idvideo="' . $video['video_code'] . '">
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             </a>
-                            <h4 style="text-align: center;height: 44px;"><a href="#" style="font-size: 16px;font-weight: bold;filter:blur(10px);overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
-                                    <span style="font-size: 16px;">' . $video['id'] . '-' . $video['titel'] . ' </span>
-                                </a></h4>';
+                            ';
             }
             if ($video['categories'] != 1 && null == session()->get('expiry_date')) {
                 echo ' <a class="btn btn-style" style="width:100%" data-toggle="modal" data-target="#exampleModalCenter">Upgrade Your Account to Watch</a>';
