@@ -18,9 +18,6 @@ class Topics extends AdminAuth
     }
     public function add($id = NULL)
     {
-
-
-
         $validationRule = [
             'photo' => [
                 'label' => 'Image File',
@@ -95,7 +92,7 @@ class Topics extends AdminAuth
         $videos = new Video();
         $category = new Category();
         $categories = $category->find($id);
-        $page['cat_name'] = $categories['cat_name'];
+        // $page['cat_name'] = $categories['cat_name'];
         $page['videos'] = $videos->where('categories', $id)->findAll();
         $data['page'] = view('backend/topics/videos', $page);
         return view("backend/template", $data);
@@ -130,8 +127,9 @@ class Topics extends AdminAuth
         $videos = new Video();
         if (!empty($videos->find($id))) {
             $post['show-v'] = 1;
+            $cat_id=$videos->select('categories')->where('id',$id)->first();
             $videos->update($id, $post);
-            return redirect()->to('/admin/topics/videos/' . $id)->with('message', 'Video Show successfully');
+            return redirect()->to('/admin/topics/videos/'.$cat_id['categories'])->with('message', 'Video Show successfully');
         }
     }
     public function reject($id = null)
@@ -139,7 +137,8 @@ class Topics extends AdminAuth
         $videos = new Video();
         if (!empty($videos->find($id))) {
             $videos->set('show-v', 0)->update($id);
-            return redirect()->to('/admin/topics/videos/' . $id)->with('message', 'Video hidden successfully');
+            $cat_id=$videos->select('categories')->where('id',$id)->first();
+            return redirect()->to('/admin/topics/videos/'.$cat_id['categories'])->with('message', 'Video hidden successfully');
         }
     }
 
