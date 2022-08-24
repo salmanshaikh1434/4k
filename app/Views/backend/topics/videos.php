@@ -25,9 +25,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($videos as $video) { ?>
+                            <?php 
+                            $i=1;
+                            foreach ($videos as $video) { ?>
                                 <tr>
-                                    <th scope="row"><?= $video['id'] ?></th>
+                                    <th scope="row"><?= $i++ ?></th>
                                     <td><img src="<?= $video['photo'] ?>" style="height: 100px;"></td>
                                     <td style="width: 30%;"><?= $video['titel'] ?></td>
 
