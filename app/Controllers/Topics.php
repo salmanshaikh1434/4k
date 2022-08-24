@@ -88,7 +88,7 @@ class Topics extends BaseController
                             ';
             }
             if ($video['categories'] != 1 && null == session()->get('expiry_date')) {
-                echo ' <a class="btn btn-style" style="width:100%" data-toggle="modal" data-target="#exampleModalCenter">Upgrade Your Account to Watch</a>';
+                echo ' <a class="btn btn-style" style="width:100%" data-toggle="modal" data-target="#exampleModalCenter">Buy Membership</a>';
             }
             echo ' </div></div>';
         }

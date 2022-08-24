@@ -20,7 +20,7 @@ class Topics extends AdminAuth
     {
 
 
-        
+
         $validationRule = [
             'photo' => [
                 'label' => 'Image File',
@@ -104,21 +104,21 @@ class Topics extends AdminAuth
     {
         helper('alert_helper');
         $post = $this->request->getPost();
-        $sortno=$post['sort'];
-       
-       
+        $sortno = $post['sort'];
+
+
         $videos = new Video();
         $page['videos'] = $videos->update($id, $post);
-        $sort=$videos->where('sort >=',$post['sort'])->findAll();
+        $sort = $videos->where('sort >=', $post['sort'])->findAll();
         // echo '<pre>';
         // print_r($sort);
         // exit();
         $i = 0;
         $newsort = 0;
-        foreach($sort as $val){
+        foreach ($sort as $val) {
             $newsort = $sort[$i]['sort'];
-            $new['sort'] = $newsort+1;
-            $videos->update($sort[$i]['id'],$new);
+            $new['sort'] = $newsort + 1;
+            $videos->update($sort[$i]['id'], $new);
             $i++;
             $newsort = 0;
         }
@@ -153,12 +153,15 @@ class Topics extends AdminAuth
             $video_id = $_POST['video_code'];
             $response = file_get_contents('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
-            
-            $photo = $data->items[0]->snippet->thumbnails->maxres->url;
+            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
+                $photo = $data->items[0]->snippet->thumbnails->maxres->url;
+            } else {
+                $photo = $data->items[0]->snippet->thumbnails->standard->url;
+            }
             $titel = $data->items[0]->snippet->title; /// 
             $post = $this->request->getPost();
             $post['photo'] = $photo;
-            $post['titel']=$titel;
+            $post['titel'] = $titel;
             if ($video->insert($post)) {
                 return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');
             } else {
@@ -181,13 +184,17 @@ class Topics extends AdminAuth
             $video_id = $_POST['video_code'];
             $response = file_get_contents('https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
-            $photo = $data->items[0]->snippet->thumbnails->maxres->url;
+            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
+                $photo = $data->items[0]->snippet->thumbnails->maxres->url;
+            } else {
+                $photo = $data->items[0]->snippet->thumbnails->standard->url;
+            }
             $titel = $data->items[0]->snippet->title; /// 
             $post = $this->request->getPost();
             $post['photo'] = $photo;
-            $post['titel']=$titel;
+            $post['titel'] = $titel;
             $post['type'] = 0;
-          
+
             if ($video->insert($post)) {
                 return redirect()->to('/admin/topics/add_playlist')->with('message', 'Video Playlist Added successfully');
             } else {
@@ -199,7 +206,7 @@ class Topics extends AdminAuth
         $data['page'] = view('backend/topics/addplaylist', $page);
         return view("backend/template", $data);
     }
-    
+
 
     public function Video_delete($id)
     {

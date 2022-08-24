@@ -27,7 +27,14 @@
         $(document).ready(function() {
             $(document).on("click", ".open-AddBookDialog", function() {
                 var myvideoid = $(this).data('id');
-                $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+                var video_type = $(this).attr('video_type');
+                
+                    if (video_type == 1) {
+                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+                     } else{
+                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/?listType=playlist&list=' + myvideoid + '" allowfullscreen></iframe>');
+               
+                }
             });
 
             $(document).on("click", ".close", function() {
@@ -103,18 +110,18 @@
                                     <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;border-radius: 8px;" id="hove">
                                 </a>
                             <?php } else { ?>
-                                <a   data-toggle="modal" data-target="#exampleModalCenter" data-idvideo="<?= $video['video_code']; ?>">
-                                    <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;filter:blur(4px);" id="hove">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" data-idvideo="<?= $video['video_code']; ?>">
+                                    <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;filter:blur(16px);" id="hove">
                                 </a>
                             <?php } ?>
                         </div>
                         <div class="col-6 ">
                             <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                                <h4 class="text_hide"> <a href="#" style="font-size: 16px;">
+                                <h4 class="text_hide"> <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel" style="font-size: 16px;">
                                         <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
                                     </a></h4>
                             <?php } else { ?>
-                                <h4 class="text_hide"> <a href="#" style="font-size: 16px;filter:blur(4px);">
+                                <h4 class="text_hide"> <a data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 16px;filter:blur(4px);">
                                         <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
                                     </a></h4>
                             <?php } ?>
@@ -148,7 +155,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:40%">
