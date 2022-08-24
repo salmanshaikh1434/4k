@@ -18,9 +18,6 @@ class Topics extends AdminAuth
     }
     public function add($id = NULL)
     {
-
-
-
         $validationRule = [
             'photo' => [
                 'label' => 'Image File',
@@ -95,7 +92,7 @@ class Topics extends AdminAuth
         $videos = new Video();
         $category = new Category();
         $categories = $category->find($id);
-        $page['cat_name'] = $categories['cat_name'];
+        // $page['cat_name'] = $categories['cat_name'];
         $page['videos'] = $videos->where('categories', $id)->findAll();
         $data['page'] = view('backend/topics/videos', $page);
         return view("backend/template", $data);
@@ -126,8 +123,9 @@ class Topics extends AdminAuth
         $videos = new Video();
         if (!empty($videos->find($id))) {
             $post['show-v'] = 1;
+            $cat_id = $videos->select('categories')->where('id', $id)->first();
             $videos->update($id, $post);
-            return redirect()->to('/admin/topics/videos/' . $id)->with('message', 'Video Show successfully');
+            return redirect()->to('/admin/topics/videos/' . $cat_id['categories'])->with('message', 'Video Show successfully');
         }
     }
     public function reject($id = null)
@@ -135,18 +133,21 @@ class Topics extends AdminAuth
         $videos = new Video();
         if (!empty($videos->find($id))) {
             $videos->set('show-v', 0)->update($id);
-            return redirect()->to('/admin/topics/videos/' . $id)->with('message', 'Video hidden successfully');
+            $cat_id = $videos->select('categories')->where('id', $id)->first();
+            return redirect()->to('/admin/topics/videos/' . $cat_id['categories'])->with('message', 'Video hidden successfully');
         }
     }
 
     public function add_video()
     {
+
         helper('alert_helper');
         $video = new Video();
         $categories = new Category();
         if ($this->request->getMethod() == "post") {
+            $post = $this->request->getPost();
             $apiKey = 'AIzaSyAxDutr3XtpX4x3faUDU_2nJG32Mms7u7o';
-            $video_id = $_POST['video_code'];
+            $video_id = $post['video_code'];
             $response = file_get_contents('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
             if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
@@ -155,19 +156,22 @@ class Topics extends AdminAuth
                 $photo = $data->items[0]->snippet->thumbnails->standard->url;
             }
             $titel = $data->items[0]->snippet->title; /// 
-            $post = $this->request->getPost();
             $post['photo'] = $photo;
             $post['titel'] = $titel;
-            if ($video->insert($post)) {
+            $video_code = str_replace(' ', '', $_POST['video_code']);
+             $check = $video->where('video_code', $video_code)->countAllResults(); 
+
+            if ($check == 0) {
+                $video->insert($post);
                 return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');
             } else {
-                $page['error_message'] = "Failed to add Video please try again !";
+                $page['message'] = "Failed to add Video please try again or Video Already Exist!";
             }
         }
 
         $page['categories'] = $categories->findAll();
-        $data['page'] = view('backend/topics/addvideos', $page);
-        return view("backend/template", $data);
+        $dataView['page'] = view('backend/topics/addvideos', $page);
+        return view("backend/template", $dataView);
     }
 
     public function add_playlist()
