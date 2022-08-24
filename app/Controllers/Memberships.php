@@ -31,7 +31,6 @@ class Memberships extends BaseController
 
     public function checkout($id = Null)
     {
-
         $membership = new Membership();
         $membership = $membership->find($id);
         $amount = $membership['priceing'];

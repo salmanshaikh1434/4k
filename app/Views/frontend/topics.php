@@ -165,9 +165,9 @@
                         <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
                     </li>
                     <?php if (!NULL == session()->get('id')) { ?>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
                         </li>
