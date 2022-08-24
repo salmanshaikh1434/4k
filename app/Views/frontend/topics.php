@@ -80,12 +80,6 @@
                     $(this).attr('src', src);
                 });
             });
-            $('#myLargeModalLabel').click(function() {
-                $(".iframeVideo").each(function() {
-                    var src = $(this).attr('src');
-                    $(this).attr('src', src);
-                });
-            });
         });
 
         const navLinks = document.querySelectorAll('.nav-item')
