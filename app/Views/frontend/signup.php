@@ -62,9 +62,27 @@
         font-weight: 600;
         text-decoration: none;
     }
+
+    #pass:focus {
+        outline: none;
+    }
+
+    #visiblity-toggle {
+        color: #363636;
+        cursor: pointer;
+        margin: 0 2px;
+    }
+
+    #visiblity-toggle2 {
+        color: #363636;
+        cursor: pointer;
+        margin: 0 2px;
+    }
 </style>
-</head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
 
 
 <section class="inner-banner py-5">
@@ -87,144 +105,110 @@
         </svg>
     </div>
 </section>
-<!-- //inner banner -->
 
-<!-- contact -->
 <section class="contact py-5" id="contact">
     <div class="container">
-
         <div class="row m-1">
-
-            <!-- map -->
-
-            <!-- contact form -->
-            <div class="col-md-6 login-form-1 d-none d-lg-block">
-                <img class="image-responsive" src="/assets/images/signup.png" height="400" width="600" />
-            </div>
-            <div class="col-md-6 login-form-2">
+            <div class="col-md-6 login-form-2 d-none d-lg-block">
                 <h3>Sign Up</h3>
-                <form method="post" action="" style="padding: 5%;">
+                <form method="post" action="/signup/info" style="padding: 5%;">
                     <div class="to">
-                        <!-- <div class="form-group">
-                            <label class="text-white p-2"><b>Plan: </b></label>
-                            <select name="plan" id="plan" class="form-control" onchange="myFunction()">
-                                <option value="">Select plan</option>
-                                <option value="basic">basic</option>
-                                <option value="pro">pro</option>
-                                <option value="premium">premium</option>
-                            </select>
-                        </div>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Price: </b></label>
-                            <input type="text" class="form-control" name="amount" maxlength="60" id="amount" readonly required>
-                        </div> -->
-                        <div class="form-group">
-                            <label class="text-white p-2"><b>Name : </b></label>
+                            <label class="text-white p-2"><b>First Name : </b></label>
                             <input type="text" class="form-control" name="firstname" maxlength="60" id="input" required>
                         </div>
-
+                        <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
+                        <div class="form-group">
+                            <label class="text-white p-2"><b>Last Name : </b></label>
+                            <input type="text" class="form-control" name="lastname" maxlength="60" id="input" required>
+                        </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Your email : </b></label>
                             <input type="email" class="form-control" name="email" maxlength="60" id="input" required>
-
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
                             <input type="phone" class="form-control" name="contact" maxlength="10" id="input" required>
-
                         </div>
-
-
-                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-                        <style>
-                            #pass:focus {
-                                outline: none;
-                            }
-
-                            #visiblity-toggle {
-                                color: #363636;
-                                cursor: pointer;
-                                margin: 0 2px;
-                            }
-
-                            #visiblity-toggle2 {
-                                color: #363636;
-                                cursor: pointer;
-                                margin: 0 2px;
-                            }
-                        </style>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
-                            <!--<input type="password"  name="password" maxlength="60" id="input" required>-->
-
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="150" required="">
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
-
                     </div>
                     <div class="form-group">
                         <label class="text-white p-2"><b>Confirm Password :</b></label>
-
-                        <!--<input type="password"  name="repassword" maxlength="60" id="input" required>-->
-
                         <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
                     </div>
                     <div class="clearfix"></div>
 
-
-                    <div class="input-group1 text-center mt-4">
-                        <button class="btn btn-style " type="submit" name="submitup" style="background-color: #fff;color: #fd746c;">Sign Up </button>
-                    </div>
-
                     <div class="clearfix"></div>
-                </form>
+
+            </div>
+            <div class="col-md-6 login-form-1">
+                <div class="m-5 p-5">
+                    <h3 style="color: #fd746c;"><?= $membership['titel'] ?></h3>
+                    <hr>
+                    <h4> ₹ <?= $membership['priceing'] ?>/- <span> </span></h4>
+                    <br>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <?= $membership['year'] ?> days</li>
+                        <li><i class="fas fa-check-circle"></i> <?= $membership['devices'] ?> Devices</li>
+                        <li><i class="fas fa-check-circle"></i> <?= $membership['topics'] ?></li>
+                        <li><i class="fas fa-check-circle"></i> <?= $membership['hours'] ?></li>
+                        <li><i class="fas fa-check-circle"></i> <?= $membership['videos'] ?></li>
+
+                    </ul>
+                    <hr>
+                    <input type="submit" class="btn btn-style mt-4 mx-auto" style="background-color: #fff;color: #fd746c;">
+                    </form>
+                </div>
             </div>
         </div>
-        <script>
-            const pass = document.querySelector('#pass')
-            const btn = document.querySelector('#visiblity-toggle')
-
-            btn.addEventListener('click', () => {
-                if (pass.type === "text") {
-                    pass.type = "password";
-                    btn.innerHTML = "visibility";
-                } else {
-                    pass.type = "text";
-                    btn.innerHTML = "visibility_off";
-
-                }
-            })
-
-
-            const passa = document.querySelector('#pass2')
-            const btna = document.querySelector('#visiblity-toggle2')
-
-            btn.addEventListener('click', () => {
-                if (passa.type === "text") {
-                    passa.type = "password";
-                    btna.innerHTML = "visibility2";
-                } else {
-                    passa.type = "text";
-                    btna.innerHTML = "visibility_off2";
-
-                }
-            })
-
-
-
-            function myFunction() {
-                var x = document.getElementById("plan").value;
-               
-                if (x == "basic") {
-                    y = 849;    
-                } else if (x == "pro") {
-                    y = 1299;
-                } else if (x == "premium") {
-                    y = 1599;
-                }
-                document.getElementById("amount").value = y;
-            }
-        </script>
-
     </div>
 </section>
+<script>
+    const pass = document.querySelector('#pass')
+    const btn = document.querySelector('#visiblity-toggle')
+
+    btn.addEventListener('click', () => {
+        if (pass.type === "text") {
+            pass.type = "password";
+            btn.innerHTML = "visibility";
+        } else {
+            pass.type = "text";
+            btn.innerHTML = "visibility_off";
+
+        }
+    })
+
+
+    const passa = document.querySelector('#pass2')
+    const btna = document.querySelector('#visiblity-toggle2')
+
+    btn.addEventListener('click', () => {
+        if (passa.type === "text") {
+            passa.type = "password";
+            btna.innerHTML = "visibility2";
+        } else {
+            passa.type = "text";
+            btna.innerHTML = "visibility_off2";
+
+        }
+    })
+
+
+
+    function myFunction() {
+        var x = document.getElementById("plan").value;
+
+        if (x == "basic") {
+            y = 849;
+        } else if (x == "pro") {
+            y = 1299;
+        } else if (x == "premium") {
+            y = 1599;
+        }
+        document.getElementById("amount").value = y;
+    }
+</script>
