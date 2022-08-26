@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                        <h3 class="card-title">Topics List</h3>
+                        <h3 class="card-title">User List</h3>
                     </div>
                 </div>
                 <br>
@@ -22,6 +22,7 @@
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Email</th>
+                                <th>mobile</th>
                                 <th>Plan</th>
                                 <th>Recieved</th>
                                 <th>Subscription Date</th>
@@ -39,6 +40,7 @@
                                     <td><?= $user['firstname'] ?></td>
                                     <td><?= $user['lastname'] ?></td>
                                     <td><?= $user['email'] ?></td>
+                                    <td><?= $user['mobile'] ?></td>
                                     <td><?= $user['titel'] ?></td>
                                     <td><?= $user['price'] ?></td>
                                     <td><?= $user['subscription_date'] ?></td>

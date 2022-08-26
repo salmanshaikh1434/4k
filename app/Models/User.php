@@ -19,6 +19,7 @@ class User extends Model
         'firstname',
         'lastname',
         'username',
+        'mobile',
         'email',
         'country',
         'pass',

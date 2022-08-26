@@ -101,12 +101,8 @@ class Topics extends AdminAuth
     {
         helper('alert_helper');
         $post = $this->request->getPost();
-        $sortno = $post['sort'];
-
-
         $videos = new Video();
-        $page['videos'] = $videos->update($id, $post);
-        $sort = $videos->where('sort >=', $post['sort'])->findAll();
+        $sort = $videos->where('sort >', $post['sort'])->findAll();
         // echo '<pre>';
         // print_r($sort);
         // exit();
@@ -114,7 +110,7 @@ class Topics extends AdminAuth
         $newsort = 0;
         foreach ($sort as $val) {
             $newsort = $sort[$i]['sort'];
-            $new['sort'] = $newsort + 1;
+            $new['sort'] = $post['sort'] + 1;
             $videos->update($sort[$i]['id'], $new);
             $i++;
             $newsort = 0;

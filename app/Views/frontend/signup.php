@@ -128,7 +128,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="phone" class="form-control" name="contact" maxlength="10" id="input" required>
+                            <input type="phone" class="form-control" name="mobile" maxlength="10" id="input" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
