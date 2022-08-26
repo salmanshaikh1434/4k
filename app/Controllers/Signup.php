@@ -129,7 +129,7 @@ class Signup extends BaseController
 
 
 
-        $user->select(['email','firstname']);
+        $user->select(['email', 'firstname']);
         $data =  $user->first();
         $name = $data['firstname'];
         $username = $data['email'];
@@ -143,12 +143,12 @@ class Signup extends BaseController
             $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
-            $mail->Password   = 'Salman@123';                               //SMTP password
+            $mail->Password   = 'Etz5Tf4Ux8L@';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('salman@sublimetechnologies.in', 'Maharashtra Fencing Association');
+            $mail->setFrom('salman@sublimetechnologies.in', '4k English');
             $mail->addAddress($username, $name);     //Add a recipient
 
 
@@ -215,11 +215,74 @@ class Signup extends BaseController
     //         return redirect()->to('/login');
     //         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     //     }
-       
+
     // }
 
+    public function forgot_password()
+    {
+        helper('alert_helper');
+        $page['footer'] = true;
+        $social = new Social();
+        $site_info = new SiteInfo();
+        $page['site_info'] = $site_info->first();
+        $page['social'] = $social->first();
+        $page['errors'] = [];
+        if ($this->request->getMethod() == 'post') {
+            $post = $this->request->getPost();
+            $change = new User();
+            $change->select(['email', 'id', 'firstname']);
+            $change->where('email', $post['email']);
+            $useremail = $change->first();
 
-    
+            if ($post['email'] == $useremail['email']) {
+                $password = rand(10, 100);
+                $username = $useremail['email'];
+                $name = $useremail['firstname'];
+                $id = $useremail['id'];
+                $change->update($id, ['pass' => md5($password), 'confpass' => md5($password)]);
+                $mail = new PHPMailer(true);
+
+                try {
+                    //Server settings
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                    $mail->isSMTP();                                            //Send using SMTP
+                    $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                    $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
+                    $mail->Password   = 'Etz5Tf4Ux8L@';                               //SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                    //Recipients
+                    $mail->setFrom('salman@sublimetechnologies.in', '4k English');
+                    $mail->addAddress($username);     //Add a recipient
+
+
+                    //Content
+                    $mail->isHTML(true);                                  //Set email format to HTML
+                    $mail->Subject = 'New Welcome Mr. ' . $name . '';
+                    $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
+                    $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
+
+                    $mail->send();
+
+                    session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+                    return redirect()->to('/login');
+                } catch (Exception $e) {
+                    session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
+                    return redirect()->to('/login');
+                    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                }
+                // exit();
+
+            } else {
+                $page['errors'][] = 'Email id did not match';
+            }
+        }
+        $data['page'] = view('/frontend/forgot_password', $page);
+        return view("/frontend/template", $data);
+    }
+
     public function signout()
     {
         session()->destroy();

@@ -189,6 +189,7 @@
     <!--content-->
 
     <!-- contact -->
+    <?= session()->getFlashdata('mailsent') ?>
     <div class="container login-container">
         <div class="row m-1">
 
@@ -232,7 +233,7 @@
                                 Remember me
                             </label>
                         </div>
-                        <a href="forget_password.php" class="ForgetPwd float-right" value="Login">Forget Password?</a>
+                        <a href="/signup/forgot_password" class="ForgetPwd float-right" value="Login">Forget Password?</a>
 
                     </div>
                 </form>
