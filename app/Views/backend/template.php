@@ -121,12 +121,12 @@
                                 <span>Topics</span>
                             </a>
                         </li>
-                        <!-- <li>
-                            <a href="javascript: void(0);" class=" waves-effect">
+                        <li>
+                            <a href="/admin/couponcodes" class=" waves-effect">
                                 <i class="mdi mdi-cash mdi-24px"></i>
-                                <span>Payment</span>
+                                <span>Coupon Code</span>
                             </a>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <a href="/admin/dashboard/oh" class=" waves-effect">
                                 <i class="mdi mdi-email-multiple mdi-24px"></i>
