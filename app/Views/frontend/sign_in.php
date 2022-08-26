@@ -189,9 +189,10 @@
     <!--content-->
 
     <!-- contact -->
+    
     <div class="container login-container">
         <div class="row m-1">
-
+        <?= alertMessage() ?>
             <div class="col-md-6 login-form-1 d-none d-lg-block">
                 <img class="image-responsive" src="/assets/images/signin.png" height="400" width="600" />
             </div>

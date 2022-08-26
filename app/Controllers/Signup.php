@@ -2,20 +2,21 @@
 
 namespace App\Controllers;
 
-use App\Models\SiteInfo;
+use App\Models\User;
+use Razorpay\Api\Api;
+use App\Models\Device;
 use App\Models\Social;
-use App\Controllers\BaseController;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
+use App\Models\SiteInfo;
+use App\Models\Temprary;
 use App\Models\Membership;
 use App\Models\Subscription;
-use App\Models\Temprary;
-use App\Models\User;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 require APPPATH . 'views/razorpay/Razorpay.php';
 
-use Razorpay\Api\Api;
+use PHPMailer\PHPMailer\PHPMailer;
+use App\Controllers\BaseController;
 
 
 class Signup extends BaseController
@@ -129,7 +130,7 @@ class Signup extends BaseController
 
 
 
-        $user->select(['email','firstname']);
+        $user->select(['email', 'firstname']);
         $data =  $user->first();
         $name = $data['firstname'];
         $username = $data['email'];
@@ -215,13 +216,17 @@ class Signup extends BaseController
     //         return redirect()->to('/login');
     //         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     //     }
-       
+
     // }
 
 
-    
+
     public function signout()
     {
+        $device = new Device();
+        $uniqid = session()->get('session_id');      
+        $id=$device->select('id')->where('session_id', $uniqid)->first();
+        $device->delete($id);
         session()->destroy();
         return redirect()->to('/');
     }
