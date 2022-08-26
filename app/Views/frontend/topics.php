@@ -170,6 +170,7 @@
                         </li> -->
                         <li class="nav-item">
                             <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                            <a href="/changepassword" class="btn btn-style" style="margin-left: 5px;">Change Password</a>
                         </li>
                     <?php } else { ?>
                         <li class="menu-item">

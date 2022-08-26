@@ -171,11 +171,7 @@ class Topics extends AdminAuth
             $video_id = $post['video_code'];
             $response = file_get_contents('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
-            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
-                $photo = $data->items[0]->snippet->thumbnails->maxres->url;
-            } else {
-                $photo = $data->items[0]->snippet->thumbnails->standard->url;
-            }
+            $photo = (!empty($data->items[0]->snippet->thumbnails->maxres)) ? $data->items[0]->snippet->thumbnails->maxres->url : $data->items[0]->snippet->thumbnails->default->url;
             $titel = $data->items[0]->snippet->title; /// 
             $post['photo'] = $photo;
             $post['titel'] = $titel;
@@ -205,18 +201,16 @@ class Topics extends AdminAuth
             $video_id = $_POST['video_code'];
             $response = file_get_contents('https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
-            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
-                $photo = $data->items[0]->snippet->thumbnails->maxres->url;
-            } else {
-                $photo = $data->items[0]->snippet->thumbnails->standard->url;
-            }
+            $photo = (!empty($data->items[0]->snippet->thumbnails->maxres)) ? $data->items[0]->snippet->thumbnails->maxres->url : $data->items[0]->snippet->thumbnails->default->url;
             $titel = $data->items[0]->snippet->title; /// 
             $post = $this->request->getPost();
             $post['photo'] = $photo;
             $post['titel'] = $titel;
             $post['type'] = 0;
-
-            if ($video->insert($post)) {
+            $video_code = str_replace(' ', '', $_POST['video_code']);
+            $check = $video->where('video_code', $video_code)->countAllResults();
+            if ($check == 0) {
+                $video->insert($post);
                 return redirect()->to('/admin/topics/add_playlist')->with('message', 'Video Playlist Added successfully');
             } else {
                 $page['error_message'] = "Failed to add Video Playlist please try again !";
