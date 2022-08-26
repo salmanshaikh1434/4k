@@ -6,16 +6,9 @@ use App\Models\User;
 use Razorpay\Api\Api;
 use App\Models\Device;
 use App\Models\Social;
-<<<<<<< HEAD
 use App\Models\SiteInfo;
 use App\Models\Temprary;
-=======
-use App\Controllers\BaseController;
 use App\Models\CouponCode;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
->>>>>>> 30fbbcb9db710094b3913234b5f1768a45f17676
 use App\Models\Membership;
 use App\Models\Subscription;
 use PHPMailer\PHPMailer\SMTP;
@@ -217,7 +210,7 @@ class Signup extends BaseController
 
 
 
-        $user->select(['email',  'firstname']);
+        $user->select(['email', 'firstname']);
         $data =  $user->first();
         $name = $data['firstname'];
         $username = $data['email'];
@@ -275,8 +268,6 @@ class Signup extends BaseController
             $change->where('email', $post['email']);
             $useremail = $change->first();
 
-<<<<<<< HEAD
-=======
             if ($post['email'] == $useremail['email']) {
                 $password = rand(10, 100);
                 $username = $useremail['email'];
@@ -322,7 +313,6 @@ class Signup extends BaseController
         $data['page'] = view('/frontend/forgot_password', $page);
         return view("/frontend/template", $data);
     }
->>>>>>> 30fbbcb9db710094b3913234b5f1768a45f17676
 
     public function signout()
     {
