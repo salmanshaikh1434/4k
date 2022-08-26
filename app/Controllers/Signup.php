@@ -130,7 +130,7 @@ class Signup extends BaseController
 
 
 
-        $user->select(['email', 'firstname']);
+        $user->select(['email',  'firstname']);
         $data =  $user->first();
         $name = $data['firstname'];
         $username = $data['email'];
@@ -144,12 +144,12 @@ class Signup extends BaseController
             $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
-            $mail->Password   = 'Salman@123';                               //SMTP password
+            $mail->Password   = 'Etz5Tf4Ux8L@';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('salman@sublimetechnologies.in', 'Maharashtra Fencing Association');
+            $mail->setFrom('salman@sublimetechnologies.in', '4k English');
             $mail->addAddress($username, $name);     //Add a recipient
 
 
@@ -219,6 +219,21 @@ class Signup extends BaseController
 
     // }
 
+    public function forgot_password()
+    {
+        helper('alert_helper');
+        $page['footer'] = true;
+        $social = new Social();
+        $site_info = new SiteInfo();
+        $page['site_info'] = $site_info->first();
+        $page['social'] = $social->first();
+        $page['errors'] = [];
+        if ($this->request->getMethod() == 'post') {
+            $post = $this->request->getPost();
+            $change = new User();
+            $change->select(['email', 'id', 'firstname']);
+            $change->where('email', $post['email']);
+            $useremail = $change->first();
 
 
     public function signout()
