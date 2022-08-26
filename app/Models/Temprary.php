@@ -14,7 +14,7 @@ class Temprary extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id','firstname','lastname','email','mobile','pass','confpass','plan_id','price','payment_id','subscription_date','expiry_date'];
+    protected $allowedFields    = ['id','firstname','lastname','email','mobile','pass','confpass','plan_id','price','payment_id','subscription_date','expiry_date','password'];
 
     // Dates
     protected $useTimestamps = false;

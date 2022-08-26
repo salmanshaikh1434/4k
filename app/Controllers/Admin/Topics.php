@@ -93,28 +93,49 @@ class Topics extends AdminAuth
         $category = new Category();
         $categories = $category->find($id);
         // $page['cat_name'] = $categories['cat_name'];
-        $page['videos'] = $videos->where('categories', $id)->findAll();
+        $page['videos'] = $videos->where('categories', $id)->orderBy('sort', 'ASC')->findAll();
         $data['page'] = view('backend/topics/videos', $page);
         return view("backend/template", $data);
     }
-    public function sort($id)
+    public function sort($id = null, $category_id = null)
     {
+        // echo "<pre>";
         helper('alert_helper');
         $post = $this->request->getPost();
         $videos = new Video();
-        $sort = $videos->where('sort >', $post['sort'])->findAll();
+        $videos->select('sort');
+        $ex = $videos->find($id);
+        $existing = $ex['sort'];
+        $newchange = $post['sort'];
+
+        $videos->select(['sort', 'id']);
+        $videos->where('categories', 1);
+        $newvalues = $videos->where('sort>=', $newchange)->findAll();
+        $videos->select(['sort', 'id']);
+        $oldvalues = $videos->where('sort>', $existing)->findAll();
         // echo '<pre>';
-        // print_r($sort);
+        // print_r($oldvalues);
         // exit();
-        $i = 0;
-        $newsort = 0;
-        foreach ($sort as $val) {
-            $newsort = $sort[$i]['sort'];
-            $new['sort'] = $post['sort'] + 1;
-            $videos->update($sort[$i]['id'], $new);
-            $i++;
-            $newsort = 0;
+
+        for ($i = 0; $i < count($newvalues); $i++) {
+            $newchange += 1;
+            $videos->update($newvalues[$i]['id'], ['sort' => $newchange]);
         }
+        $videos->update($id, $post);
+
+        // for ($i = 1; $i < count($oldvalues); $i++) {
+        // //  if($oldvalues[$i]['sort'] == $post['sort']){
+        // //     $change = $oldvalues[$i]['sort']+1;
+        // //  }else{
+        //     $change = $oldvalues[$i]['sort'] - 1;
+        // //  }
+            
+        //     $videos->update($oldvalues[$i]['id'], ['sort' => $change]);
+        // }
+
+
+
+
         $massage = 'Sorting Successfully';
         return redirect()->back()->with('message', $massage);
     }
@@ -159,7 +180,7 @@ class Topics extends AdminAuth
             $post['photo'] = $photo;
             $post['titel'] = $titel;
             $video_code = str_replace(' ', '', $_POST['video_code']);
-             $check = $video->where('video_code', $video_code)->countAllResults(); 
+            $check = $video->where('video_code', $video_code)->countAllResults();
 
             if ($check == 0) {
                 $video->insert($post);

@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\SiteInfo;
 use App\Models\Social;
 use App\Controllers\BaseController;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 use App\Models\Membership;
 use App\Models\Subscription;
 use App\Models\Temprary;
@@ -31,6 +34,7 @@ class Signup extends BaseController
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
             $post['pass'] = md5($post['pass']);
+            $post['password'] = $post['pass'];
             $post['confpass'] = md5($post['confpass']);
             $price_id =  $post['price_id'];
             if ($post['pass'] == $post['confpass']) {
@@ -91,6 +95,8 @@ class Signup extends BaseController
         if ($_POST['razorpay_payment_id']) {
             $info = $temp->find($id);
             unset($info['id']);
+            $password = $info['password'];
+            unset($info['password']);
             if ($user->insert($info)) {
                 $id = $user->insertID();
             }
@@ -120,9 +126,100 @@ class Signup extends BaseController
         if (isset($active)) {
             $user['expiry_date'] = $active['expiry_date'];
         }
-        return redirect()->to('/login');
+
+
+
+        $user->select(['email','firstname']);
+        $data =  $user->first();
+        $name = $data['firstname'];
+        $username = $data['email'];
+        $password = $password;
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
+            $mail->Password   = 'Salman@123';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom('salman@sublimetechnologies.in', 'Maharashtra Fencing Association');
+            $mail->addAddress($username, $name);     //Add a recipient
+
+
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Welcome Mr. ' . $name . '';
+            $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
+            $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
+
+            $mail->send();
+
+            session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+            return redirect()->to('/login');
+        } catch (Exception $e) {
+            session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
+            return redirect()->to('/login');
+            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+        // return redirect()->to('/login');
     }
 
+
+    // public function send_password($id = null, $password = null)
+    // {
+    //     $user = new User();
+    //     if ($id != null) {
+    //         $user->where('id', $id);
+    //     }
+    //     $user->select(['email','firstname']);
+    //     $data =  $user->first();
+    //     $name = $data['firstname'];
+    //     $username = $data['email'];
+    //     $password = $password;
+    //     $mail = new PHPMailer(true);
+
+    //     try {
+    //         //Server settings
+    //         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    //         $mail->isSMTP();                                            //Send using SMTP
+    //         $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+    //         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    //         $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
+    //         $mail->Password   = 'Salman@123';                               //SMTP password
+    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    //         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //         //Recipients
+    //         $mail->setFrom('salman@sublimetechnologies.in', 'Maharashtra Fencing Association');
+    //         $mail->addAddress($username, $name);     //Add a recipient
+
+
+    //         //Content
+    //         $mail->isHTML(true);                                  //Set email format to HTML
+    //         $mail->Subject = 'Welcome Mr. ' . $name . '';
+    //         $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
+    //         $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
+
+    //         $mail->send();
+
+    //         session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+    //         return redirect()->to('/login');
+    //     } catch (Exception $e) {
+    //         session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
+    //         return redirect()->to('/login');
+    //         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    //     }
+       
+    // }
+
+
+    
     public function signout()
     {
         session()->destroy();
