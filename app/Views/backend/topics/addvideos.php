@@ -1,7 +1,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body ">
-        <?= alertMessage() ?>
+        <?= alertMessage()?>
             <h5 class="card-title">Add Videos</h5>
             <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                 <br />
