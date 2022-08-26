@@ -44,4 +44,6 @@ class ChangePassword extends BaseController
         $data['page'] = view('/frontend/change_password', $page);
         return view("/frontend/template", $data);
     }
+
+    
 }

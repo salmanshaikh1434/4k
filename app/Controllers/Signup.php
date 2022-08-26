@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\SiteInfo;
 use App\Models\Social;
 use App\Controllers\BaseController;
+use App\Models\CouponCode;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -26,18 +27,86 @@ class Signup extends BaseController
         $social = new Social();
         $m = new Membership();
         $temp = new Temprary();
+        $user = new User();
         $site_info = new SiteInfo();
+
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         $page['membership'] = $m->find($id);
+
 
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
             $post['confpass'] = md5($post['confpass']);
-            $price_id =  $post['price_id'];
-            if ($post['pass'] == $post['confpass']) {
+            echo $price_id =  $post['price_id'];
+
+
+            $code = new CouponCode();
+            $code->where('subscription_id', $price_id);
+            $couponcode = $code->first();
+            // for coupon code
+            if (!empty($post['coupon']) && isset($couponcode)) {
+                if ($post['coupon'] == $couponcode['name']) {
+                    unset($post['coupon']);
+                    unset($post['password']);
+                    $user->insert($post);
+                    $user_id = $user->insertID();
+                    $data['subscription_date'] = date('Y-m-d');
+                    $data['user_id'] = $user_id;
+                    $data['plan_id'] = $price_id;
+
+
+                    // calculate expiry of plan  and Add Subscription
+                    $membership = new Membership();
+                    $members = $membership->find($price_id);
+                    $days  = '+' . $members['year'] . ' days';
+                    $data['price'] = $members['priceing'];
+                    $data['expiry_date'] = date('Y-m-d', strtotime($days));
+                    $subscription = new Subscription();
+                    $subscription->insert($data);
+
+                    $user->select(['email', 'firstname']);
+                    $data =  $user->first();
+                    $name = $data['firstname'];
+                    $username = $data['email'];
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        //Server settings
+                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                        $mail->isSMTP();                                            //Send using SMTP
+                        $mail->Host       = 'smtp.hostinger.com';                   //Set the SMTP server to send through
+                        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                        $mail->Username   = 'salman@sublimetechnologies.in';        //SMTP username
+                        $mail->Password   = 'Etz5Tf4Ux8L@';                         //SMTP password
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                        //Recipients
+                        $mail->setFrom('salman@sublimetechnologies.in', '4k English');
+                        $mail->addAddress($username, $name);     //Add a recipient
+
+
+                        //Content
+                        $mail->isHTML(true);                                  //Set email format to HTML
+                        $mail->Subject = 'Welcome Mr. ' . $name . '';
+                        $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $post['pass'] . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
+                        $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $post['pass'] . '';
+                        $mail->send();
+
+                        session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+                        return redirect()->to('/login');
+                    } catch (Exception $e) {
+                        session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
+                        return redirect()->to('/login');
+                    }
+                }
+
+                // without coupon code
+            } elseif ($post['pass'] == $post['confpass']) {
+
                 if ($temp->insert($post)) {
                     $tempid = $temp->insertID();
                     unset($post['pass']);
@@ -58,6 +127,11 @@ class Signup extends BaseController
         $data['page'] = view('frontend/signup', $page);
         return view("frontend/template", $data);
     }
+
+
+
+
+
 
     public function checkout($tempid = Null, $price_id = NUll)
     {
@@ -86,6 +160,12 @@ class Signup extends BaseController
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
     }
+
+
+
+
+
+
     public function payment_status($id = null, $membership_id = null)
     {
         $temp = new Temprary();
@@ -133,7 +213,7 @@ class Signup extends BaseController
         $data =  $user->first();
         $name = $data['firstname'];
         $username = $data['email'];
-        $password = $password;
+
         $mail = new PHPMailer(true);
 
         try {
@@ -165,58 +245,11 @@ class Signup extends BaseController
         } catch (Exception $e) {
             session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
             return redirect()->to('/login');
-            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-        // return redirect()->to('/login');
     }
 
 
-    // public function send_password($id = null, $password = null)
-    // {
-    //     $user = new User();
-    //     if ($id != null) {
-    //         $user->where('id', $id);
-    //     }
-    //     $user->select(['email','firstname']);
-    //     $data =  $user->first();
-    //     $name = $data['firstname'];
-    //     $username = $data['email'];
-    //     $password = $password;
-    //     $mail = new PHPMailer(true);
 
-    //     try {
-    //         //Server settings
-    //         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    //         $mail->isSMTP();                                            //Send using SMTP
-    //         $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
-    //         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    //         $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
-    //         $mail->Password   = 'Salman@123';                               //SMTP password
-    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    //         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //         //Recipients
-    //         $mail->setFrom('salman@sublimetechnologies.in', 'Maharashtra Fencing Association');
-    //         $mail->addAddress($username, $name);     //Add a recipient
-
-
-    //         //Content
-    //         $mail->isHTML(true);                                  //Set email format to HTML
-    //         $mail->Subject = 'Welcome Mr. ' . $name . '';
-    //         $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
-    //         $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
-
-    //         $mail->send();
-
-    //         session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
-    //         return redirect()->to('/login');
-    //     } catch (Exception $e) {
-    //         session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
-    //         return redirect()->to('/login');
-    //         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    //     }
-
-    // }
 
     public function forgot_password()
     {
@@ -271,10 +304,7 @@ class Signup extends BaseController
                 } catch (Exception $e) {
                     session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
                     return redirect()->to('/login');
-                    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
-                // exit();
-
             } else {
                 $page['errors'][] = 'Email id did not match';
             }

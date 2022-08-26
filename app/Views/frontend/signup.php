@@ -111,7 +111,7 @@
         <div class="row m-1">
             <div class="col-md-6 login-form-2 d-none d-lg-block">
                 <h3>Sign Up</h3>
-                <form method="post" action="/signup/info" style="padding: 5%;">
+                <form method="post" action="/signup/info/" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
@@ -135,11 +135,20 @@
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="150" required="">
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
+                        <div class="form-group">
+                            <label class="text-white p-2"><b>Confirm Password :</b></label>
+                            <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white p-2"> <b>Coupon Code :</b></label>
+                            <input type="text" class="form-control" name="coupon" id="input">
+                        </div>
+
+                     
+
                     </div>
-                    <div class="form-group">
-                        <label class="text-white p-2"><b>Confirm Password :</b></label>
-                        <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
-                    </div>
+
+
                     <div class="clearfix"></div>
 
                     <div class="clearfix"></div>
