@@ -14,7 +14,7 @@ use App\Models\Subscription;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require APPPATH . 'views/razorpay/Razorpay.php';
+// require APPPATH . 'views/razorpay/Razorpay.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use App\Controllers\BaseController;
@@ -106,7 +106,9 @@ class Signup extends BaseController
                 }
 
                 // without coupon code
-            } elseif ($post['pass'] == $post['confpass']) {
+            } 
+            
+            if ($post['pass'] == $post['confpass']) {
 
                 if ($temp->insert($post)) {
                     $tempid = $temp->insertID();
@@ -124,6 +126,7 @@ class Signup extends BaseController
             } else {
                 $page['error_message'] = "password and confirm password doesn't match!";
             }
+          
         }
         $data['page'] = view('frontend/signup', $page);
         return view("frontend/template", $data);
