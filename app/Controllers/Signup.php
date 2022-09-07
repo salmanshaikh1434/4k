@@ -107,12 +107,10 @@ class Signup extends BaseController
                 }
 
                 // without coupon code
-            } elseif ($post['pass'] == $post['confpass']) {
-                $emails=$user->select('email')->where('email',$post['email'])->findAll();
-                if($emails){
-                   print_r('ji');
-                   exit();
-                }
+            } 
+            
+            if ($post['pass'] == $post['confpass']) {
+
                 if ($temp->insert($post)) {
                     $tempid = $temp->insertID();
                     unset($post['pass']);
@@ -129,6 +127,7 @@ class Signup extends BaseController
             } else {
                 $page['error_message'] = "password and confirm password doesn't match!";
             }
+          
         }
         $data['page'] = view('frontend/signup', $page);
         return view("frontend/template", $data);
