@@ -115,12 +115,12 @@
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
-                            <input type="text" class="form-control" name="firstname" maxlength="60" id="input" required>
+                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="firstname" maxlength="60" id="input" required>
                         </div>
                         <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
                         <div class="form-group">
                             <label class="text-white p-2"><b>Last Name : </b></label>
-                            <input type="text" class="form-control" name="lastname" maxlength="60" id="input" required>
+                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="lastname" maxlength="60" id="input" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Your email : </b></label>
@@ -128,23 +128,24 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="phone" class="form-control" name="mobile" maxlength="10" id="input" required>
+                            <input type="number" class="form-control" name="mobile" maxlength="10" id="input" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="150" required="">
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="14" minlength="8" required="">
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Confirm Password :</b></label>
                             <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
                         </div>
+                        <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Coupon Code :</b></label>
                             <input type="text" class="form-control" name="coupon" id="input">
                         </div>
 
-                     
+
 
                     </div>
 
@@ -178,18 +179,31 @@
 </section>
 <script>
     const pass = document.querySelector('#pass')
+    const pass2 = document.querySelector('#pass2')
     const btn = document.querySelector('#visiblity-toggle')
-
+    const btn2 = document.querySelector('#visiblity-toggle2')
     btn.addEventListener('click', () => {
-        if (pass.type === "text") {
-            pass.type = "password";
-            btn.innerHTML = "visibility";
-        } else {
-            pass.type = "text";
-            btn.innerHTML = "visibility_off";
+            if (pass.type === "text") {
+                pass.type = "password";
+                btn.innerHTML = "visibility";
+            } else {
+                pass.type = "text";
+                btn.innerHTML = "visibility_off";
 
-        }
-    })
+            }
+
+        }),
+        btn2.addEventListener('click', () => {
+            if (pass2.type === "text") {
+                pass2.type = "password";
+                btn2.innerHTML = "visibility";
+            } else {
+                pass2.type = "text";
+                btn2.innerHTML = "visibility_off";
+
+            }
+        })
+
 
 
     const passa = document.querySelector('#pass2')
@@ -206,7 +220,27 @@
         }
     })
 
+    var password = document.getElementById("pass"),
+        confirm_password = document.getElementById("pass2");
 
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+
+    function isNumericKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 &&
+            (charCode < 48 || charCode > 57))
+            return true;
+        return false;
+    }
 
     function myFunction() {
         var x = document.getElementById("plan").value;

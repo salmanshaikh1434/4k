@@ -14,7 +14,7 @@ use App\Models\Subscription;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require APPPATH . 'views/razorpay/Razorpay.php';
+// require APPPATH . 'views/razorpay/Razorpay.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use App\Controllers\BaseController;
@@ -34,6 +34,7 @@ class Signup extends BaseController
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         $page['membership'] = $m->find($id);
+        
 
 
         if ($this->request->getMethod() == "post") {
@@ -107,7 +108,11 @@ class Signup extends BaseController
 
                 // without coupon code
             } elseif ($post['pass'] == $post['confpass']) {
-
+                $emails=$user->select('email')->where('email',$post['email'])->findAll();
+                if($emails){
+                   print_r('ji');
+                   exit();
+                }
                 if ($temp->insert($post)) {
                     $tempid = $temp->insertID();
                     unset($post['pass']);
