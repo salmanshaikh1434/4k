@@ -30,7 +30,8 @@ class Login extends BaseController
       
 
       if (!empty($user)) {
-        if ($user['pass'] == md5($post['password'])) {
+
+        if ($user['pass'] == md5($post['password']) && $user['email']==$post['email']) {
          
           $com = $subscription->select('plan_id')->where('user_id', $user['id'])->first();
           if ($com['plan_id'] == 1) {
@@ -67,8 +68,11 @@ class Login extends BaseController
             return redirect()->to('/login')->with('message', ' you loged in multiple device');
           }
         } else {
-          return redirect()->to('/login')->with('message', 'wrong username or password password');
+          return redirect()->to('/login')->with('message', 'The username or password you entered is incorrect');
         }
+      }
+      else{
+        return redirect()->to('/login')->with('message', 'User Not exist');
       }
     }
 

@@ -110,6 +110,7 @@
     <div class="container">
         <div class="row m-1">
             <div class="col-md-6 login-form-2 d-none d-lg-block">
+            <?= alertMessage() ?>
                 <h3>Sign Up</h3>
                 <form method="post" action="/signup/info/" style="padding: 5%;">
                     <div class="to">

@@ -319,11 +319,13 @@
                                         </p>
                                     </div>
                                     <div class="col-4 mt-2">
-                                       
-                                            
-                                         <?php if (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                    <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
+                                                    <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
+                                    
+                                         <?php } elseif (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
                                             <img src="/assets/images/unlockg.png" height="81px" width="100%">
-                                        <?php } else{?>
+                                        <?php } 
+                                        else { ?>
                                             <img src="/assets/images/lock.png" height="81px" width="100%"> 
                                         <?php    } ?>
 

@@ -24,6 +24,7 @@ class Signup extends BaseController
 {
     public function info($id = Null)
     {
+        helper('alert_helper');
         $page['footer'] = false;
         $social = new Social();
         $m = new Membership();
@@ -35,10 +36,15 @@ class Signup extends BaseController
         $page['social'] = $social->first();
         $page['membership'] = $m->find($id);
         
-
+ 
 
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
+            $email=$user->select('email')->where('email',$post['email'])->findAll();
+            if(isset($email)){
+               
+                return redirect()->to('/signup/info/3')->with('message','email already exist');
+            }
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
             $post['confpass'] = md5($post['confpass']);

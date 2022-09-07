@@ -85,6 +85,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <style>
         body {
@@ -94,6 +95,14 @@
         p {
             font-size: 16px;
         }
+        #visiblity-toggle {
+        color: #363636;
+        cursor: pointer;
+        margin: 0 2px;
+        
+    margin-top: -43px;
+
+    }
     </style>
 </head>
 
@@ -192,7 +201,7 @@
     <?= session()->getFlashdata('mailsent') ?>
     <div class="container login-container">
         <div class="row m-1">
-        <?= alertMessage() ?>
+            <?= alertMessage() ?>
             <div class="col-md-6 login-form-1 d-none d-lg-block">
                 <img class="image-responsive" src="/assets/images/signin.png" height="400" width="600" />
             </div>
@@ -208,21 +217,8 @@
                     <div class="form-group mb-3">
                         <input type="password" id="pass" name="password" class="form-control" placeholder="Your Password *" value="" maxlength="150" required="" />
                     </div>
-                    <script>
-                        const pass = document.querySelector('#pass')
-                        const btn = document.querySelector('#visiblity-toggle')
+                    <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -43px;position: relative;z-index: 2;">visibility</span>
 
-                        btn.addEventListener('click', () => {
-                            if (pass.type === "text") {
-                                pass.type = "password";
-                                btn.innerHTML = "visibility";
-                            } else {
-                                pass.type = "text";
-                                btn.innerHTML = "visibility_off";
-
-                            }
-                        })
-                    </script>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" name="submitup" />
                     </div>
@@ -232,8 +228,9 @@
                                 <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
                                 Remember me
                             </label>
+                            <a href="/signup/forgot_password" class="ForgetPwd float-right" value="Login">Forget Password?</a>
                         </div>
-                        <a href="/signup/forgot_password" class="ForgetPwd float-right" value="Login">Forget Password?</a>
+
 
                     </div>
                 </form>
@@ -241,3 +238,18 @@
         </div>
     </div>
 </body>
+<script>
+    const pass = document.querySelector('#pass')
+    const btn = document.querySelector('#visiblity-toggle')
+
+    btn.addEventListener('click', () => {
+        if (pass.type === "text") {
+            pass.type = "password";
+            btn.innerHTML = "visibility";
+        } else {
+            pass.type = "text";
+            btn.innerHTML = "visibility_off";
+
+        }
+    })
+</script>
