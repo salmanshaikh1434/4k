@@ -189,11 +189,7 @@
     <!--content-->
 
     <!-- contact -->
-<<<<<<< HEAD
-    
-=======
     <?= session()->getFlashdata('mailsent') ?>
->>>>>>> a7578dd1484294aad7e5c045e6902d999f784ec7
     <div class="container login-container">
         <div class="row m-1">
         <?= alertMessage() ?>

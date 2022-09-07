@@ -6,7 +6,7 @@ use App\Models\Membership;
 use App\Controllers\BaseController;
 use App\Models\CouponCode;
 
-class CouponCodes extends BaseController
+class Coupon_codes extends BaseController
 {
     public function index()
     {

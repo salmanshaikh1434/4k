@@ -7,7 +7,7 @@ use App\Models\Social;
 use App\Models\SiteInfo;
 use App\Controllers\BaseController;
 
-class ChangePassword extends BaseController
+class Change_password extends BaseController
 {
     public function index()
     {

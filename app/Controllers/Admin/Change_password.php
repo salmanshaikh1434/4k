@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\SiteInfo;
 
-class ChangePassword extends BaseController
+class Change_password extends BaseController
 {
     public function index()
     {

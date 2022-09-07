@@ -157,6 +157,9 @@
             </div>
             <div class="col-md-6 login-form-1">
                 <div class="m-5 p-5">
+                    <div class="row text-center" >
+                <a href="https://razorpay.com/" target="_blank"> <img referrerpolicy="origin" src = "https://badges.razorpay.com/badge-dark.png " style = "height: 100px; width: 250px;" alt = "Razorpay | Payment Gateway | Neobank"></a>
+                </div>
                     <h3 style="color: #fd746c;"><?= $membership['titel'] ?></h3>
                     <hr>
                     <h4> ₹ <?= $membership['priceing'] ?>/- <span> </span></h4>

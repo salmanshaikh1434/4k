@@ -27,11 +27,11 @@ class Login extends BaseController
       $post = $this->request->getPost();
       $user = $user->where('email', $post['email'])->first();
       $count = $devices->where('email', $post['email'])->countAllResults();
-
+      
 
       if (!empty($user)) {
         if ($user['pass'] == md5($post['password'])) {
-
+         
           $com = $subscription->select('plan_id')->where('user_id', $user['id'])->first();
           if ($com['plan_id'] == 1) {
             $i = 2;
@@ -43,6 +43,7 @@ class Login extends BaseController
             $i = 7;
           }
           if ($count <= $i) {
+           
             // remove unnesessory array parameters
             $subscription->where('user_id', $user['id']);
             $subscription->select('expiry_date,plan_id');
