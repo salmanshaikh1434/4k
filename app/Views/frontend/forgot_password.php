@@ -1,5 +1,6 @@
   <!-- start page title -->
   <div style="height:20vh;"></div>
+  <div class="container">
   <div class="row">
       <div class="col-lg-6 offset-lg-2 col-sm-8">
           <div class="card m-2">
@@ -36,6 +37,7 @@
                   </form>
               </div>
           </div>
+      </div>
       </div>
 
   </div> <!-- end row -->

@@ -36,7 +36,6 @@
                
                 }
             });
-
             $(document).on("click", ".close", function() {
                 $(".iframeVideo").each(function() {
                     var src = $(this).attr('src');
@@ -100,7 +99,7 @@
                     <div class="row">
                         <div class="col-6">
                             <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                                <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel">
+                                <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel" video_type="<?=$video["type"];?>">
                                     <img src="<?= $video['photo']; ?>" alt="" class="img-fluid" style="height: 115px;border-radius: 8px;" id="hove">
                                 </a>
                             <?php } else { ?>
@@ -112,11 +111,11 @@
                         <div class="col-6 ">
                             <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
                                 <h4 class="text_hide"> <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel" style="font-size: 16px;">
-                                        <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
+                                        <span style="font-size: 16px;"> <?= $video['titel']; ?> </span>
                                     </a></h4>
                             <?php } else { ?>
                                 <h4 class="text_hide"> <a data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 16px;filter:blur(4px);">
-                                        <span style="font-size: 16px;"><?= $video['id']; ?> - <?= $video['titel']; ?> </span>
+                                        <span style="font-size: 16px;"><?= $video['titel']; ?> </span>
                                     </a></h4>
                             <?php } ?>
                             <?php if ($video['categories'] != 1 && null == session()->get('expiry_date')) { ?>

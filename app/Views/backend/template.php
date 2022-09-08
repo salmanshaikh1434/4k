@@ -122,7 +122,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/admin/couponcodes" class=" waves-effect">
+                            <a href="/admin/coupon_codes" class=" waves-effect">
                                 <i class="mdi mdi-cash mdi-24px"></i>
                                 <span>Coupon Code</span>
                             </a>

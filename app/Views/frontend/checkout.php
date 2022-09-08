@@ -1,5 +1,9 @@
+
+<body style="background-color: red;">
 <button id="rzp-button1" style="display: none;">Pay</button>
-<a href="<?php echo base_url('/signup') ?>">Back</a>
+
+<a href="<?php echo base_url('/signup/info/'.$membership_id.'') ?>">Back</a>
+</body>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
     var options = {

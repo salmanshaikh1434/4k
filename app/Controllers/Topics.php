@@ -44,7 +44,7 @@ class Topics extends BaseController
     {
         $category = new Category();
         $videos = new Video();
-        $videos->orderBy('sort','ASC');
+        // $videos->orderBy('sort','ASC');
         $videos = $videos->where('categories', $id)->where('show-v',1)->findAll();
         $cat_name = $category->where('id', $id)->first();
         echo '
@@ -109,7 +109,6 @@ class Topics extends BaseController
         $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
         $page['videos'] = $videos->where('categories', $id)->where('show-v',1)->findAll();
-
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         return view('frontend/topics_mobile', $page);

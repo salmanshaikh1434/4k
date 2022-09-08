@@ -41,8 +41,9 @@ class Signup extends BaseController
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
             $email=$user->select('email')->where('email',$post['email'])->findAll();
-            if(isset($email)){
-               
+            if(!empty($email)){ 
+               print_r($email);
+               exit();
                 return redirect()->to('/signup/info/3')->with('message','email already exist');
             }
             $post['pass'] = md5($post['pass']);

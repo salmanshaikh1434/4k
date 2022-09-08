@@ -88,10 +88,10 @@
 <section class="inner-banner py-5">
     <div class="w3l-breadcrumb py-lg-5">
         <div class="container pt-4 pb-sm-4">
-            <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">Sign Up</h4>
+            <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">Checkout</h4>
             <ul class="breadcrumbs-custom-path">
                 <li><a href="index.php">Home</a></li>
-                <li class="active"><i class="fas fa-angle-right mx-2"></i>Sign Up</li>
+                <li class="active"><i class="fas fa-angle-right mx-2"></i>Checkout</li>
             </ul>
         </div>
     </div>
@@ -109,9 +109,9 @@
 <section class="contact py-5" id="contact">
     <div class="container">
         <div class="row m-1">
-            <div class="col-md-6 login-form-2 d-none d-lg-block">
+            <div class="col-md-6 login-form-2 ">
             <?= alertMessage() ?>
-                <h3>Sign Up</h3>
+                <h3>Chekout</h3>
                 <form method="post" action="/signup/info/" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
@@ -129,11 +129,11 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="number" class="form-control" name="mobile" maxlength="10" id="input" required>
+                            <input type="text" class="form-control" name="mobile" id="input"   pattern="[1-9]{1}[0-9]{9}"  required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="14" minlength="8" required="">
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="14" minlength="8" required>
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
@@ -159,7 +159,7 @@
             <div class="col-md-6 login-form-1">
                 <div class="m-5 p-5">
                     <div class="row text-center" >
-                <a href="https://razorpay.com/" target="_blank"> <img referrerpolicy="origin" src = "https://badges.razorpay.com/badge-dark.png " style = "height: 100px; width: 250px;" alt = "Razorpay | Payment Gateway | Neobank"></a>
+                <a href="https://razorpay.com/" target="_blank"> <img referrerpolicy="origin" src = "https://badges.razorpay.com/badge-dark.png "  class="img-fluid" alt = "Razorpay | Payment Gateway | Neobank"></a>
                 </div>
                     <h3 style="color: #fd746c;"><?= $membership['titel'] ?></h3>
                     <hr>

@@ -212,7 +212,7 @@
                 <form method="post" action="">
 
                     <div class="form-group mb-3">
-                        <input type="text" class="form-control" name="email" placeholder="Your Email *" value="" maxlength="60" required="" />
+                        <input type="email" class="form-control" name="email" placeholder="Your Email *" value="" maxlength="60" required="" />
                     </div>
                     <div class="form-group mb-3">
                         <input type="password" id="pass" name="password" class="form-control" placeholder="Your Password *" value="" maxlength="150" required="" />

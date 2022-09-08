@@ -27,7 +27,7 @@ class Coupon_codes extends BaseController
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
             if ($coupon->insert($post)) {
-                return redirect()->to('/admin/couponcodes/')->with('message', 'Coupon Added successfully');
+                return redirect()->to('/admin/coupon_codes/')->with('message', 'Coupon Added successfully');
             } else {
                 $page['error_message'] = "Failed to add Coupon please try again !";
             }
@@ -44,6 +44,6 @@ class Coupon_codes extends BaseController
         if ($coupon->delete($id)) {
             $massage = 'Couponcode Deleted Successfully';
         }
-        return redirect()->to('/admin/couponcodes/')->with('message', $massage);
+        return redirect()->to('/admin/coupon_codes/')->with('message', $massage);
     }
 }

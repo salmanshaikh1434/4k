@@ -177,7 +177,8 @@ class Topics extends AdminAuth
             $post['titel'] = $titel;
             $video_code = str_replace(' ', '', $_POST['video_code']);
             $check = $video->where('video_code', $video_code)->countAllResults();
-
+           $sort= $video->where('categories', $post['categories'])->countAllResults();
+           $post['sort']=$sort+1;
             if ($check == 0) {
                 $video->insert($post);
                 return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');

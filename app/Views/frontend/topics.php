@@ -70,7 +70,6 @@
                         $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
                      } else{
                         $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/?listType=playlist&list=' + myvideoid + '" allowfullscreen></iframe>');
-               
                 }
             });
 
@@ -170,7 +169,7 @@
                         </li> -->
                         <li class="nav-item">
                             <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
-                            <a href="/changepassword" class="btn btn-style" style="margin-left: 5px;">Change Password</a>
+                            <a href="/change_password" class="btn btn-style" style="margin-left: 5px;">Change Password</a>
                         </li>
                     <?php } else { ?>
                         <li class="menu-item">

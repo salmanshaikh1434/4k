@@ -8,7 +8,7 @@
                     </div>
                  
                     <div class="col-md-6">
-                        <a href="/admin/couponcodes/add" class="btn btn-primary" style="float:right">Add Coupon Code</a>
+                        <a href="/admin/coupon_codes/add" class="btn btn-primary" style="float:right">Add Coupon Code</a>
                     </div>
                 </div>
                 <br>
@@ -30,7 +30,7 @@
                                     <td><?= $coupon['plan'] ?></td>
                                     <td>
                                         <div class="">
-                                            <a href="/admin/couponcodes/delete/<?= $coupon['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Category ?');"><i class="fa fa-trash"></i></a>
+                                            <a href="/admin/coupon_codes/delete/<?= $coupon['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Category ?');"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
                                     </td>
