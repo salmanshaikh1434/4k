@@ -123,7 +123,11 @@
                             <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
                         </li> -->
                         <li class="nav-item">
-                            <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                        <?php if ('admin' == session()->get('type')) { ?>
+                            <a href="/logout?is_admin=true" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                            <?php }else{?>
+                                <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                            <?php } ?>
                             <a href="/change_password" class="btn btn-style" style="margin-left: 5px;">Change Password</a>
                         </li>
                     <?php } else { ?>

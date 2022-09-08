@@ -3,10 +3,10 @@
 namespace App\Controllers\Admin;
 
 use App\Models\Membership;
-use App\Controllers\BaseController;
+use App\Controllers\AdminAuth;
 use App\Models\CouponCode;
 
-class Coupon_codes extends BaseController
+class Coupon_codes extends AdminAuth
 {
     public function index()
     {

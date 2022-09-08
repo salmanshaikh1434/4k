@@ -2,11 +2,11 @@
 
 namespace App\Controllers\Admin;
 
-use App\Controllers\BaseController;
+use App\Controllers\AdminAuth;
 use App\Models\Temprary;
 use App\Models\User;
 
-class Users extends BaseController
+class Users extends AdminAuth
 {
     public function index()
     {

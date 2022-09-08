@@ -2,10 +2,10 @@
 
 namespace App\Controllers\Admin;
 
-use App\Controllers\BaseController;
+use App\Controllers\AdminAuth;
 use App\Models\SiteInfo;
 
-class Change_password extends BaseController
+class Change_password extends AdminAuth
 {
     public function index()
     {

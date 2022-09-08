@@ -9,9 +9,7 @@ class Login extends BaseController
 {
     public function index()
     {
-        if (NULL !== session()->get('is_loggedin') && session()->get('is_loggedin') == true) {
-            return redirect()->to('/admin/dashboard');
-        }
+       
         return view('backend/login');
     }
     public function login_check()
@@ -29,6 +27,7 @@ class Login extends BaseController
                 unset($user["deleted_at"]);
 
                 // add login success msg to session 
+                session()->set('type', 'admin');
                 session()->set('is_loggedin', true);
                 // set user data as session 
                 session()->set($user);
