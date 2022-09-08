@@ -153,7 +153,7 @@
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:40%">
             <div style=" pointer-events: none !important;"></div>
-            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;top:50%">
+            <div class="modal-content" id="videoframe" style="background-color:black;height:100%;top:50%;border:2px solid white">
             </div>
         </div>
     </div>

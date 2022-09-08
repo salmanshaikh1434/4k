@@ -129,18 +129,18 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="text" class="form-control" name="mobile" id="input"   pattern="[1-9]{1}[0-9]{9}"  required>
+                            <input type="tel" class="form-control" name="mobile" id="input"  maxlength="10" pattern="\d{10}"  required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="14" minlength="8" required>
                         </div>
-                        <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
+                        <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Confirm Password :</b></label>
                             <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
                         </div>
-                        <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -25px;margin-top: -39px;position: relative;z-index: 2;">visibility</span>
+                        <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Coupon Code :</b></label>
                             <input type="text" class="form-control" name="coupon" id="input">

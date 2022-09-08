@@ -1,8 +1,8 @@
 
-<body style="background-color: red;">
+<body style="background-image: url('/assets/images/payment.jpeg'); background-repeat: no-repeat;background-size: cover; width:100%">
 <button id="rzp-button1" style="display: none;">Pay</button>
 
-<a href="<?php echo base_url('/signup/info/'.$membership_id.'') ?>">Back</a>
+<a href="<?php echo base_url('/signup/info/'.$membership_id.'') ?>"><button>Back</button></a>
 </body>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>

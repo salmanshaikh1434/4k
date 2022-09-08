@@ -110,6 +110,10 @@
                                 <i class="mdi mdi-account-supervisor mdi-24px"></i>
                                 <span>Users</span>
                             </a>
+                            <a href="/admin/users/temp_users" class=" waves-effect">
+                                <i class="mdi mdi-account-supervisor mdi-24px"></i>
+                                <span>Register User</span>
+                            </a>
                             <!-- <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="/admin/users">All Users</a></li>
                                 <li><a href="/admin/dashboard/iuihuh">Mailing List Subscribers</a></li>
