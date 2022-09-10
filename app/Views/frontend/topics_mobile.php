@@ -110,7 +110,7 @@
                         </div>
                         <div class="col-6 ">
                             <?php if ($video['categories'] == 1 || !null == session()->get('expiry_date')) { ?>
-                                <h4 class="text_hide"> <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel" style="font-size: 16px;">
+                                <h4 class="text_hide"> <a data-toggle="modal" data-id="<?= $video['video_code']; ?>" class="open-AddBookDialog" href="#myLargeModalLabel" video_type="<?=$video["type"];?>" style="font-size: 16px;">
                                         <span style="font-size: 16px;"> <?= $video['titel']; ?> </span>
                                     </a></h4>
                             <?php } else { ?>

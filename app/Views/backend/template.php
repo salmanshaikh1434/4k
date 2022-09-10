@@ -131,6 +131,12 @@
                                 <span>Coupon Code</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/admin/change_password" class=" waves-effect">
+                                <i class="mdi mdi-settings mdi-24px"></i>
+                                <span>Change Password</span>
+                            </a>
+                        </li>
                         <!-- <li>
                             <a href="/admin/dashboard/oh" class=" waves-effect">
                                 <i class="mdi mdi-email-multiple mdi-24px"></i>
@@ -206,6 +212,7 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
+    
     <script src="/assets/backend/libs/jquery/jquery.min.js"></script>
     <script src="/assets/backend/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/backend/libs/metismenu/metisMenu.min.js"></script>

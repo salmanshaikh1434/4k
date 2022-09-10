@@ -42,25 +42,26 @@ class Signup extends BaseController
             $post = $this->request->getPost();
             $email=$user->select('email')->where('email',$post['email'])->findAll();
             if(!empty($email)){ 
-               print_r($email);
-               exit();
                 return redirect()->to('/signup/info/3')->with('message','email already exist');
             }
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
             $post['confpass'] = md5($post['confpass']);
-            echo $price_id =  $post['price_id'];
+             $price_id =  $post['price_id'];
 
 
             $code = new CouponCode();
-            $code->where('subscription_id', $price_id);
-            $couponcode = $code->first();
+            $couponcode = $code->where('name',$post['coupon'])->first();
             // for coupon code
+
+            $coupon_id=$couponcode['id'];
+          
             if (!empty($post['coupon']) && isset($couponcode)) {
                 if ($post['coupon'] == $couponcode['name']) {
                     unset($post['coupon']);
                     unset($post['password']);
                     $user->insert($post);
+                    $code->delete($coupon_id);
                     $user_id = $user->insertID();
                     $data['subscription_date'] = date('Y-m-d');
                     $data['user_id'] = $user_id;

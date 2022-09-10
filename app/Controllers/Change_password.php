@@ -28,8 +28,8 @@ class Change_password extends BaseController
                         if (
                             $login->update(session()->get('id'), ['pass' => md5($post['new_password']),'confpass' => md5($post['new_password']),])
                         ) {
-                            session()->setFlashdata('msg', 'Password changed Successfully');
-                            return redirect()->to('/changepassword');
+                            return redirect()->to('/change_password')->with('message', 'Password changed Successfully');
+        
                         }
                     } else {
                         $page['errors'][] = 'Old Password Not Match';

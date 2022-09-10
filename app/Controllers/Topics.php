@@ -45,7 +45,7 @@ class Topics extends BaseController
         $category = new Category();
         $videos = new Video();
         // $videos->orderBy('sort','ASC');
-        $videos = $videos->where('categories', $id)->where('show-v',1)->findAll();
+        $videos = $videos->where('categories', $id)->where('show-v',1)->orderBy('sort','ASC')->findAll();
         $cat_name = $category->where('id', $id)->first();
         echo '
         <div class="title-heading-w3 text-center mx-auto mb-1">';
@@ -108,7 +108,7 @@ class Topics extends BaseController
         $page['footer'] = false;
         $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
-        $page['videos'] = $videos->where('categories', $id)->where('show-v',1)->findAll();
+        $page['videos'] = $videos->where('categories', $id)->where('show-v',1)->orderBy('sort','ASC')->findAll();
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         return view('frontend/topics_mobile', $page);

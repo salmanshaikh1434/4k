@@ -112,7 +112,7 @@
             <div class="col-md-6 login-form-2 ">
             <?= alertMessage() ?>
                 <h3>Chekout</h3>
-                <form method="post" action="/signup/info/" style="padding: 5%;">
+                <form method="post" action="/signup/info" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
