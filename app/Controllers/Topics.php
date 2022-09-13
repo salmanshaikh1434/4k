@@ -79,7 +79,7 @@ class Topics extends BaseController
 
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             
-                            <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical;">
+                            <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical; video_type="' . $video["type"] . '"">
                                     <span style="font-size: 16px;">'.$video['titel'] . '</span>
                                 </a></h4></div>';
             } else {

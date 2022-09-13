@@ -32,7 +32,7 @@ class Change_password extends BaseController
         
                         }
                     } else {
-                        $page['errors'][] = 'Old Password Not Match';
+                        $page['errors'][] = "Old Password Doesn't Match";
                     }
                 } else {
                     $page['errors'][] = ' New And Confirm Password should be same';

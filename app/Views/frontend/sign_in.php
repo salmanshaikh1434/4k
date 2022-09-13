@@ -1,4 +1,20 @@
-<style>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        p {
+            font-size: 16px;
+        }
+        #visiblity-toggle {
+        color: #363636;
+        cursor: pointer;
+        margin: 0 2px;
+        
+    margin-top: -43px;
+
+    }
     .login-container {
         margin-top: 5%;
         margin-bottom: 5%;
@@ -62,52 +78,7 @@
         font-weight: 600;
         text-decoration: none;
     }
-</style>
 
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $site_info['site_name']; ?></title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="/assets/css/style-starter.css">
-
-    <meta name="keywords" content="<?= $site_info['keyword']; ?>">
-    <meta name="description" content="<?= $site_info['description']; ?>">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        }
-
-        p {
-            font-size: 16px;
-        }
-        #visiblity-toggle {
-        color: #363636;
-        cursor: pointer;
-        margin: 0 2px;
-        
-    margin-top: -43px;
-
-    }
-    </style>
-</head>
-
-<header id="site-header" class="fixed-top">
-    <style>
         .dropdown {
             position: relative;
             display: inline-block;
@@ -127,38 +98,6 @@
             display: block;
         }
     </style>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">
-                <span><img src="/assets/images/logo2.png" style="width: 250px;background-color: #fff;
-    border-radius: 10px;"></span>
-            </a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll">
-
-                    <li class="nav-item">
-                        <a class="btn btn-style" style="background: #242952;" href="/topics/videos/1">Demo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/" style="color:white; margin-top: 9px;">Home</a>
-                    </li>
-                </ul>
-
-
-                <a href="login" class="btn btn-style" style="background-color: #fff;color: #fd746c;">Sign In</a>
-                <!-- <a href="signup" class="btn btn-style" style="margin-left: 5px;">Sign Up</a> -->
-            </div>
-
-        </nav>
-    </div>
-
-</header>
-
-<body>
 
     <section class="inner-banner py-5">
         <div class="w3l-breadcrumb py-lg-5">
@@ -237,7 +176,6 @@
             </div>
         </div>
     </div>
-</body>
 <script>
     const pass = document.querySelector('#pass')
     const btn = document.querySelector('#visiblity-toggle')

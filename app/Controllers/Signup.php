@@ -54,9 +54,10 @@ class Signup extends BaseController
             $couponcode = $code->where('name',$post['coupon'])->first();
             // for coupon code
 
-            $coupon_id=$couponcode['id'];
+           
           
             if (!empty($post['coupon']) && isset($couponcode)) {
+                $coupon_id=$couponcode['id'];
                 if ($post['coupon'] == $couponcode['name']) {
                     unset($post['coupon']);
                     unset($post['password']);
@@ -160,16 +161,16 @@ class Signup extends BaseController
         $page['name'] = session()->get('firstname');
         $page['email'] = session()->get('email');
         $page['contact'] = session()->get('contact');
-        $key_id = 'rzp_test_t4AiT3u3UUTSi9';
-        $secret = 'ElCTJ6v2l9cxv66SRzJn7Ekb';
+        $key_id = 'rzp_live_fq8NoLtseiRNHb';
+        $secret = 'zK1VTREMdzdLn1Kcy5BnBeiC';
         $api = new Api($key_id, $secret);
         $orderData = [
             'receipt'         => 'rcptid_11',
             'amount'          => $amount * 100, // 39900 rupees in paise
             'currency'        => 'INR'
         ];
-        $page['secret'] = 'ElCTJ6v2l9cxv66SRzJn7Ekb';
-        $page['key_id'] = 'rzp_test_t4AiT3u3UUTSi9';
+        $page['secret'] = 'zK1VTREMdzdLn1Kcy5BnBeiC';
+        $page['key_id'] = 'rzp_live_fq8NoLtseiRNHb';
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
     }

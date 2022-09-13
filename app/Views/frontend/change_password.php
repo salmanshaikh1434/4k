@@ -49,14 +49,14 @@
                     <div class="form-group"  id="show_hide_password">
                         <label for="example-email-input1" class="col-form-label pt-0">Old Password</label>
                         <div class="">
-                            <input class="form-control" name="old_password" type="password" value="" id="pass" required>
+                            <input class="form-control" name="old_password" type="password"  maxlength="14" minlength="8"  value="" id="pass" required>
                         </div>
                         <span id="visiblity-toggle1" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -36px;position: relative;z-index: 2;"> <a href=""><i class="fa fa-eye-slash" id="show" aria-hidden="true"></i></a></span>
                     </div>
                     <div class="form-group" id="show_hide_password2">
                         <label for="example-email-input1" class="col-form-label pt-0">New Password</label>
                         <div class="">
-                            <input class="form-control" name="new_password" type="password" value="" id="new_pass" required>
+                            <input class="form-control" name="new_password" type="password" maxlength="14" minlength="8"   value="" id="new_pass" required>
                         </div>
                         <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -36px;position: relative;z-index: 2;"> <a href=""><i class="fa fa-eye-slash" id="show" aria-hidden="true"></i></a></span>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="form-group" id="show_hide_password3">
                         <label for="example-email-input1" class="col-form-label pt-0">Confirm New Password</label>
                         <div class="">
-                            <input class="form-control" name="confirm_password" type="password" value="" id="confpass" required>
+                            <input class="form-control" name="confirm_password" type="password" maxlength="14" minlength="8"  value="" id="confpass" required>
                         </div>
                         <span id="visiblity-toggle3" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -36px;position: relative;z-index: 2;"><a href=""><i class="fa fa-eye-slash" id="show" aria-hidden="true"></i></a></span>
                     </div>

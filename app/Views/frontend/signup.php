@@ -81,8 +81,6 @@
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</head>
-
 
 
 <section class="inner-banner py-5">
@@ -111,17 +109,17 @@
         <div class="row m-1">
             <div class="col-md-6 login-form-2 ">
             <?= alertMessage() ?>
-                <h3>Chekout</h3>
+                <h3>Checkout Page</h3>
                 <form method="post" action="/signup/info" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
-                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="firstname" maxlength="60" id="input" required>
+                            <input type="text" class="form-control" class="form-control" name="firstname" maxlength="60"  required>
                         </div>
                         <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
                         <div class="form-group">
                             <label class="text-white p-2"><b>Last Name : </b></label>
-                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="lastname" maxlength="60" id="input" required>
+                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="lastname" maxlength="60" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Your email : </b></label>
@@ -129,7 +127,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="tel" class="form-control" name="mobile" id="input"  maxlength="10" pattern="\d{10}"  required>
+                            <input type="number" class="form-control" name="mobile" id="input"  pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.maxlength==10 && this.value.minlength==10) return false;"  required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
@@ -142,7 +140,7 @@
                         </div>
                         <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Coupon Code :</b></label>
+                            <label class="text-white p-2"> <b>Coupon Code (Optional):</b></label>
                             <input type="text" class="form-control" name="coupon" id="input">
                         </div>
 
@@ -210,19 +208,7 @@
 
 
 
-    const passa = document.querySelector('#pass2')
-    const btna = document.querySelector('#visiblity-toggle2')
-
-    btn.addEventListener('click', () => {
-        if (passa.type === "text") {
-            passa.type = "password";
-            btna.innerHTML = "visibility2";
-        } else {
-            passa.type = "text";
-            btna.innerHTML = "visibility_off2";
-
-        }
-    })
+  
 
     var password = document.getElementById("pass"),
         confirm_password = document.getElementById("pass2");

@@ -15,6 +15,7 @@ class Login extends BaseController
 {
   public function index()
   {
+    $page['footer']=false;
     helper('alert_helper');
     $social = new Social();
     $devices = new Device();
@@ -65,18 +66,18 @@ class Login extends BaseController
             $devices->insert($device);
             return redirect()->to('/topics');
           } else {
-            return redirect()->to('/login')->with('message', ' you loged in multiple device');
+            return redirect()->to('/login')->with('message', 'UserID currently in use');
           }
         } else {
-          return redirect()->to('/login')->with('message', 'The username or password you entered is incorrect');
+          return redirect()->to('/login')->with('message', 'The user name or password you entered is incorrect');
         }
       }
       else{
-        return redirect()->to('/login')->with('message', 'User Not exist');
+        return redirect()->to('/login')->with('message', "User Doesn't Exist");
       }
     }
 
     $data['page'] = view('frontend/sign_in', $page);
-    return view("frontend/sign_in", $data);
+    return view("frontend/template", $data);
   }
 }
