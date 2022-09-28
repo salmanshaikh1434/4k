@@ -26,7 +26,7 @@
 require __DIR__ . '/app/Config/Paths.php';
 
 // Path to the front controller
-define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR);
+define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR . 'public_html' . DIRECTORY_SEPARATOR);
 
 /**
  * See https://www.php.net/manual/en/function.str-contains.php#126277
