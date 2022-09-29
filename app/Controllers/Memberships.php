@@ -41,16 +41,16 @@ class Memberships extends BaseController
         $page['name'] = session()->get('firstname');
         $page['email'] = session()->get('email');
         $page['contact'] = session()->get('contact');
-        $key_id = 'rzp_test_t4AiT3u3UUTSi9';
-        $secret = 'ElCTJ6v2l9cxv66SRzJn7Ekb';
+        $key_id = env('rezor_pay_key_id');
+        $secret = env('rezor_pay_secret');
         $api = new Api($key_id, $secret);
         $orderData = [
             'receipt'         => 'rcptid_11',
             'amount'          => $amount * 100, // 39900 rupees in paise
             'currency'        => 'INR'
         ];
-        $page['secret'] = 'ElCTJ6v2l9cxv66SRzJn7Ekb';
-        $page['key_id'] = 'rzp_test_t4AiT3u3UUTSi9';
+        $page['secret'] = env('rezor_pay_secret');
+        $page['key_id'] = env('rezor_pay_key_id');
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
     }

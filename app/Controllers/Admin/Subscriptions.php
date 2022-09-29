@@ -15,30 +15,19 @@ class Subscriptions extends AdminAuth
         $data['page'] = view('backend/subscription/list', $page);
         return view("backend/template", $data);
     }
-    public function add($id=null)
+    public function add($id)
     {
-        $membership= new Membership();
+        $membership = new Membership();
         $page[] = '';
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
-            if ($id) {
-                if ($membership->update($id, $post)) {
-                    return redirect()->to('admin/subscriptions/')->with('message', 'Plan Updated successfully');
-                } else {
-                    $page['error_message'] = "Failed to Update Plan please try again !";
-                }
+            if ($membership->update($id, $post)) {
+                return redirect()->to('admin/subscriptions/')->with('message', 'Plan Updated successfully');
             } else {
-                if ($membership->insert($post)) {
-                    return redirect()->to('admin/subscriptions/')->with('message', 'Plan Added successfully');
-                } else {
-                    $page['error_message'] = "Failed to add Plan please try again !";
-                }
+                $page['error_message'] = "Failed to Update Plan please try again !";
             }
         }
-        if ($id !== null) {
-            // find data releted to the store
-            $page['memberships'] = $membership->find($id);
-        }
+        $page['memberships'] = $membership->find($id);
         $data['page'] = view('backend/subscription/add', $page);
         return view('backend/template', $data);
     }
@@ -46,7 +35,7 @@ class Subscriptions extends AdminAuth
     public function delete($id)
     {
         $massage = "Failed to Delete Plan";
-        $membership= new Membership();
+        $membership = new Membership();
         if ($membership->delete($id)) {
             $massage = 'Plan Deleted Successfully';
         }

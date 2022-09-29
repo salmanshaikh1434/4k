@@ -10,8 +10,8 @@
         "key": "<?= $key_id ?>", // Enter the Key ID generated from the Dashboard
         "amount": "<?= $amount ?>", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
-        "name": "Razorpay Test",
-        "description": "Test Transaction",
+        "name": "Razorpay",
+        "description": "plan Purchase",
         "image": "https://example.com/your_logo",
         "order_id": "<?= $razorpayOrder['id'] ?>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "callback_url": "<?php echo base_url('/signup/payment_status/'.$customer_id.'/'.$membership_id) ?>",

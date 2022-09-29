@@ -157,16 +157,15 @@ class Signup extends BaseController
         $page['name'] = session()->get('firstname');
         $page['email'] = session()->get('email');
         $page['contact'] = session()->get('contact');
-        $key_id = 'rzp_live_fq8NoLtseiRNHb';
-        $secret = 'zK1VTREMdzdLn1Kcy5BnBeiC';
-        $api = new Api($key_id, $secret);
+
+        $api = new Api(env('rezor_pay_key_id'), env('rezor_pay_secret'));
         $orderData = [
             'receipt'         => 'rcptid_11',
             'amount'          => $amount * 100, // 39900 rupees in paise
             'currency'        => 'INR'
         ];
-        $page['secret'] = 'zK1VTREMdzdLn1Kcy5BnBeiC';
-        $page['key_id'] = 'rzp_live_fq8NoLtseiRNHb';
+        $page['secret'] = env('rezor_pay_secret') ;
+        $page['key_id'] = env('rezor_pay_key_id');
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
     }
