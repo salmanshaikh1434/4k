@@ -40,4 +40,15 @@ class Users extends AdminAuth
         $data['page'] = view('backend/temp_user_list', $page);
         return view("backend/template", $data);
     }
+
+    public function temp_delete($id)
+    {
+        $massage = "Failed to Delete";
+        $user = new Temprary();
+        if ($user->delete($id)) {
+            $massage = 'User Deleted Successfully';
+        }
+        return redirect()->back()->with('message', $massage);
+    }
+
 }

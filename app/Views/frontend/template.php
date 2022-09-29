@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -125,9 +125,9 @@
                             <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
                         </li> -->
                         <li class="nav-item">
-                        <?php if ('admin' == session()->get('type')) { ?>
-                            <a href="/logout?is_admin=true" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
-                            <?php }else{?>
+                            <?php if ('admin' == session()->get('type')) { ?>
+                                <a href="/logout?is_admin=true" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
+                            <?php } else { ?>
                                 <a href="/signup/signout" class="btn btn-style" style="margin-left: 5px;">Sign Out</a>
                             <?php } ?>
                             <a href="/change_password" class="btn btn-style" style="margin-left: 5px;">Change Password</a>
@@ -318,6 +318,8 @@
             mainClass: 'my-mfp-slide-bottom'
         });
     });
+
+    
 </script>
 <script src="/assets/js/theme-change.js"></script>
 <script>
@@ -452,11 +454,11 @@
 
     });
 
-    $('.ytp-watch-later-icon').click(function (e) { 
+    $('.ytp-watch-later-icon').click(function(e) {
         e.preventDefault();
         var s = confirm('d');
         return;
-        
+
     });
 </script>
 

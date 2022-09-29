@@ -65,11 +65,11 @@
             $(document).on("click", ".open-AddBookDialog", function() {
                 var myvideoid = $(this).data('id');
                 var video_type = $(this).attr('video_type');
-                
-                    if (video_type == 1) {
-                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
-                     } else{
-                        $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/?listType=playlist&list=' + myvideoid + '" allowfullscreen></iframe>');
+
+                if (video_type == 1) {
+                    $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/' + myvideoid + '" allowfullscreen></iframe>');
+                } else {
+                    $("#videoframe").html('<iframe class="iframeVideo" src="https://www.youtube.com/embed/?listType=playlist&list=' + myvideoid + '" allowfullscreen></iframe>');
                 }
             });
 
@@ -88,6 +88,13 @@
             l.addEventListener('click', () => {
                 bsCollapse.toggle()
             })
+        });
+
+
+        $('#exampleModalCenter').on('hide.bs.modal', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
         });
     </script>
     <style>
@@ -196,7 +203,7 @@
                                             <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
                                         </a>
                                     </span><span style="margin-bottom: 11px;text-align:center;">
-                                    <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 2.5vw;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i> 4,724 Hours)</span></span>
+                                        <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 2.5vw;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i> 4,724 Hours)</span></span>
                                     </span>
                                     <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
                                 </div>
@@ -280,7 +287,7 @@
             </div>
     </section>
     <!--popup -->
-    <div class="modal fade bd-example-modal-lg" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg"  style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:90%">

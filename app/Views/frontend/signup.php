@@ -78,10 +78,78 @@
         cursor: pointer;
         margin: 0 2px;
     }
+    span{
+        color:black;
+    }
 </style>
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+<script>
+    function validate() {
+        
+        var firstname = document.getElementById('firstname').value;
+        var lastname = document.getElementById('lastname').value;
+        var email = document.getElementById('email').value;
+        var mobile = document.getElementById('mobile').value;
+        var pass = document.getElementById('pass').value;
+        var pass2 = document.getElementById('pass2').value;
+        var status = true;
+        var alpha=/^[A-Za-z]+$/;
+
+        if (firstname.length < 1) {
+            document.getElementById("nameErrorMsg").innerHTML =
+                "only alphabets";
+            status = false;
+            
+        }
+        if (!firstname.match(alpha)) {
+            document.getElementById("alphaErrorMsg").innerHTML =
+                "only alphabets";
+            status = false;
+        }
+        if (lastname.length < 1) {
+            document.getElementById("lastnameErrorMsg").innerHTML =
+                "only alphabets";
+            status = false;
+        }
+        if (!lastname.match(alpha)) {
+            document.getElementById("alphalastErrorMsg").innerHTML =
+                "only alphabets";
+            status = false;
+        }
+        if (email.length < 1) {
+            document.getElementById("emailErrorMsg").innerHTML =
+                "Enter valid Email";
+            status = false;
+        }
+        if (mobile.length != 10) {
+            document.getElementById("mobileErrorMsg").innerHTML =
+                "Enter 10 digits no.";
+            status = false;
+        }
+        if (pass.length < 8) {
+            document.getElementById("passErrorMsg").innerHTML =
+                "An 8 to 14 characters";
+            status = false;
+        }
+        if (pass2.length < 8) {
+            document.getElementById("pass2ErrorMsg").innerHTML =
+                "An 8 to 14 characters";
+            status = false;
+        }
+        if (pass2!=pass) {
+            document.getElementById("pass2ErrorMsg").innerHTML =
+                "doesn't match";
+            status = false;
+        }
+        if(!status){
+            topFunction();
+        }
+        return status;
+    }
+</script>
 
 <section class="inner-banner py-5">
     <div class="w3l-breadcrumb py-lg-5">
@@ -104,53 +172,60 @@
     </div>
 </section>
 
-<section class="contact py-5" id="contact">
+<section class="contact py-5">
     <div class="container">
         <div class="row m-1">
             <div class="col-md-6 login-form-2 ">
                 <?= alertMessage() ?>
                 <h3>Checkout Page</h3>
-                <form method="post" action="/signup/info" style="padding: 5%;">
+                <form method="post" name="f1" onsubmit="return validate()" action="/signup/info" id="myForm" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
-                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" class="form-control" name="firstname" maxlength="60" required>
+                            <span   id="nameErrorMsg"></span>
+                            <span  id="alphaErrorMsg"></span>
+                            <input type="text"  class="form-control" id="firstname" name="firstname">
                         </div>
                         <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Last Name : </b></label>
-                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" name="lastname" maxlength="60" required>
+                            <label class="text-white p-2"><b>Last Name : </b></label> 
+                            <span   id="lastnameErrorMsg"></span>
+                            <span id="alphalastErrorMsg"></span>
+                            <input type="text" class="form-control" id="lastname" name="lastname">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Your email : </b></label>
-                            <input type="email" class="form-control" name="email" maxlength="60" id="input" required>
+                            <label class="text-white p-2"><b>Your email : </b></label><span  id="emailErrorMsg"></span>
+                            <input type="email" class="form-control" name="email" maxlength="60" id="email">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="number" class="form-control" name="mobile" id="input" min="1000000000" max="9999999999" required>
+                            <label class="text-white p-2"> <b>Mobile :</b></label><span   id="mobileErrorMsg"></span>
+                            <input type="number" class="form-control" name="mobile" id="mobile">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Password :</b></label>
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password " maxlength="14" minlength="8" required>
+                            <label class="text-white p-2"><b>Password :</b></label><span  id="passErrorMsg"></span>
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password ">
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Confirm Password :</b></label>
-                            <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="14" minlength="8" required="">
+                            <label class="text-white p-2"><b>Confirm Password :</b></label><span  id="pass2ErrorMsg"></span>
+                            <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password ">
                         </div>
                         <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
-                        
+
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Coupon Code (Optional):<a  style="color:#242952" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            click to Enter
-                        </a></b></label>
-                        <div class="collapse"  id="collapseExample">
+                            <label class="text-white p-2"> <b>Coupon Code (Optional):</b></label>
                             <input type="text" class="form-control" name="coupon" id="input">
                         </div>
-                        </div>
+
+
+
                     </div>
+
+
                     <div class="clearfix"></div>
+
                     <div class="clearfix"></div>
+
             </div>
             <div class="col-md-6 login-form-1">
                 <div class="m-5 p-5">
@@ -204,20 +279,7 @@
             }
         })
 
-
-
-
-
-    var password = document.getElementById("pass"),
-        confirm_password = document.getElementById("pass2");
-
-    function validatePassword() {
-        if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
+    
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;

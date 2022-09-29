@@ -17,6 +17,15 @@
     <link href="/assets/backend/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="/assets/backend/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <style>
+   #visiblity-toggle {
+        color: #363636;
+        cursor: pointer;
+        margin: 0 2px;
+    }
+
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
 </head>
 
@@ -62,8 +71,10 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" name="password" placeholder="Enter password">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                                     </div>
+                                     <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -29px;position: relative;z-index: 2;">visibility</span>
+                                  
                                 </div>
 
                                 <div class="form-group row mt-4">
@@ -100,7 +111,22 @@
         </div>
         <!-- End Log In page -->
     </div>
+<script>
 
+const pass = document.querySelector('#password')
+    const btn = document.querySelector('#visiblity-toggle')
+
+    btn.addEventListener('click', () => {
+            if (pass.type === "text") {
+                pass.type = "password";
+                btn.innerHTML = "visibility";
+            } else {
+                pass.type = "text";
+                btn.innerHTML = "visibility_off";
+
+            }
+        })
+</script>
 
 
     <!-- JAVASCRIPT -->

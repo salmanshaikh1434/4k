@@ -48,7 +48,7 @@
 
                                     <td>
                                         <div class="">
-                                            <a href="/admin/users/delete/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this user ?');"><i class="fa fa-trash"></i></a>
+                                            <a href="/admin/users/temp_delete/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this user ?');"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
 
