@@ -108,13 +108,13 @@
     <div class="container">
         <div class="row m-1">
             <div class="col-md-6 login-form-2 ">
-            <?= alertMessage() ?>
+                <?= alertMessage() ?>
                 <h3>Checkout Page</h3>
                 <form method="post" action="/signup/info" style="padding: 5%;">
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
-                            <input type="text" class="form-control" class="form-control" name="firstname" maxlength="60"  required>
+                            <input type="text" id="txtCharacter" onkeypress="return isNumericKey(event)" class="form-control" class="form-control" name="firstname" maxlength="60" required>
                         </div>
                         <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
                         <div class="form-group">
@@ -127,7 +127,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"> <b>Mobile :</b></label>
-                            <input type="number" class="form-control" name="mobile" id="input"  pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.maxlength==10 && this.value.minlength==10) return false;"  required>
+                            <input type="number" class="form-control" name="mobile" id="input" min="1000000000" max="9999999999" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label>
@@ -136,29 +136,27 @@
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Confirm Password :</b></label>
-                            <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="150" required="">
+                            <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password " maxlength="14" minlength="8" required="">
                         </div>
                         <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
+                        
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Coupon Code (Optional):</b></label>
+                            <label class="text-white p-2"> <b>Coupon Code (Optional):<a  style="color:#242952" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            click to Enter
+                        </a></b></label>
+                        <div class="collapse"  id="collapseExample">
                             <input type="text" class="form-control" name="coupon" id="input">
                         </div>
-
-
-
+                        </div>
                     </div>
-
-
                     <div class="clearfix"></div>
-
                     <div class="clearfix"></div>
-
             </div>
             <div class="col-md-6 login-form-1">
                 <div class="m-5 p-5">
-                    <div class="row text-center" >
-                <a href="https://razorpay.com/" target="_blank"> <img referrerpolicy="origin" src = "https://badges.razorpay.com/badge-dark.png "  class="img-fluid" alt = "Razorpay | Payment Gateway | Neobank"></a>
-                </div>
+                    <div class="row text-center">
+                        <a href="https://razorpay.com/" target="_blank"> <img referrerpolicy="origin" src="https://badges.razorpay.com/badge-dark.png " class="img-fluid" alt="Razorpay | Payment Gateway | Neobank"></a>
+                    </div>
                     <h3 style="color: #fd746c;"><?= $membership['titel'] ?></h3>
                     <hr>
                     <h4> ₹ <?= $membership['priceing'] ?>/- <span> </span></h4>
@@ -208,7 +206,7 @@
 
 
 
-  
+
 
     var password = document.getElementById("pass"),
         confirm_password = document.getElementById("pass2");

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Category;
+use App\Models\Membership;
 use App\Models\SiteInfo;
 use App\Models\Social;
 
@@ -14,9 +15,11 @@ class Home extends BaseController
         $social=new Social();
         $site_info=new SiteInfo();
         $category=new Category();
+        $membership=new Membership();
         $page['categories']=$category->findAll();
         $page['site_info']=$site_info->first();
         $page['social']=$social->first();
+        $page['memberships']=$membership->findAll();
         $data['page'] = view('frontend/index', $page);
         return view("frontend/template", $data);
        

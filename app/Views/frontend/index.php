@@ -597,9 +597,9 @@
 
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
-                    <h3 class="text-price">Basic</h3>
+                    <h3 class="text-price"><?=$memberships[0]['titel']?></h3>
                     <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
-                    <h4> ₹ 849/- <span> </span></h4>
+                    <h4> ₹ <?=$memberships[0]['priceing']?>/- <span> </span></h4>
                     <h5 class="text-white">Only ₹ 71/- per month</h5>
                     <br>
                     <ul>
@@ -615,9 +615,9 @@
                 </div>
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 40px;">
-                    <h3 class="text-price">Pro</h3>
+                    <h3 class="text-price"><?=$memberships[1]['titel']?></h3>
                     <h5><del>6000/- </del>Now (% 78 off) </h5>
-                    <h4> ₹ 1299/- <span> </span></h4>
+                    <h4> ₹ <?=$memberships[1]['priceing']?>/- <span> </span></h4>
                     <h5>Only ₹ 54/- per month</h5>
                     <br>
                     <ul>
@@ -632,9 +632,9 @@
                 </div>
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
-                    <h3 class="text-price">Premium</h3>
+                    <h3 class="text-price"><?=$memberships[2]['titel']?></h3>
                     <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
-                    <h4> ₹ 1,599/- <span> </span></h4>
+                    <h4> ₹ <?=$memberships[2]['priceing']?>/- <span> </span></h4>
                     <h5 class="text-white">Only ₹ 44/- per month</h5>
                     <br>
                     <ul>

@@ -25,8 +25,6 @@
                     <a href="/memberships/checkout/<?= $membership['id']?>" class="btn btn-style mt-4" style="color: #000;background-color: #fff;">Get Started</a>
             </div>
             <?php } ?>
-
-
         </div>
     </div>
 </section>

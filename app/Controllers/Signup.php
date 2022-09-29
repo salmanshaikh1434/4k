@@ -35,35 +35,32 @@ class Signup extends BaseController
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         $page['membership'] = $m->find($id);
-        
- 
 
         if ($this->request->getMethod() == "post") {
             $post = $this->request->getPost();
-            $email=$user->select('email')->where('email',$post['email'])->findAll();
-            if(!empty($email)){ 
-                return redirect()->to('/signup/info/3')->with('message','email already exist');
+            $email = $user->select('email')->where('email', $post['email'])->findAll();
+            if (!empty($email)) {
+                return redirect()->to('/signup/info/3')->with('message', 'email already exist');
             }
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
             $post['confpass'] = md5($post['confpass']);
-             $price_id =  $post['price_id'];
+            $price_id =  $post['price_id'];
 
 
             $code = new CouponCode();
-            $couponcode = $code->where('name',$post['coupon'])->first();
+            $couponcode = $code->where('name', $post['coupon'])->first();
             // for coupon code
 
-           
-          
+
+
             if (!empty($post['coupon']) && isset($couponcode)) {
-                $coupon_id=$couponcode['id'];
+                $coupon_id = $couponcode['id'];
                 if ($post['coupon'] == $couponcode['name']) {
                     unset($post['coupon']);
                     unset($post['password']);
-                    $user->insert($post);
+                    $user_id = $user->insert($post);
                     $code->delete($coupon_id);
-                    $user_id = $user->insertID();
                     $data['subscription_date'] = date('Y-m-d');
                     $data['user_id'] = $user_id;
                     $data['plan_id'] = $price_id;
@@ -116,8 +113,8 @@ class Signup extends BaseController
                 }
 
                 // without coupon code
-            } 
-            
+            }
+
             if ($post['pass'] == $post['confpass']) {
 
                 if ($temp->insert($post)) {
@@ -136,7 +133,6 @@ class Signup extends BaseController
             } else {
                 $page['error_message'] = "password and confirm password doesn't match!";
             }
-          
         }
         $data['page'] = view('frontend/signup', $page);
         return view("frontend/template", $data);
@@ -191,9 +187,7 @@ class Signup extends BaseController
             unset($info['id']);
             $password = $info['password'];
             unset($info['password']);
-            if ($user->insert($info)) {
-                $id = $user->insertID();
-            }
+            $id = $user->insert($info);
         }
 
         $data['payment_id'] = $_POST['razorpay_payment_id'];
@@ -330,8 +324,8 @@ class Signup extends BaseController
     public function signout()
     {
         $device = new Device();
-        $uniqid = session()->get('session_id');      
-        $id=$device->select('id')->where('session_id', $uniqid)->first();
+        $uniqid = session()->get('session_id');
+        $id = $device->select('id')->where('session_id', $uniqid)->first();
         $device->delete($id);
         session()->destroy();
         return redirect()->to('/');

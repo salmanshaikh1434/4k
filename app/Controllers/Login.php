@@ -13,6 +13,14 @@ use App\Models\Subscription;
 
 class Login extends BaseController
 {
+  public function __construct()
+  {
+      $session = session()->get();
+      if (isset($session['is_loggedin'])) {
+          header('location:/topics');
+          exit();
+      }
+  }
   public function index()
   {
     $page['footer']=false;

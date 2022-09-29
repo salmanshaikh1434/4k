@@ -126,6 +126,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/admin/subscriptions/" class=" waves-effect">
+                                <i class="mdi mdi-format-list-bulleted mdi-24px"></i>
+                                <span>Subscription Plan</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/admin/coupon_codes" class=" waves-effect">
                                 <i class="mdi mdi-cash mdi-24px"></i>
                                 <span>Coupon Code</span>
