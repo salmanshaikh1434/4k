@@ -110,9 +110,9 @@ class Topics extends AdminAuth
 
         $videos->select(['sort', 'id']);
         $videos->where('categories', 1);
-        $newvalues = $videos->where('sort>=', $newchange)->findAll();
+        $newvalues = $videos->where('sort >=', $newchange)->orderBy('sort', 'ASC')->findAll();
         $videos->select(['sort', 'id']);
-        $oldvalues = $videos->where('sort>', $existing)->findAll();
+        // $oldvalues = $videos->where('sort >', $existing)->findAll();
         // echo '<pre>';
         // print_r($oldvalues);
         // exit();
@@ -122,17 +122,6 @@ class Topics extends AdminAuth
             $videos->update($newvalues[$i]['id'], ['sort' => $newchange]);
         }
         $videos->update($id, $post);
-
-        // for ($i = 1; $i < count($oldvalues); $i++) {
-        // //  if($oldvalues[$i]['sort'] == $post['sort']){
-        // //     $change = $oldvalues[$i]['sort']+1;
-        // //  }else{
-        //     $change = $oldvalues[$i]['sort'] - 1;
-        // //  }
-            
-        //     $videos->update($oldvalues[$i]['id'], ['sort' => $change]);
-        // }
-
 
 
 

@@ -40,7 +40,7 @@ class Signup extends BaseController
             $post = $this->request->getPost();
             $email = $user->select('email')->where('email', $post['email'])->findAll();
             if (!empty($email)) {
-                return redirect()->to('/signup/info/3')->with('message', 'email already exist');
+                return redirect()->to('/signup/info/'.$post['price_id'])->with('message', 'email already exist');
             }
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
@@ -164,7 +164,7 @@ class Signup extends BaseController
             'amount'          => $amount * 100, // 39900 rupees in paise
             'currency'        => 'INR'
         ];
-        $page['secret'] = env('rezor_pay_secret') ;
+        $page['secret'] = env('rezor_pay_secret');
         $page['key_id'] = env('rezor_pay_key_id');
         $page['razorpayOrder'] = $api->order->create($orderData);
         return  view('frontend/checkout', $page);
