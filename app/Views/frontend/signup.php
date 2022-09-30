@@ -78,8 +78,9 @@
         cursor: pointer;
         margin: 0 2px;
     }
-    span{
-        color:black;
+
+    span {
+        color: black;
     }
 </style>
 
@@ -88,7 +89,17 @@
 
 <script>
     function validate() {
-        
+        // event.preventDefault();
+        document.getElementById("nameErrorMsg").innerHTML = "";
+        document.getElementById("alphaErrorMsg").innerHTML = "";
+        document.getElementById("lastnameErrorMsg").innerHTML = "";
+        document.getElementById("alphalastErrorMsg").innerHTML = "";
+        document.getElementById("emailErrorMsg").innerHTML = "";
+        document.getElementById("mobileErrorMsg").innerHTML = "";
+        document.getElementById("passErrorMsg").innerHTML = "";
+        document.getElementById("pass2ErrorMsg").innerHTML = "";
+        document.getElementById("pass2ErrorMsg").innerHTML = "";
+
         var firstname = document.getElementById('firstname').value;
         var lastname = document.getElementById('lastname').value;
         var email = document.getElementById('email').value;
@@ -96,56 +107,78 @@
         var pass = document.getElementById('pass').value;
         var pass2 = document.getElementById('pass2').value;
         var status = true;
-        var alpha=/^[A-Za-z]+$/;
+        var alpha = /^[A-Za-z$ ]+$/;
+        var is_focus_set = false;
+        var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-        if (firstname.length < 1) {
-            document.getElementById("nameErrorMsg").innerHTML =
-                "only alphabets";
+        if (pass2.length < 8) {
+            document.getElementById("pass2ErrorMsg").innerHTML =
+                "An 8 to 14 characters";
             status = false;
-            
+            document.getElementById('pass2').focus();
         }
-        if (!firstname.match(alpha)) {
-            document.getElementById("alphaErrorMsg").innerHTML =
-                "only alphabets";
+        if (pass2 != pass) {
+            document.getElementById("pass2ErrorMsg").innerHTML =
+                "doesn't match";
             status = false;
-        }
-        if (lastname.length < 1) {
-            document.getElementById("lastnameErrorMsg").innerHTML =
-                "only alphabets";
-            status = false;
-        }
-        if (!lastname.match(alpha)) {
-            document.getElementById("alphalastErrorMsg").innerHTML =
-                "only alphabets";
-            status = false;
-        }
-        if (email.length < 1) {
-            document.getElementById("emailErrorMsg").innerHTML =
-                "Enter valid Email";
-            status = false;
-        }
-        if (mobile.length != 10) {
-            document.getElementById("mobileErrorMsg").innerHTML =
-                "Enter 10 digits no.";
-            status = false;
+            document.getElementById('pass2').focus();
         }
         if (pass.length < 8) {
             document.getElementById("passErrorMsg").innerHTML =
                 "An 8 to 14 characters";
             status = false;
+            document.getElementById('pass').focus();
         }
-        if (pass2.length < 8) {
-            document.getElementById("pass2ErrorMsg").innerHTML =
-                "An 8 to 14 characters";
+
+        if (mobile.length != 10) {
+            document.getElementById("mobileErrorMsg").innerHTML =
+                "Enter 10 digits no.";
             status = false;
+            document.getElementById('mobile').focus();
         }
-        if (pass2!=pass) {
-            document.getElementById("pass2ErrorMsg").innerHTML =
-                "doesn't match";
+
+        if (!email.match(regEmail)) {
+            document.getElementById("emailErrorMsg").innerHTML =
+                "Enter Valid Email Address ";
             status = false;
+            document.getElementById('email').focus();
         }
-        if(!status){
-            topFunction();
+
+        if (email.length < 1) {
+            document.getElementById("emailErrorMsg").innerHTML =
+                "Email Address Is Required";
+            status = false;
+            document.getElementById('email').focus();
+        }
+
+        if (!lastname.match(alpha)) {
+            document.getElementById("alphalastErrorMsg").innerHTML =
+                "Only Alphabets";
+            status = false;
+            document.getElementById('lastname').focus();
+        }
+
+        if (lastname.length < 1) {
+            document.getElementById("lastnameErrorMsg").innerHTML =
+                "Last Name Is Required";
+            status = false;
+            document.getElementById('lastname').focus();
+        }
+        if (!firstname.match(alpha)) {
+            document.getElementById("alphaErrorMsg").innerHTML =
+                "Only Alphabets";
+            status = false;
+            document.getElementById('firstname').focus();
+        }
+        if (firstname.length < 1) {
+            document.getElementById("nameErrorMsg").innerHTML =
+                "First Name Required";
+            status = false;
+            document.getElementById('firstname').focus();
+        }
+
+        if (!status) {
+            // topFunction();
         }
         return status;
     }
@@ -182,32 +215,32 @@
                     <div class="to">
                         <div class="form-group">
                             <label class="text-white p-2"><b>First Name : </b></label>
-                            <span   id="nameErrorMsg"></span>
-                            <span  id="alphaErrorMsg"></span>
-                            <input type="text"  class="form-control" id="firstname" name="firstname">
+                            <span id="nameErrorMsg"></span>
+                            <span id="alphaErrorMsg"></span>
+                            <input type="text" class="form-control" id="firstname" name="firstname">
                         </div>
                         <input type="hidden" name="price_id" value="<?= $membership['id'] ?>">
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Last Name : </b></label> 
-                            <span   id="lastnameErrorMsg"></span>
+                            <label class="text-white p-2"><b>Last Name : </b></label>
+                            <span id="lastnameErrorMsg"></span>
                             <span id="alphalastErrorMsg"></span>
                             <input type="text" class="form-control" id="lastname" name="lastname">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Your email : </b></label><span  id="emailErrorMsg"></span>
-                            <input type="email" class="form-control" name="email" maxlength="60" id="email">
+                            <label class="text-white p-2"><b>Your email : </b></label><span id="emailErrorMsg"></span>
+                            <input type="text" class="form-control" name="email" maxlength="60" id="email">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Mobile :</b></label><span   id="mobileErrorMsg"></span>
+                            <label class="text-white p-2"> <b>Mobile :</b></label><span id="mobileErrorMsg"></span>
                             <input type="number" class="form-control" name="mobile" id="mobile">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Password :</b></label><span  id="passErrorMsg"></span>
+                            <label class="text-white p-2"><b>Password :</b></label><span id="passErrorMsg"></span>
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Password ">
                         </div>
                         <span id="visiblity-toggle" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
                         <div class="form-group">
-                            <label class="text-white p-2"><b>Confirm Password :</b></label><span  id="pass2ErrorMsg"></span>
+                            <label class="text-white p-2"><b>Confirm Password :</b></label><span id="pass2ErrorMsg"></span>
                             <input type="password" class="form-control" id="pass2" name="confpass" placeholder="Password ">
                         </div>
                         <span id="visiblity-toggle2" class="material-icons-outlined" style="float: right;margin-left: -20px;margin-top: -45px;position: relative;z-index: 2;">visibility</span>
@@ -279,7 +312,7 @@
             }
         })
 
-    
+
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
