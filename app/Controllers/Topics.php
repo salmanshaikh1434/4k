@@ -10,6 +10,17 @@ use App\Models\Video;
 
 class Topics extends BaseController
 {
+    public function __construct()
+    {
+        if (session()->get('type') == 'user') {
+            $db = db_connect();
+            $user = $db->table('devices')->where('session_id', session()->get('session_id'))->get()->getRowArray();
+            if (empty($user)) {
+                header('location:/signup/signout');
+                exit();
+            }
+        }
+    }
     public function index()
     {
         $social = new Social();
@@ -18,8 +29,8 @@ class Topics extends BaseController
         $videos = new Video();
         $page['categories'] = $category->findAll();
         $page['categories_id'] = $page['categories'][0]['id'];
-        $page['videos'] = $videos->where('show-v',1)->findAll();
-      
+        $page['videos'] = $videos->where('show-v', 1)->findAll();
+
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         $data['page'] = view('frontend/topics', $page);
@@ -45,7 +56,7 @@ class Topics extends BaseController
         $category = new Category();
         $videos = new Video();
         // $videos->orderBy('sort','ASC');
-        $videos = $videos->where('categories', $id)->where('show-v',1)->orderBy('sort','ASC')->findAll();
+        $videos = $videos->where('categories', $id)->where('show-v', 1)->orderBy('sort', 'ASC')->findAll();
         $cat_name = $category->where('id', $id)->first();
         echo '
         <div class="title-heading-w3 text-center mx-auto mb-1">';
@@ -80,7 +91,7 @@ class Topics extends BaseController
                                 <img src="' . $video['photo'] . '" alt="" class="img-fluid radius-image" style="height: 190px;width:100%;">
                             
                             <h4 style="text-align: center;"><a href="#" style="font-size: 16px;overflow:hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient:vertical; video_type="' . $video["type"] . '"">
-                                    <span style="font-size: 16px;">'.$video['titel'] . '</span>
+                                    <span style="font-size: 16px;">' . $video['titel'] . '</span>
                                 </a></h4></div>';
             } else {
                 echo '<a data-toggle="modal" data-target="#exampleModalCenter" style="filter:blur(16px);" data-idvideo="' . $video['video_code'] . '">
@@ -108,7 +119,7 @@ class Topics extends BaseController
         $page['footer'] = false;
         $page['category'] = $category->where('id', $id)->first();
         $page['categories'] = $category->findAll();
-        $page['videos'] = $videos->where('categories', $id)->where('show-v',1)->orderBy('sort','ASC')->findAll();
+        $page['videos'] = $videos->where('categories', $id)->where('show-v', 1)->orderBy('sort', 'ASC')->findAll();
         $page['site_info'] = $site_info->first();
         $page['social'] = $social->first();
         return view('frontend/topics_mobile', $page);

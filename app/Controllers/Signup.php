@@ -40,7 +40,7 @@ class Signup extends BaseController
             $post = $this->request->getPost();
             $email = $user->select('email')->where('email', $post['email'])->findAll();
             if (!empty($email)) {
-                return redirect()->to('/signup/info/'.$post['price_id'])->with('message', 'email already exist');
+                return redirect()->to('/signup/info/' . $post['price_id'])->with('message', 'email already exist');
             }
             $post['pass'] = md5($post['pass']);
             $post['password'] = $post['pass'];
@@ -325,7 +325,10 @@ class Signup extends BaseController
         $device = new Device();
         $uniqid = session()->get('session_id');
         $id = $device->select('id')->where('session_id', $uniqid)->first();
-        $device->delete($id);
+        
+        if ($id)
+            $device->delete($id);
+
         session()->destroy();
         return redirect()->to('/');
     }

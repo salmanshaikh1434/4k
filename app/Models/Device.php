@@ -18,7 +18,7 @@ class Device extends Model
         'id',
         'session_id',
         'email',
-
+        'browser'
     ];
 
     // Dates
