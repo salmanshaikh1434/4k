@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\AdminAuth;
+use App\Models\Device;
 use App\Models\Temprary;
 use App\Models\User;
 
@@ -51,4 +52,22 @@ class Users extends AdminAuth
         return redirect()->back()->with('message', $massage);
     }
 
+    public function active_user()
+    {
+        helper('alert');
+        $devicesModel = new Device();
+        $page['users'] = $devicesModel->findAll();
+        $data['page'] = view('backend/user_connected', $page);
+        return view("backend/template", $data);
+    }
+
+    public function delete_session($id)
+    {
+        $massage = "Failed to Delete";
+        $devicesModel = new Device();
+        if ($devicesModel->delete($id)) {
+            $massage = 'User session Deleted Successfully';
+        }
+        return redirect()->back()->with('message', $massage);
+    }
 }
