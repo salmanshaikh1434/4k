@@ -139,10 +139,6 @@ class Signup extends BaseController
     }
 
 
-
-
-
-
     public function checkout($tempid = Null, $price_id = NUll)
     {
 
