@@ -19503,6 +19503,9 @@ li {
 /* Media queries - Responsive timeline on screens less than 786px wide */
 
 @media screen and (max-width: 786px) {
+    .intro {
+        height: 40%
+    }
     /* Place the timelime to the left */
     .pad {
         padding-top: 1px;

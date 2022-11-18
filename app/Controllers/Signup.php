@@ -270,8 +270,9 @@ class Signup extends BaseController
             $change->where('email', $post['email']);
             $useremail = $change->first();
 
-            if ($post['email'] == $useremail['email']) {
-                $password = rand(10, 100);
+
+            if (!empty($useremail)) {
+                $password = substr(uniqid(), 8);
                 $username = $useremail['email'];
                 $name = $useremail['firstname'];
                 $id = $useremail['id'];
@@ -284,20 +285,20 @@ class Signup extends BaseController
                     $mail->isSMTP();                                            //Send using SMTP
                     $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'salman@sublimetechnologies.in';                     //SMTP username
-                    $mail->Password   = 'Etz5Tf4Ux8L@';                               //SMTP password
+                    $mail->Username   = 'noreply@english4000hours.com';                     //SMTP username
+                    $mail->Password   = 'English4000hours@';                               //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
-                    $mail->setFrom('salman@sublimetechnologies.in', '4k English');
+                    $mail->setFrom('noreply@english4000hours.com', 'English4000hours');
                     $mail->addAddress($username);     //Add a recipient
 
 
                     //Content
                     $mail->isHTML(true);                                  //Set email format to HTML
                     $mail->Subject = 'New Welcome Mr. ' . $name . '';
-                    $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! https://mahafencing.in !!!';
+                    $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! ' . env("app.baseURL") . '/login !!!';
                     $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
 
                     $mail->send();
@@ -321,7 +322,7 @@ class Signup extends BaseController
         $device = new Device();
         $uniqid = session()->get('session_id');
         $id = $device->select('id')->where('session_id', $uniqid)->first();
-        
+
         if ($id)
             $device->delete($id);
 

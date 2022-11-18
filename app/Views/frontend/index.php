@@ -1,3 +1,9 @@
+<script>
+    $(document).on("click", ".close", function() {
+        var vid = document.getElementById("vidId");
+        vid.pause();
+    });
+</script>
 <div class="banner-wrap" id="home">
     <div class="row m-0">
         <div class="col-md-6 banner-left pt-md-0 pt-5 pb-md-0 pb-sm-4">
@@ -21,19 +27,53 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
+            </button>
+            <div class="modal-dialog modal-xl frame-content intro">
+                <div style=" pointer-events: none !important;"></div>
+                <div class="modal-content" style="background-color:black;height:100%;top:50%;border:2px solid white">
+                    <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4" autoplay controls muted>
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
+            </button>
+            <div class="modal-dialog modal-xl frame-content" style="height:90%">
+                <div style=" pointer-events: none !important;"></div>
+                <div class="modal-content" style="background-color:black;height:100%;border:2px solid white">
+                    <video width="100%" height="100%" autoplay controls muted>
+                        <source class="video" src="/assets/intro.mp4" type="video/mp4">
+
+                    </video>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
+            </button>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="margin-top:120px">
+                    <video width="100%" autoplay controls muted>
+                        <source src="/assets/intro.mp4" type="video/mp4">
+                        <source src="/assets/intro.mp4" type="video/ogg">
+                    </video>
+                </div>
+            </div>
+        </div> -->
         <div class="col-md-6 banner-right">
             <div class="text-center py-5">
-                <!-- <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center">
-                        <span class="video-play-icon">
-                            <span class="fa fa-play"></span>
-                        </span>
-                    </a>
-                
-                    dialog itself, mfp-hide class is required to make dialog hidden -->
-                <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                    <iframe src="https://player.vimeo.com/video/119641053?h=6ddc880e8a" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-                <!--//video-->
+                <a class="popup-with-zoom-anim play-view text-center" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <span class="video-play-icon">
+                        <span class="fa fa-play"></span>
+                    </span>
+                </a>
             </div>
         </div>
     </div>
@@ -307,7 +347,7 @@
 
                             <img src="/assets/uploads/<?= $category['photo']; ?>" alt="" class="img-fluid radius-image" id="hove">
                             <h4 class="mt-3">
-                                <span  class="topic_titles"><span class="numberCircle"><?= $category['id']; ?></span> <?= $category['cat_name']; ?> </span>
+                                <span class="topic_titles"><span class="numberCircle"><?= $category['id']; ?></span> <?= $category['cat_name']; ?> </span>
                                 <br>
                                 <div class="row">
                                     <div class="col-8">
@@ -319,14 +359,13 @@
                                         </p>
                                     </div>
                                     <div class="col-4 mt-2">
-                                    <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
-                                                    <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
-                                    
-                                         <?php } elseif (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
+                                        <?php if ($category['id'] == 1 && null == session()->get('expiry_date')) { ?>
+                                            <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
+
+                                        <?php } elseif (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
                                             <img src="/assets/images/unlockg.png" height="81px" width="100%">
-                                        <?php } 
-                                        else { ?>
-                                            <img src="/assets/images/lock.png" height="81px" width="100%"> 
+                                        <?php } else { ?>
+                                            <img src="/assets/images/lock.png" height="81px" width="100%">
                                         <?php    } ?>
 
                                     </div>
@@ -597,9 +636,9 @@
 
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded ">
-                    <h3 class="text-price"><?=$memberships[0]['titel']?></h3>
+                    <h3 class="text-price"><?= $memberships[0]['titel'] ?></h3>
                     <h5 class="text-white"><del>3500/- </del>Now (% 76 off)</h5>
-                    <h4> ₹ <?=$memberships[0]['priceing']?>/- <span> </span></h4>
+                    <h4> ₹ <?= $memberships[0]['priceing'] ?>/- <span> </span></h4>
                     <h5 class="text-white">Only ₹ 71/- per month</h5>
                     <br>
                     <ul>
@@ -615,9 +654,9 @@
                 </div>
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing shadow-lg bg-white rounded" style="margin-top: -5px;padding-top: 40px;">
-                    <h3 class="text-price"><?=$memberships[1]['titel']?></h3>
+                    <h3 class="text-price"><?= $memberships[1]['titel'] ?></h3>
                     <h5><del>6000/- </del>Now (% 78 off) </h5>
-                    <h4> ₹ <?=$memberships[1]['priceing']?>/- <span> </span></h4>
+                    <h4> ₹ <?= $memberships[1]['priceing'] ?>/- <span> </span></h4>
                     <h5>Only ₹ 54/- per month</h5>
                     <br>
                     <ul>
@@ -632,9 +671,9 @@
                 </div>
 
                 <div class="col-lg-4 col-md-11 col-md-offset-1 box-pricing featured shadow-lg bg-white rounded">
-                    <h3 class="text-price"><?=$memberships[2]['titel']?></h3>
+                    <h3 class="text-price"><?= $memberships[2]['titel'] ?></h3>
                     <h5 class="text-white"><del>7,500/- </del>Now (% 79 off)</h5>
-                    <h4> ₹ <?=$memberships[2]['priceing']?>/- <span> </span></h4>
+                    <h4> ₹ <?= $memberships[2]['priceing'] ?>/- <span> </span></h4>
                     <h5 class="text-white">Only ₹ 44/- per month</h5>
                     <br>
                     <ul>
@@ -671,117 +710,117 @@
         </div>
         <div class="accordion">
             <div class="accordion-item" id="faq1" style="margin-top: 20px;margin-bottom: 20px;">
-              <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">   <a href="#faq1" style="color:white">Why do I
+                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title"> <a href="#faq1" style="color:white">Why do I
                             have to pay when everything is available on YouTube for free? </a></span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-                    <div class="accordion-content">
-               
-                <ul>
-                    <li><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
-                        get you the best out of it and to make the index.</li>
-                    <li><span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
-                        on YouTube.</li>
-                    <li> <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
-                        videos available on YouTube.</li>
-                    <li><span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
-                        into <b>35 topics</b> which are very easy to reach out.</li>
-                    <li><span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
-                        of time, and you will have to do a lot of searches (a waste of your time).</li>
-                    <li> <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.</li>
-                    <li><span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
-                        topic and any video without doing the search process.</li>
-                    <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item" id="faq2" style="margin-bottom: 20px;">
-            <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
-                    selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-            <div class="accordion-content">
-                <ul>
-                    <li><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
-                        for everyone, and you can access to any videos on YouTube by yourself, you don’t need
-                        anyone’s help to use YouTube videos.</li>
-                    <li><span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
-                            hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
-                        hours) sorted in very well order.</li>
-                    <li> <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
-                        channels (not in our website) but only in our website interface as pop-up window.</li>
-                    <li><span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
-                        index (we charge for our Road-map that made English learning easy for you)</li>
-                    <li><span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
-                        these <b>16,600 videos</b> are organized and classified into 35 topics.</li>
-                    <li> <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.</li>
-                    <li><span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
-                        is beneficial for you.</li>
-                    <li><span class="circle">8</span> The index will help you to learn and improve your English language very effectively
-                        if you have the eager to study and learn.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item" id="faq3" style="margin-bottom: 20px;">
-            <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
-                    benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-            <div class="accordion-content">
-                <ul>
-                    <li><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
-                        <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
-                            videos</b>).<br>
-                    </li>
-                    <li><span class="circle">2</span> The content we have will surely help you to develop your English skills and master
-                        your English language to a higher level if you put a little effort in it.<br></li>
-                    <li><span class="circle">3</span> You will gain the American and British accents through imitation.<br></li>
-                    <li><span class="circle">4</span> You will gain listening skills for the American and British accents.<br></li>
-                    <li><span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br></li>
-                    <li><span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
-                        learning at a very <b>low cost</b>.</li>
+                <div class="accordion-content">
 
-                </ul>
+                    <ul>
+                        <li><span class="circle">1</span> Yes, it is <b>free</b>, but we have been doing search on YouTube for more than <b>1,000 hours</b> to
+                            get you the best out of it and to make the index.</li>
+                        <li><span class="circle">2</span> We have extracted and filtered out <b>4,700 hours</b> from more than <b>50,000 hours </b>available
+                            on YouTube.</li>
+                        <li> <span class="circle">3</span> We have extracted and filtered out <b>16,600 videos</b> for you from more than <b>200,000</b>
+                            videos available on YouTube.</li>
+                        <li><span class="circle">4</span> We have arranged these <b>16,600 videos</b> for you in an organized manner and divided them
+                            into <b>35 topics</b> which are very easy to reach out.</li>
+                        <li><span class="circle">5</span> If you do the search to get what we are guiding you through, then you will need a lot
+                            of time, and you will have to do a lot of searches (a waste of your time).</li>
+                        <li> <span class="circle">6</span> Our <b>4,700 hours </b> are very well-indexed on our website which you can use anytime.</li>
+                        <li><span class="circle">7</span> Just a few clicks on our index then very simply and quickly you will be reaching any
+                            topic and any video without doing the search process.</li>
+                        <li><span class="circle">8</span> This index will be available for you every time and from anywhere.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item" style="margin-bottom: 20px;">
-            <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
-                    payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-            <div class="accordion-content">
-                <ul>
-                    <li><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
-                        well-known and <b>trusted Payment Gateway.</b></li>
-                </ul>
+            <div class="accordion-item" id="faq2" style="margin-bottom: 20px;">
+                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Are you
+                        selling for YouTube videos? </span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><span class="circle">1</span> Not at all, we are not selling or charging for YouTube videos because they are free
+                            for everyone, and you can access to any videos on YouTube by yourself, you don’t need
+                            anyone’s help to use YouTube videos.</li>
+                        <li><span class="circle">2</span> But we did a long research and put a lot of effort into it (we spent more <b>1,000
+                                hours</b>) to find you the best content which were around <b>16,600 videos</b> (more than 4,700
+                            hours) sorted in very well order.</li>
+                        <li> <span class="circle">3</span> All videos are embedded videos, and these videos open and play in the original
+                            channels (not in our website) but only in our website interface as pop-up window.</li>
+                        <li><span class="circle">4</span> we are not changing for the videos but for the efforts we have put to create our
+                            index (we charge for our Road-map that made English learning easy for you)</li>
+                        <li><span class="circle">5</span> We have indexed these <b>16,600 videos</b> in a manner that make learning easier and all
+                            these <b>16,600 videos</b> are organized and classified into 35 topics.</li>
+                        <li> <span class="circle">6</span> Once you pay then you will get membership to access our index and start using it.</li>
+                        <li><span class="circle">7</span> So, you will pay for the index (for the road-map we have made) if you find this index
+                            is beneficial for you.</li>
+                        <li><span class="circle">8</span> The index will help you to learn and improve your English language very effectively
+                            if you have the eager to study and learn.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item" style="margin-bottom: 20px;">
-            <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
-                    membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
-            <div class="accordion-content">
-                <ul>
-                    <li><span class="circle">1</span> Click on membership.</li>
-                    <li><span class="circle">2</span> Choose the plan you like.</li>
-                    <li><span class="circle">3</span> Fill up the checkout page form.</li>
-                    <li><span class="circle">4</span> Choose the suitable payment option then pay .</li>
-                    <li><span class="circle">5</span> Now you have user name and password.
-                    </li>
-                    <li><span class="circle">6</span> Click on sign in then write your user &password and click on sign in.</li>
-                    <li><span class="circle">7</span> You became a member and start using the full index.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <script>
-        const items = document.querySelectorAll(".accordion button");
+            <div class="accordion-item" id="faq3" style="margin-bottom: 20px;">
+                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What will I
+                        benefit if I get membership with this website?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><span class="circle">1</span> You will get our service (it is a road-map) which will guide you to the most valuable
+                            <b> 4,700 hours </b>to learn the English language from YouTube (in <b>35 topics & 16,600
+                                videos</b>).<br>
+                        </li>
+                        <li><span class="circle">2</span> The content we have will surely help you to develop your English skills and master
+                            your English language to a higher level if you put a little effort in it.<br></li>
+                        <li><span class="circle">3</span> You will gain the American and British accents through imitation.<br></li>
+                        <li><span class="circle">4</span> You will gain listening skills for the American and British accents.<br></li>
+                        <li><span class="circle">5</span> Anyone of your family members can benefit from the index for <b>free of cost.</b><br></li>
+                        <li><span class="circle">6</span> You will get long-time access to this service hence to <b>4,700 hours</b> of English
+                            learning at a very <b>low cost</b>.</li>
 
-        function toggleAccordion() {
-            const itemToggle = this.getAttribute('aria-expanded');
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Is the
+                        payment safe?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><span class="circle">1</span> Yes, it is very safe and payment will be through the Razorpay company, which is a very
+                            well-known and <b>trusted Payment Gateway.</b></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item" style="margin-bottom: 20px;">
+                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How to get
+                        membership?</span><span class="icon" aria-hidden="true"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><span class="circle">1</span> Click on membership.</li>
+                        <li><span class="circle">2</span> Choose the plan you like.</li>
+                        <li><span class="circle">3</span> Fill up the checkout page form.</li>
+                        <li><span class="circle">4</span> Choose the suitable payment option then pay .</li>
+                        <li><span class="circle">5</span> Now you have user name and password.
+                        </li>
+                        <li><span class="circle">6</span> Click on sign in then write your user &password and click on sign in.</li>
+                        <li><span class="circle">7</span> You became a member and start using the full index.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            const items = document.querySelectorAll(".accordion button");
 
-            for (i = 0; i < items.length; i++) {
-                items[i].setAttribute('aria-expanded', 'false');
+            function toggleAccordion() {
+                const itemToggle = this.getAttribute('aria-expanded');
+
+                for (i = 0; i < items.length; i++) {
+                    items[i].setAttribute('aria-expanded', 'false');
+                }
+
+                if (itemToggle == 'false') {
+                    this.setAttribute('aria-expanded', 'true');
+                }
             }
 
-            if (itemToggle == 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        items.forEach(item => item.addEventListener('click', toggleAccordion));
-    </script>
+            items.forEach(item => item.addEventListener('click', toggleAccordion));
+        </script>
     </div>
 </section>
 <!-- //testimonial section -->
@@ -807,8 +846,7 @@
                 <!-- contact form -->
                 <div class="col-lg-6 content-form-right p-0 ">
                     <div class="form-w3ls p-5">
-                        <form method="post" action="">
-
+                        <form method="post" action="/home/contact_us">
                             <div class="form-group mb-3">
                                 <input class="form-control" type="text" name="name" placeholder="Your Name" maxlength="60" required="">
                             </div>
@@ -816,14 +854,12 @@
                                 <input class="form-control" type="email" name="email" placeholder="Email" maxlength="60" required="">
                             </div>
                             <div class="form-group mb-3">
-                                <input class="form-control" type="text" name="titel" placeholder="Subject " maxlength="150" required="">
+                                <input class="form-control" type="text" name="subject" placeholder="Subject " maxlength="150" required="">
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="message" placeholder="Message" maxlength="500" required=""></textarea>
                             </div>
-                            <div class="input-group1 text-end mt-4">
-                                <button class="btn btn-style" type="submit" name="Submit">Send Message </button>
-                            </div>
+                            <input type="submit" class="btn btn-style mt-4 mx-auto" style="background-color: #fff;color: #fd746c;">
                         </form>
                     </div>
                 </div>

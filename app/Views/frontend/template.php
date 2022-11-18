@@ -165,7 +165,7 @@
                     <div class="col-lg-4 pe-lg-5">
                         <h3>Address:</h3>
                         <p class="mt-3">18-12-222 lane no 4 Qaisar colony, behind junior Zakir Hussain school, Aurangabad (MS) 410013, India.</p>
-                        <p class="mt-3">Mobile : +91 8767578712</p>
+                        <p class="mt-3">Mobile : +91 8530982779</p>
                         <p class="mt-3">Email : info@english4000hours.com</p>
                         <div class="columns-2 mt-4 pt-1">
 
