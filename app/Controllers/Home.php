@@ -7,11 +7,15 @@ use App\Models\Category;
 use App\Models\Membership;
 use App\Models\SiteInfo;
 use App\Models\Social;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Home extends BaseController
 {
     public function index()
     {
+        helper('alert');
         $page['footer'] = true;
         $social = new Social();
         $site_info = new SiteInfo();
@@ -67,21 +71,38 @@ class Home extends BaseController
 
     public function contact_us()
     {
-        $email = \Config\Services::email();
-        $config['protocol'] = 'sendmail';
-        $config['mailPath'] = '/usr/sbin/sendmail';
-        $config['charset']  = 'iso-8859-1';
-        $config['wordWrap'] = true;
+       
+        $post = $this->request->getPost();
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'noreply@english4000hours.com';                     //SMTP username
+            $mail->Password   = 'English4000hours@';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-        $email->initialize($config);
-        
+            //Recipients
+            $mail->setFrom('noreply@english4000hours.com', 'English4000hours');
+            $mail->addAddress('info@english4000hours.com');     //Add a recipient
 
-        $email->setFrom('manojshelgaonkarb@gmail.com', 'Manoj Name');
-        $email->setTo('manojshelgaonkar111@gmail.com');
 
-        $email->setSubject('Email Test');
-        $email->setMessage('Testing the email class.');
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = $post['subject'];
+            $mail->Body    = 'Name:  '.$post['name'].'<br/>'.'Email:  '.$post['email'].'<br/>'.'    '.$post['message'];
+            $mail->AltBody = '';
 
-        $email->send();
+            $mail->send();
+
+            session()->setFlashdata('message', 'Mail Have Sent Successfully!');
+            return redirect()->to('/#contact');
+        } catch (Exception $e) {
+            session()->setFlashdata('message', 'Mail Have failed to Sent!');
+            return redirect()->to('/#contact');
+        }
     }
 }

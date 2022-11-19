@@ -28,7 +28,7 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
             </button>
             <div class="modal-dialog modal-xl frame-content intro">
@@ -38,35 +38,21 @@
                     </video>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <!-- <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
             </button>
-            <div class="modal-dialog modal-xl frame-content" style="height:90%">
+            <div class="modal-dialog modal-xl frame-content intro">
                 <div style=" pointer-events: none !important;"></div>
                 <div class="modal-content" style="background-color:black;height:100%;border:2px solid white">
-                    <video width="100%" height="100%" autoplay controls muted>
-                        <source class="video" src="/assets/intro.mp4" type="video/mp4">
-
+                <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4" autoplay controls muted>
                     </video>
                 </div>
             </div>
-        </div> -->
+        </div>
 
 
-        <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
-            </button>
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content" style="margin-top:120px">
-                    <video width="100%" autoplay controls muted>
-                        <source src="/assets/intro.mp4" type="video/mp4">
-                        <source src="/assets/intro.mp4" type="video/ogg">
-                    </video>
-                </div>
-            </div>
-        </div> -->
         <div class="col-md-6 banner-right">
             <div class="text-center py-5">
                 <a class="popup-with-zoom-anim play-view text-center" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -363,7 +349,7 @@
                                             <img class="blink-image" src="/assets/images/unlockg.png" height="81px" width="100%">
 
                                         <?php } elseif (date('Y-m-d') < date('Y-m-d', strtotime(session()->get('expiry_date')))) { ?>
-                                            <img src="/assets/images/unlockg.png" height="81px" width="100%">
+                                            <img src="/assets/images/unlockwh.png" height="81px" width="100%">
                                         <?php } else { ?>
                                             <img src="/assets/images/lock.png" height="81px" width="100%">
                                         <?php    } ?>
@@ -845,6 +831,7 @@
                 </div>
                 <!-- contact form -->
                 <div class="col-lg-6 content-form-right p-0 ">
+                    <?= alertMessage() ?>
                     <div class="form-w3ls p-5">
                         <form method="post" action="/home/contact_us">
                             <div class="form-group mb-3">
