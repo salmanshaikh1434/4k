@@ -199,9 +199,7 @@
                         <li class="">
                             <div class="">
                                 <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                                        <a href="/">
-                                            <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
-                                        </a>
+                                        <p class="circle2" style="margin-top:-11px;margin-left: -8px;"><i class="fa fa-arrow-left" aria-hidden="true" onclick="history.back()"></i></p>
                                     </span><span style="margin-bottom: 11px;text-align:center;">
                                         <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 2.5vw;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i> 4,724 Hours)</span></span>
                                     </span>
@@ -287,7 +285,7 @@
             </div>
     </section>
     <!--popup -->
-    <div class="modal fade bd-example-modal-lg"  style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
         </button>
         <div class="modal-dialog modal-xl frame-content" style="height:90%">

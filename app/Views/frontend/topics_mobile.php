@@ -77,9 +77,9 @@
             <li class="">
                 <div class="">
                     <div style="display:flex;justify-content: space-between;align-items:center;color:#242952"> <span style="background-image:url('/assets/images/start1.png');background-size:contain;background-repeat:no-repeat;padding: 25px;line-height: 14px;color:white;position: relative;">
-                            <a href="/topics/videos/4">
-                                <p class="circle2" style="margin-top:-11px;margin-left: -10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></p>
-                            </a>
+                          
+                                <p class="circle2" style="margin-top:-11px;margin-left: -10px;"><i class="fa fa-arrow-left" aria-hidden="true"  onclick="history.back()"></i></p>
+                         
                         </span><span style="margin-bottom: 11px;text-align:center;">
                             <span style="font-size: 4.5vw; font-weight:bold"> <?= $category['id'] ?>.<?= $category['cat_name'] ?></span></span>
                         </span>
