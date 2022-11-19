@@ -19499,16 +19499,18 @@ li {
     padding-top: 25px;
 }
 
-.intro {
-    height: 90%;
-}
-
 
 /* Media queries - Responsive timeline on screens less than 786px wide */
 
 @media screen and (max-width: 786px) {
+    .introvideo {
+        background-color: black;
+        height: 70%;
+        top: 68%;
+        border: 2px solid white;
+    }
     .intro {
-        height: 40%;
+        top: 40%;
     }
     /* Place the timelime to the left */
     .pad {

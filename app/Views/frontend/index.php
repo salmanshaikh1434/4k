@@ -43,10 +43,10 @@
         <div class="modal fade bd-example-modal-lg1" style="background: #0f0f0fa1;" data-keyboard="false" data-backdrop="static" id="myLargeModalLabel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <button type="button" class="close m-5" data-dismiss="modal" aria-label="Close" style=" background-color: red;border-radius: 50%;color:white;border: 1px solid grey;padding: 10px;padding:20px">
             </button>
-            <div class="modal-dialog modal-xl frame-content intro" style="height:40%">
+            <div class="modal-dialog modal-xl frame-content intro">
                 <div style=" pointer-events: none !important;"></div>
-                <div class="modal-content" id="videoframe" style="background-color:black;height:100%;top:50%;border:2px solid white">
-                    <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4" controls>
+                <div class="modal-content introvideo" style="background-color:black;height:100%;top:50%;border:2px solid white">
+                    <video id="vidId"  width="100%"  height="100%" src="/assets/intro.mp4" controls>
                     </video>
                 </div>
             </div>
