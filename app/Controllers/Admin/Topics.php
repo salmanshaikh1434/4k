@@ -97,7 +97,7 @@ class Topics extends AdminAuth
         $data['page'] = view('backend/topics/videos', $page);
         return view("backend/template", $data);
     }
-    public function sort($id = null, $category_id = null)
+    public function sort($id = null)
     {
         // echo "<pre>";
         helper('alert_helper');
@@ -105,11 +105,12 @@ class Topics extends AdminAuth
         $videos = new Video();
         $videos->select('sort');
         $ex = $videos->find($id);
+       $category_id=$videos->select('categories')->where('id',$id)->first();
         $existing = $ex['sort'];
         $newchange = $post['sort'];
-
+        
         $videos->select(['sort', 'id']);
-        $videos->where('categories', 1);
+        $videos->where('categories', $category_id['categories']);
         $newvalues = $videos->where('sort >=', $newchange)->orderBy('sort', 'ASC')->findAll();
         $videos->select(['sort', 'id']);
         // $oldvalues = $videos->where('sort >', $existing)->findAll();
@@ -214,6 +215,7 @@ class Topics extends AdminAuth
             }
             $post['titel'] = $titel;
             $post['type'] = 0;
+           
             $video_code = str_replace(' ', '', $_POST['video_code']);
             $check = $video->where('video_code', $video_code)->countAllResults();
             $sort = $video->select('sort')->where('categories', $post['categories'])->orderBy('sort', 'desc')->first();
