@@ -160,14 +160,25 @@ class Topics extends AdminAuth
             $video_id = $post['video_code'];
             $response = file_get_contents('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=' . $video_id . '&key=' . $apiKey);
             $data = json_decode($response);
-            $photo = (!empty($data->items[0]->snippet->thumbnails->maxres)) ? $data->items[0]->snippet->thumbnails->maxres->url : $data->items[0]->snippet->thumbnails->default->url;
-            $titel = $data->items[0]->snippet->title; /// 
-            $post['photo'] = $photo;
+            $titel = $data->items[0]->snippet->title;
+
+            //get default thumbnail
+            $post['photo'] = $data->items[0]->snippet->thumbnails->default->url;
+
+            // if max resolution available 
+            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
+                $post['photo'] = $data->items[0]->snippet->thumbnails->maxres->url;
+            }
+
             $post['titel'] = $titel;
             $video_code = str_replace(' ', '', $_POST['video_code']);
             $check = $video->where('video_code', $video_code)->countAllResults();
-           $sort= $video->where('categories', $post['categories'])->countAllResults();
-           $post['sort']=$sort+1;
+            $sort = $video->select('sort')->where('categories', $post['categories'])->orderBy('sort', 'desc')->first();
+            if (empty($sort)) {
+                $post['sort'] = 1;
+            } else {
+                $post['sort'] = $sort['sort'] + 1;
+            }
             if ($check == 0) {
                 $video->insert($post);
                 return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');
@@ -194,11 +205,23 @@ class Topics extends AdminAuth
             $photo = (!empty($data->items[0]->snippet->thumbnails->maxres)) ? $data->items[0]->snippet->thumbnails->maxres->url : $data->items[0]->snippet->thumbnails->default->url;
             $titel = $data->items[0]->snippet->title; /// 
             $post = $this->request->getPost();
-            $post['photo'] = $photo;
+            //get default thumbnail
+            $post['photo'] = $data->items[0]->snippet->thumbnails->default->url;
+
+            // if max resolution available 
+            if (!empty($data->items[0]->snippet->thumbnails->maxres)) {
+                $post['photo'] = $data->items[0]->snippet->thumbnails->maxres->url;
+            }
             $post['titel'] = $titel;
             $post['type'] = 0;
             $video_code = str_replace(' ', '', $_POST['video_code']);
             $check = $video->where('video_code', $video_code)->countAllResults();
+            $sort = $video->select('sort')->where('categories', $post['categories'])->orderBy('sort', 'desc')->first();
+            if (empty($sort)) {
+                $post['sort'] = 1;
+            } else {
+                $post['sort'] = $sort['sort'] + 1;
+            }
             if ($check == 0) {
                 $video->insert($post);
                 return redirect()->to('/admin/topics/add_playlist')->with('message', 'Video Playlist Added successfully');
