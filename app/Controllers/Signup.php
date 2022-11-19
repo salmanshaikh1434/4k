@@ -272,7 +272,7 @@ class Signup extends BaseController
 
 
             if (!empty($useremail)) {
-                $password = substr(md5(uniqid()), 8);
+                $password = substr(md5(uniqid()), 0, 8);
                 $username = $useremail['email'];
                 $name = $useremail['firstname'];
                 $id = $useremail['id'];
