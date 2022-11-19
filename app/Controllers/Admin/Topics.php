@@ -105,10 +105,10 @@ class Topics extends AdminAuth
         $videos = new Video();
         $videos->select('sort');
         $ex = $videos->find($id);
-       $category_id=$videos->select('categories')->where('id',$id)->first();
+        $category_id = $videos->select('categories')->where('id', $id)->first();
         $existing = $ex['sort'];
         $newchange = $post['sort'];
-        
+
         $videos->select(['sort', 'id']);
         $videos->where('categories', $category_id['categories']);
         $newvalues = $videos->where('sort >=', $newchange)->orderBy('sort', 'ASC')->findAll();
@@ -184,7 +184,7 @@ class Topics extends AdminAuth
                 $video->insert($post);
                 return redirect()->to('/admin/topics/add_video')->with('message', 'Video Added successfully');
             } else {
-                $page['message'] = "Failed to add Video please try again or Video Already Exist!";
+                return redirect()->to('/admin/topics/add_video')->with('message', 'Video code already exist!');
             }
         }
 
@@ -195,7 +195,7 @@ class Topics extends AdminAuth
 
     public function add_playlist()
     {
-        helper('alert_helper');
+        helper('alert');
         $video = new Video();
         $categories = new Category();
         if ($this->request->getMethod() == "post") {
@@ -215,7 +215,7 @@ class Topics extends AdminAuth
             }
             $post['titel'] = $titel;
             $post['type'] = 0;
-           
+
             $video_code = str_replace(' ', '', $_POST['video_code']);
             $check = $video->where('video_code', $video_code)->countAllResults();
             $sort = $video->select('sort')->where('categories', $post['categories'])->orderBy('sort', 'desc')->first();
@@ -228,10 +228,9 @@ class Topics extends AdminAuth
                 $video->insert($post);
                 return redirect()->to('/admin/topics/add_playlist')->with('message', 'Video Playlist Added successfully');
             } else {
-                $page['error_message'] = "Failed to add Video Playlist please try again !";
+                return redirect()->to('/admin/topics/add_playlist')->with('message', 'Video Playlist code already exist!');
             }
         }
-
         $page['categories'] = $categories->findAll();
         $data['page'] = view('backend/topics/addplaylist', $page);
         return view("backend/template", $data);

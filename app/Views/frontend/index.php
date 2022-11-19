@@ -46,7 +46,7 @@
             <div class="modal-dialog modal-xl frame-content intro">
                 <div style=" pointer-events: none !important;"></div>
                 <div class="modal-content" style="background-color:black;height:100%;border:2px solid white">
-                <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4"  controls>
+                    <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4" controls>
                     </video>
                 </div>
             </div>

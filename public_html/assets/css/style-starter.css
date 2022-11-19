@@ -19508,8 +19508,7 @@ li {
 
 @media screen and (max-width: 786px) {
     .intro {
-        top: 35%;
-        height: 24%;
+        height: 40%;
     }
     /* Place the timelime to the left */
     .pad {

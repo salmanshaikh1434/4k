@@ -256,7 +256,7 @@ class Signup extends BaseController
 
     public function forgot_password()
     {
-        helper('alert_helper');
+        helper('alert');
         $page['footer'] = true;
         $social = new Social();
         $site_info = new SiteInfo();
@@ -303,11 +303,9 @@ class Signup extends BaseController
 
                     $mail->send();
 
-                    session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
-                    return redirect()->to('/login');
+                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
                 } catch (Exception $e) {
-                    session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
-                    return redirect()->to('/login');
+                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
                 }
             } else {
                 $page['errors'][] = 'Email id did not match';

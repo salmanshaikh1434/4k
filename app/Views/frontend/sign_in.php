@@ -137,7 +137,7 @@
     <!--content-->
 
     <!-- contact -->
-    <?= session()->getFlashdata('mailsent') ?>
+    <?= session()->getFlashdata('message') ?>
     <div class="container login-container">
         <div class="row m-1">
             <?= alertMessage() ?>
