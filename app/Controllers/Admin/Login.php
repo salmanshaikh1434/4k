@@ -7,9 +7,17 @@ use App\Models\SiteInfo;
 
 class Login extends BaseController
 {
-    public function index()
+    public function __construct()
     {
        
+        if (session()->get('type') == 'user') {
+            echo "Logout User Account";
+            exit();
+        }
+    }
+    public function index()
+    {
+
         return view('backend/login');
     }
     public function login_check()
@@ -31,7 +39,7 @@ class Login extends BaseController
                 session()->set('is_loggedin', true);
                 // set user data as session 
                 session()->set($user);
-                    return redirect()->to('/admin/dashboard');
+                return redirect()->to('/admin/dashboard');
             } else {
                 session()->setFlashdata('message', 'Check Your password and try again');
                 return redirect()->to('/admin/login');
