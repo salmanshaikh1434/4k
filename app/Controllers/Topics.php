@@ -12,6 +12,11 @@ class Topics extends BaseController
 {
     public function __construct()
     {
+        if (session()->get('type') == 'admin') {
+           echo "Logged Out admin Account";
+            exit();
+        }
+
         if (session()->get('type') == 'user') {
             $db = db_connect();
             $user = $db->table('devices')->where('session_id', session()->get('session_id'))->get()->getRowArray();
