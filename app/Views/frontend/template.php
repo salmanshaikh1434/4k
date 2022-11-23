@@ -7,6 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $site_info['site_name']; ?></title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNRY20T9CE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FNRY20T9CE');
+    </script>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
     <!-- Template CSS Style link -->
@@ -318,8 +331,6 @@
             mainClass: 'my-mfp-slide-bottom'
         });
     });
-
-    
 </script>
 <script src="/assets/js/theme-change.js"></script>
 <script>
