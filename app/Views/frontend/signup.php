@@ -95,7 +95,7 @@
         document.getElementById("lastnameErrorMsg").innerHTML = "";
         document.getElementById("alphalastErrorMsg").innerHTML = "";
         document.getElementById("emailErrorMsg").innerHTML = "";
-        document.getElementById("mobileErrorMsg").innerHTML = "";
+        // document.getElementById("mobileErrorMsg").innerHTML = "";
         document.getElementById("passErrorMsg").innerHTML = "";
         document.getElementById("pass2ErrorMsg").innerHTML = "";
         document.getElementById("pass2ErrorMsg").innerHTML = "";
@@ -109,7 +109,7 @@
         var status = true;
         var alpha = /^[A-Za-z$ ]+$/;
         var is_focus_set = false;
-        var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var regEmail = /^\w[a-zA-Z0-9_\.\-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
         if (pass2.length < 8) {
             document.getElementById("pass2ErrorMsg").innerHTML =
@@ -130,12 +130,12 @@
             document.getElementById('pass').focus();
         }
 
-        if (mobile.length != 10) {
-            document.getElementById("mobileErrorMsg").innerHTML =
-                "Enter 10 digits no.";
-            status = false;
-            document.getElementById('mobile').focus();
-        }
+        // if (mobile.length != 10) {
+        //     document.getElementById("mobileErrorMsg").innerHTML =
+        //         "Enter 10 digits no.";
+        //     status = false;
+        //     document.getElementById('mobile').focus();
+        // }
 
         if (!email.match(regEmail)) {
             document.getElementById("emailErrorMsg").innerHTML =
@@ -231,8 +231,8 @@
                             <input type="text" class="form-control" name="email" maxlength="60" id="email">
                         </div>
                         <div class="form-group">
-                            <label class="text-white p-2"> <b>Mobile :</b></label><span id="mobileErrorMsg"></span>
-                            <input type="number" class="form-control" name="mobile" id="mobile">
+                            <label class="text-white p-2"> <b>Mobile :</b></label>
+                            <input type="number" class="form-control" name="mobile" id="mobile" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white p-2"><b>Password :</b></label><span id="passErrorMsg"></span>
