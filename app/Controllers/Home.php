@@ -71,8 +71,14 @@ class Home extends BaseController
 
     public function contact_us()
     {
-       
+
         $post = $this->request->getPost();
+
+        if ($post['captcha'] != session()->get('captcha')) {
+            session()->setFlashdata('message', 'Wrong Captcha Code entered. please reenter the code');
+            return redirect()->to('/#contact');
+        }
+
         $mail = new PHPMailer(true);
         try {
             //Server settings
@@ -93,7 +99,7 @@ class Home extends BaseController
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $post['subject'];
-            $mail->Body    = 'Name:  '.$post['name'].'<br/>'.'Email:  '.$post['email'].'<br/>'.'    '.$post['message'];
+            $mail->Body    = 'Name:  ' . $post['name'] . '<br/>' . 'Email:  ' . $post['email'] . '<br/>' . '    ' . $post['message'];
             $mail->AltBody = '';
 
             $mail->send();
@@ -104,5 +110,24 @@ class Home extends BaseController
             session()->setFlashdata('message', 'Mail Have failed to Sent!');
             return redirect()->to('/#contact');
         }
+    }
+
+    public function get_captcha()
+    {
+        $random_num    = md5(random_bytes(64));
+        $captcha_code  = substr($random_num, 0, 6);
+        // Assign captcha in session
+        session()->set(['captcha' => $captcha_code]);
+        // Create captcha image
+        $layer = imagecreatetruecolor(168, 37);
+        $captcha_bg = imagecolorallocate($layer, 247, 174, 71);
+        imagefill($layer, 0, 0, $captcha_bg);
+        $captcha_text_color = imagecolorallocate($layer, 0, 0, 0);
+        imagestring($layer, 5, 55, 10, $captcha_code, $captcha_text_color);
+        header("Content-type: image/jpeg");
+        imagejpeg($layer);
+        // Free memory
+        imagedestroy($layer);
+        exit();
     }
 }

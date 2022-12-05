@@ -265,50 +265,55 @@ class Signup extends BaseController
         $page['errors'] = [];
         if ($this->request->getMethod() == 'post') {
             $post = $this->request->getPost();
-            $change = new User();
-            $change->select(['email', 'id', 'firstname']);
-            $change->where('email', $post['email']);
-            $useremail = $change->first();
 
-
-            if (!empty($useremail)) {
-                $password = substr(md5(uniqid()), 0, 8);
-                $username = $useremail['email'];
-                $name = $useremail['firstname'];
-                $id = $useremail['id'];
-                $change->update($id, ['pass' => md5($password), 'confpass' => md5($password)]);
-                $mail = new PHPMailer(true);
-
-                try {
-                    //Server settings
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                    $mail->isSMTP();                                            //Send using SMTP
-                    $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
-                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'noreply@english4000hours.com';                     //SMTP username
-                    $mail->Password   = 'English4000hours@';                               //SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                    //Recipients
-                    $mail->setFrom('noreply@english4000hours.com', 'English4000hours');
-                    $mail->addAddress($username);     //Add a recipient
-
-
-                    //Content
-                    $mail->isHTML(true);                                  //Set email format to HTML
-                    $mail->Subject = 'New Welcome Mr. ' . $name . '';
-                    $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! ' . env("app.baseURL") . '/login !!!';
-                    $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
-
-                    $mail->send();
-
-                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
-                } catch (Exception $e) {
-                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
-                }
+            if ($post['captcha'] != session()->get('captcha')) {
+                $page['errors'][] = 'Wrong Captcha Code entered. please reenter the code';
             } else {
-                $page['errors'][] = 'Email id did not match';
+                $change = new User();
+                $change->select(['email', 'id', 'firstname']);
+                $change->where('email', $post['email']);
+                $useremail = $change->first();
+
+
+                if (!empty($useremail)) {
+                    $password = substr(md5(uniqid()), 0, 8);
+                    $username = $useremail['email'];
+                    $name = $useremail['firstname'];
+                    $id = $useremail['id'];
+                    $change->update($id, ['pass' => md5($password), 'confpass' => md5($password)]);
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        //Server settings
+                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                        $mail->isSMTP();                                            //Send using SMTP
+                        $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+                        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                        $mail->Username   = 'noreply@english4000hours.com';                     //SMTP username
+                        $mail->Password   = 'English4000hours@';                               //SMTP password
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                        //Recipients
+                        $mail->setFrom('noreply@english4000hours.com', 'English4000hours');
+                        $mail->addAddress($username);     //Add a recipient
+
+
+                        //Content
+                        $mail->isHTML(true);                                  //Set email format to HTML
+                        $mail->Subject = 'New Welcome Mr. ' . $name . '';
+                        $mail->Body    = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '<br>LOGIN LINK Will APPEAR ON OUR WEBSITE SOON !!! ' . env("app.baseURL") . '/login !!!';
+                        $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $password . '';
+
+                        $mail->send();
+
+                        return redirect()->to('/login')->with('message', 'Mail Have Sent Successfully!');
+                    } catch (Exception $e) {
+                        return redirect()->to('/login')->with('message', 'Mail Have Sent Successfully!');
+                    }
+                } else {
+                    $page['errors'][] = 'Email id did not match';
+                }
             }
         }
         $data['page'] = view('/frontend/forgot_password', $page);

@@ -46,7 +46,7 @@
             <div class="modal-dialog modal-xl frame-content intro">
                 <div style=" pointer-events: none !important;"></div>
                 <div class="modal-content introvideo" style="background-color:black;height:100%;top:50%;border:2px solid white">
-                    <video id="vidId"  width="100%"  height="100%" src="/assets/intro.mp4" controls>
+                    <video id="vidId" width="100%" height="100%" src="/assets/intro.mp4" controls>
                     </video>
                 </div>
             </div>
@@ -845,6 +845,14 @@
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="message" placeholder="Message" maxlength="500" required=""></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="form-group mb-3 col-lg-6">
+                                    <img src="/home/get_captcha" alt="captcha code" srcset="">
+                                </div>
+                                <div class="form-group mb-3 col-lg-4">
+                                    <input class="form-control" type="text" name="captcha" placeholder="Captcha code " maxlength="150" required="">
+                                </div>
                             </div>
                             <input type="submit" class="btn btn-style mt-4 mx-auto" style="background-color: #fff;color: #fd746c;">
                         </form>
