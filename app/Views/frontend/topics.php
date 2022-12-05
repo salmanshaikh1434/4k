@@ -183,6 +183,9 @@
                         <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
                     </li>
                     <?php if (!NULL == session()->get('id')) { ?>
+                        <li class="nav-item">
+                            <a href="/home/user_details" class="nav-link" style="margin-top: 9px;">Your Plan</a>
+                        </li>
                         <!-- <li class="nav-item">
                             <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
                         </li> -->
@@ -215,7 +218,7 @@
                                     </span><span style="margin-bottom: 11px;text-align:center;">
                                         <span style="font-size: 4.5vw; font-weight:bold"> Our Index (Our Road-map)<br /></span><span style="font-size: 2.5vw;">(<i class="fa fa-book m-1"></i>35 Topics,<i class="fas fa-video-camera m-1"></i>16,667 Videos & <i class="fa fa-clock-o m-1"></i> 4,724 Hours)</span></span>
                                     </span>
-                                    <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
+                                    <span style="padding: 11px;line-height: 54px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"> <a href="/"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color:#ed1c24"> </i></a></span>
                                 </div>
                             </div>
                         </li>
