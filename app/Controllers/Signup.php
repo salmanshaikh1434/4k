@@ -104,7 +104,8 @@ class Signup extends BaseController
                         $mail->AltBody = 'Your username and password as follows!<br>USERNAME: ' . $username . '<br>PASSWORD: ' . $post['pass'] . '';
                         $mail->send();
 
-                        session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+                        session()->setFlashdata('mailsent', 'Mail have been sent successfully
+                        Check your inbox or spam folder!!');
                         return redirect()->to('/login');
                     } catch (Exception $e) {
                         session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
@@ -243,7 +244,8 @@ class Signup extends BaseController
 
             $mail->send();
 
-            session()->setFlashdata('mailsent', 'Mail Have Sent Sucessfully!');
+            session()->setFlashdata('mailsent', 'Mail have been sent successfully
+            Check your inbox or spam folder!');
             return redirect()->to('/login');
         } catch (Exception $e) {
             session()->setFlashdata('mailsent', 'Mail Have failed to Sent!');
@@ -270,7 +272,6 @@ class Signup extends BaseController
             $change->where('email', $post['email']);
             $useremail = $change->first();
 
-
             if (!empty($useremail)) {
                 $password = substr(md5(uniqid()), 0, 8);
                 $username = $useremail['email'];
@@ -278,7 +279,7 @@ class Signup extends BaseController
                 $id = $useremail['id'];
                 $change->update($id, ['pass' => md5($password), 'confpass' => md5($password)]);
                 $mail = new PHPMailer(true);
-
+               
                 try {
                     //Server settings
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -303,9 +304,10 @@ class Signup extends BaseController
 
                     $mail->send();
 
-                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
+                    return redirect()->to('/login')->with('message', 'Mail have been sent successfully
+                    Check your inbox or spam folder!');
                 } catch (Exception $e) {
-                    return redirect()->to('/login')->with('message', 'Mail Have Sent Sucessfully!');
+                    return redirect()->to('/login')->with('message', 'Mail have failed to Sent!');
                 }
             } else {
                 $page['errors'][] = 'Email id did not match';

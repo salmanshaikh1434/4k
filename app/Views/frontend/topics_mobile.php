@@ -83,7 +83,8 @@
                         </span><span style="margin-bottom: 11px;text-align:center;">
                             <span style="font-size: 4.5vw; font-weight:bold"> <?= $category['id'] ?>.<?= $category['cat_name'] ?></span></span>
                         </span>
-                        <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span>
+                        <span style="padding: 11px;line-height: 54px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"> <a href="/"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color:#ed1c24"> </i></a></span>
+                        <!-- <span style="background-image:url('/assets/images/end.png');background-size:contain;background-repeat:no-repeat;padding: 11px;line-height: 14px;color:white;margin-bottom: 17px;margin-right:-7px;height: 66px;"></span> -->
                     </div>
                 </div>
             </li>

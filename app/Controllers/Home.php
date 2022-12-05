@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Membership;
 use App\Models\SiteInfo;
 use App\Models\Social;
+use App\Models\User;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -104,5 +105,22 @@ class Home extends BaseController
             session()->setFlashdata('message', 'Mail Have failed to Sent!');
             return redirect()->to('/#contact');
         }
+    }
+
+    public function user_details(){
+        $page['footer'] = true;
+        $social = new Social();
+        $site_info = new SiteInfo();
+        $page['site_info'] = $site_info->first();
+        $page['social'] = $social->first();
+        $user_id=session()->get('id');
+        $user = new User();
+        $user->select('usres.*,s.price,s.subscription_date,s.expiry_date,p.titel');
+        $user->join('subscription as s', 's.user_id = usres.id', 'left');
+        $user->join('price as p', 'p.id = s.plan_id', 'left');
+        $user->where('usres.id',$user_id);
+        $page['users'] = $user->first();
+        $data['page'] = view('frontend/user_details', $page);
+        return view("frontend/template", $data);
     }
 }

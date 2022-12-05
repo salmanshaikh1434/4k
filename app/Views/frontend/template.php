@@ -131,9 +131,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact" style="margin-top: 9px;">Contact</a>
+                        <a class="nav-link" href="/index.php#contact" style="margin-top: 9px;">Contact</a>
                     </li>
                     <?php if (!NULL == session()->get('id')) { ?>
+                        <li class="nav-item">
+                            <a href="/home/user_details" class="nav-link" style="margin-top: 9px;">Your Plan</a>
+                        </li>
                         <!-- <li class="nav-item">
                             <a href="/memberships" class="btn btn-style" style="margin-left: 5px;">Membership</a>
                         </li> -->
