@@ -312,7 +312,7 @@ class Signup extends BaseController
                         return redirect()->to('/login')->with('message', 'Mail have failed to Sent!');
                     }
                 } else {
-                    $page['errors'][] = 'Email id did not match';
+                    $page['errors'][] = 'Email does not match';
                 }
             }
         }
