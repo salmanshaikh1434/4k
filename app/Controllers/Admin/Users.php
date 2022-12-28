@@ -16,7 +16,7 @@ class Users extends AdminAuth
         $user->select('usres.*,s.price,s.subscription_date,s.expiry_date,p.titel');
         $user->join('subscription as s', 's.user_id = usres.id', 'left');
         $user->join('price as p', 'p.id = s.plan_id', 'left');
-        $page['users'] = $user->findAll();
+        $page['users'] = $user->orderby('id','desc')->findAll();
         $data['page'] = view('backend/user_list', $page);
         return view("backend/template", $data);
     }
