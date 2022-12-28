@@ -29,6 +29,7 @@ class User extends Model
         'payed',
         'plan',
         'amount',
+        'coupon'
     ];
 
     // Dates

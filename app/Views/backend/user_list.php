@@ -25,6 +25,7 @@
                                 <th>mobile</th>
                                 <th>Plan</th>
                                 <th>Recieved</th>
+                                <th>Coupon</th>
                                 <th>Subscription Date</th>
                                 <th>Expiry Date</th>
                                 <th>Action</th>
@@ -43,6 +44,7 @@
                                     <td><?= $user['mobile'] ?></td>
                                     <td><?= $user['titel'] ?></td>
                                     <td><?= $user['price'] ?></td>
+                                    <td><?= $user['coupon'] ?></td>
                                     <td><?= $user['subscription_date'] ?></td>
                                     <td><?= $user['expiry_date'] ?></td>
 

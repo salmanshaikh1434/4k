@@ -57,16 +57,12 @@ class Signup extends BaseController
             if (!empty($post['coupon']) && isset($couponcode)) {
                 $coupon_id = $couponcode['id'];
                 if ($post['coupon'] == $couponcode['name']) {
-                    unset($post['coupon']);
                     unset($post['password']);
                     $user_id = $user->insert($post);
                     $code->delete($coupon_id);
                     $data['subscription_date'] = date('Y-m-d');
                     $data['user_id'] = $user_id;
                     $data['plan_id'] = $price_id;
-
-
-                    // calculate expiry of plan  and Add Subscription
                     $membership = new Membership();
                     $members = $membership->find($price_id);
                     $days  = '+' . $members['year'] . ' days';
